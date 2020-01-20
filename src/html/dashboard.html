@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Página Inicial - Embrapa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Coderthemes" name="author" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+  <!-- Bootstrap select pluings -->
+  <link href="assets/libs/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+  <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/libs/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+  <link href="assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+  <!-- c3 plugin css -->
+  <link rel="stylesheet" type="text/css" href="assets/libs/c3/c3.min.css">
+
+  <!-- App css -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+  <!-- Begin page -->
+  <div id="wrapper">
+
+    @@include('./partials/topbar.html')
+
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+      <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+          <!-- start page title -->
+          <div class="row">
+            <div class="col-12">
+              <div class="page-title-box">
+                <div class="page-title-right">
+                  <form class="form-inline">
+                    <div class="form-group">
+
+                      <input class="form-control input-daterange-datepicker" type="text" name="daterange" value="01/01/2018 - 12/31/2018" />
+                    </div>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light btn-md">
+                      <i class="mdi mdi-filter"></i>
+                      Filtrar Período
+                    </button>
+                  </form>
+                </div>
+                <h4 class="page-title">Lançamentos</h4>
+              </div>
+            </div>
+          </div>
+          <!-- end page title -->
+
+          <div class="row">
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card widget-box-two bg-danger">
+                <div class="card-body">
+                  <button class="float-right avatar bg-soft-light mt-2" title="Cadastrar Nova Despesa" data-toggle="modal" data-target="#lancar-despesa">
+                    <i class="mdi mdi-plus font-22 avatar-title text-white"></i>
+                  </button>
+                  <div class="wigdet-two-content">
+                    <p class="m-0 text-uppercase text-white" title="Despesas">Despesas</p>
+                    <h4 class="text-white">R$ <span data-plugin="counterup">2500.00</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end col -->
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card widget-box-two bg-success">
+                <div class="card-body">
+                  <button class="float-right avatar bg-soft-light mt-2" title="Cadastrar Nova Receita" data-toggle="modal" data-target="#lancar-receita">
+                    <i class="mdi mdi-plus  font-22 avatar-title text-white"></i>
+                  </button>
+
+                  <div class="wigdet-two-content">
+                    <p class="m-0 text-white text-uppercase" title="Receitas">Receitas</p>
+                    <h4 class="text-white">R$ <span data-plugin="counterup">7800.00</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end col -->
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card widget-box-two bg-warning">
+                <div class="card-body">
+                  <button class="float-right avatar bg-soft-light mt-2" title="Cadastrar Novo Investimento" data-toggle="modal" data-target="#lancar-investimento">
+                    <i class="mdi mdi-plus font-22 avatar-title text-white"></i>
+                  </button>
+                  <div class="wigdet-two-content">
+                    <p class="m-0 text-uppercase text-white" title="Investimentos">Investimentos</p>
+                    <h4 class="text-white">R$ <span data-plugin="counterup">1687.44</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end col -->
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card widget-box-two bg-primary" style="border-radius: 50px">
+                <div class="card-body">
+                  <button class="float-right avatar rounded-circle bg-soft-light mt-2" title="Lançamento de Rebanho" data-toggle="modal" data-target="#lancar-rebanho">
+                    <i class="mdi mdi-plus font-22 avatar-title text-white"></i>
+                  </button>
+                  <div class="wigdet-two-content">
+                    <p class="m-0 text-white text-uppercase" title="Rebanho">Rebanho</p>
+                    <h4 class="text-white"><span data-plugin="counterup">33</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end col -->
+
+            <div class="col-xl-3 col-md-6 mb-3">
+              <button type="button" class="btn btn-link" name="lancamento-outras-atividades" data-toggle="modal" data-target="#lancar-outras-atividades">
+                <b>Lançamento em Outras Atividades</b>&nbsp;
+                <i class="fas fa-plus-circle"></i>
+              </button>
+            </div>
+
+          </div>
+          <!-- end row -->
+
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="header-title mb-3">Categorias de Despesas</h4>
+
+                  <div dir="ltr">
+                    <div id="donut-chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="header-title mb-3">Acompanhamento das finanças</h4>
+                  <div dir="ltr">
+                    <div id="combine-chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="header-title mb-3">Despesas Por Atividade</h4>
+
+                  <div dir="ltr">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="header-title mb-3">Receitas Por Atividade</h4>
+
+                  <div dir="ltr">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end row -->
+
+        </div> <!-- end container-fluid -->
+
+      </div> <!-- end content -->
+      <div id="lancar-despesa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoDespesa" aria-hidden="true">
+          <div class="modal-dialog ">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="adicionarLancamentoDespesa">Adicionar Despesa</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  </div>
+                  <div class="modal-body">
+                    @@include('./forms/lancar-despesa.html')
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="lancar-receita" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoReceita" aria-hidden="true">
+          <div class="modal-dialog ">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="adicionarLancamentoReceita">Adicionar Receita</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  </div>
+                  <div class="modal-body">
+                    @@include('./forms/lancar-receita.html')
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="lancar-investimento" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoInvestimento" aria-hidden="true">
+          <div class="modal-dialog ">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="adicionarLancamentoInvestimento">Adicionar Investimento</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  </div>
+                  <div class="modal-body">
+                    @@include('./forms/lancar-investimento.html')
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="lancar-rebanho" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoRebanho" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="adicionarLancamentoRebanho">Gerenciar Rebanho</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  </div>
+                  <div class="modal-body">
+                    @@include('./forms/lancar-rebanho.html')
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="lancar-outras-atividades" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoOutros" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="adicionarLancamentoOutros">Lançamento Outras Atividades</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="propriedade">Propriedade</label>
+                            <select type="text" id="propriedade" class="form-control select2" value="">
+                              <option value="1" selected>Fazenda 1</option>
+                              <option value="2">Fazenda 2</option>
+                              <option value="3">Fazenda 3</option>
+                              <option value="4">Fazenda 4</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="text-center">
+                            <div class="custom-control custom-control-inline custom-radio mb-2">
+                                <input type="radio" id="outra-despesa" name="check-lancamento-outros" class="custom-control-input" checked>
+                                <label class="custom-control-label" for="outra-despesa">Despesa</label>
+                            </div>
+                            <div class="custom-control custom-control-inline custom-radio mb-2">
+                                <input type="radio" id="outra-receita" name="check-lancamento-outros" class="custom-control-input">
+                                <label class="custom-control-label" for="outra-receita">Receita</label>
+                            </div>
+                            <div class="custom-control custom-control-inline custom-radio mb-2">
+                                <input type="radio" id="outro-investimento" name="check-lancamento-outros" class="custom-control-input">
+                                <label class="custom-control-label" for="outro-investimento">Investimento</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="nome-outro-lancamento">Nome do Lançamento</label>
+                            <input type="text" id="nome-outro-lancamento" class="form-control" value="">
+                          </div>
+                        </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="atividade-associada">Atividade Associada</label>
+                          <select type="text" id="atividade-associada" class="form-control select2" value="">
+                            <option></option>
+                            <option value="1">Pastagem Nativa</option>
+                            <option value="2">Pastagem Cultivada</option>
+                            <option value="3">Cultivo Agrícola</option>
+                            <option value="4">Reserva</option>
+                            <option value="5">Benfeitorias (Casa, açude e etc.)</option>
+                            <option value="6">Outra Atividade 1</option>
+                            <option value="7">Outra Atividade 2</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="data-outro-lancamento">Data do Lançamento</label>
+                          <input id="data-outro-lancamento" type="text" class="form-control" placeholder="dd/mm/yyyy" data-provide="datepicker" data-date-autoclose="true">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="quantidade-outro-lancamento">Quantidade</label>
+                          <div class="input-group">
+                            <input class="form-control" type="number" id="quantidade-outro-lancamento" placeholder="10">
+                            <div class="input-group-append">
+                              <select class="form-control select2" name="select-unidade-outro-lancamento">
+                                <option value="1">KG</option>
+                                <option value="2">@</option>
+                                <option value="3">Ton</option>
+                                <option value="4">Unidade(s)</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="valor-outro-lancamento">Valor</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-primary text-white b-0">R$</span>
+                            </div>
+                            <input id="valor-despesa" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="descricao-outro-lancamento">Descrição</label>
+                          <textarea rows="8" id="descricao-outro-lancamento" class="form-control" value=""></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg float-right" type="submit">Adicionar Lançamento</button>
+                    <button class="btn btn-danger btn-lg float-right mr-4" type="reset">Limpar Campos</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+      @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+  </div>
+  <!-- END wrapper -->
+
+  @@include('./partials/right-sidebar.html')
+
+  <!-- Vendor js -->
+  <script src="assets/js/vendor.min.js"></script>
+
+  <!-- Bootstrap select plugin -->
+  <script src="assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
+
+  <!-- plugins -->
+  <script src="assets/libs/c3/c3.min.js"></script>
+  <script src="assets/libs/d3/d3.min.js"></script>
+  <!-- plugins -->
+  <script src="assets/libs/moment/moment.min.js"></script>
+  <script src="assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+  <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+  <script src="assets/libs/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
+  <script src="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="assets/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
+  <script src="assets/libs/autonumeric/autoNumeric-min.js"></script>
+  <script src="assets/js/pages/form-masks.init.js"></script>
+
+  <!-- Init js-->
+  <script src="assets/js/pages/form-pickers.init.js"></script>
+  <!--Form Wizard-->
+  <script src="assets/libs/jquery-steps/jquery.steps.min.js"></script>
+  <!-- Init js-->
+  <script src="assets/js/pages/form-wizard.init.js"></script>
+
+
+
+  <!-- dashboard init -->
+  <script src="assets/js/pages/dashboard.init.js"></script>
+
+
+
+
+  <!-- App js -->
+  <script src="assets/js/app.min.js"></script>
+
+</body>
+
+</html>

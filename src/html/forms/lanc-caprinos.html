@@ -1,0 +1,291 @@
+<h3>Tipo</h3>
+<section>
+  <div class="mt-5 text-center">
+      <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input type="radio" id="tipo-lancamento-caprinos1" name="tipo-lancamento-caprinos" class="custom-control-input">
+          <label class="custom-control-label" for="tipo-lancamento-caprinos1">Venda</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input type="radio" id="tipo-lancamento-caprinos2" name="tipo-lancamento-caprinos" class="custom-control-input">
+          <label class="custom-control-label" for="tipo-lancamento-caprinos2">Compra</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input type="radio" id="tipo-lancamento-caprinos3" name="tipo-lancamento-caprinos" class="custom-control-input">
+          <label class="custom-control-label" for="tipo-lancamento-caprinos3">Nascimento</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input type="radio" id="tipo-lancamento-caprinos4" name="tipo-lancamento-caprinos" class="custom-control-input">
+          <label class="custom-control-label" for="tipo-lancamento-caprinos4">Morte</label>
+      </div>
+  </div>
+</section>
+<h3>Venda</h3>
+<section>
+    <div class="form-group row">
+      <div class="col-md-12">
+        <div>
+            <div class="custom-control custom-radio custom-control-inline mb-2">
+                <input type="radio" id="tipo-venda-caprinos1" name="tipo-venda-caprinos" class="custom-control-input">
+                <label class="custom-control-label" for="tipo-venda-caprinos1">Cabeças</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline mb-2">
+                <input type="radio" id="tipo-venda-caprinos2" name="tipo-venda-caprinos" class="custom-control-input">
+                <label class="custom-control-label" for="tipo-venda-caprinos2">Produto</label>
+            </div>
+        </div>
+      </div>
+    </div>
+    <h4>Se Selecionado Cabeças</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="quantidade-venda-caprinos">Qtd. Cabeças</label>
+          <input type="number" id="quantidade-venda-caprinos" class="form-control" value="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="valor-venda-caprinos">Valor</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-primary text-white b-0">R$</span>
+            </div>
+            <input id="valor-venda-caprinos" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="sexo-venda-caprinos">Sexo</label>
+          <select id="sexo-venda-caprinos" class="form-control" name="sexo-cabeca">
+            <option value="1">Macho</option>
+            <option value="2">Fêmea</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="periodo-venda-caprinos">Idade</label>
+          <select id="periodo-venda-caprinos" class="form-control" name="periodo-cabeca">
+            <option value="1">Jovem</option>
+            <option value="2">Adulto</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <h4>Se Selecionado Produto</h4>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="tipo-venda-produto-caprinos">Tipo de Produto</label>
+          <select id="tipo-venda-produto-caprinos" class="form-control" name="tipo-produto">
+            <option value="1">Carne</option>
+            <option value="2">Leite</option>
+            <option value="3">Couro</option>
+            <option value="4">Outros</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="custom-control custom-checkbox custom-control-inline mb-2">
+            <input type="checkbox" class="custom-control-input" id="check-venda-abate-caprinos">
+            <label class="custom-control-label" for="check-venda-abate-caprinos">Animal Abatido?</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="quantidade-caprinos-abatidos">Quantidade</label>
+          <input type="number" id="quantidade-caprinos-abatidos" class="form-control" value="" disabled>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="sexo-abate-caprinos">Sexo</label>
+          <select id="sexo-abate-caprinos" class="form-control" name="tipo-produto" disabled>
+            <option value="1">Macho</option>
+            <option value="2">Fêmea</option>
+          </select>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="unidade-venda-produto-caprinos">Medida</label>
+          <select type="text" id="unidade-venda-produto-caprinos" class="form-control select2" value="">
+            <option></option>
+            <option value="1">KG</option>
+            <option value="2">@</option>
+            <option value="3">Ton</option>
+            <option value="4">Unidade</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="quantidade-venda-produto-caprinos">Quantidade</label>
+          <input type="number" id="quantidade-venda-produto-caprinos" class="form-control" value="">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="valor-venda-caprinos">Valor</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-primary text-white b-0">R$</span>
+            </div>
+            <input id="valor-venda-caprinos" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-lg-12 control-label ">(*) Obrigatório</label>
+    </div>
+
+</section>
+<h3>Compra</h3>
+<section>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="quantidade-compra-cabeca">Qtd. Cabeças</label>
+        <input type="number" id="quantidade-compra-cabeca" class="form-control" value="">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="valor-compra-cabeca">Valor</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white b-0">R$</span>
+          </div>
+          <input id="valor-compra-cabeca" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="sexo-compra-cabeca">Sexo</label>
+        <select id="sexo-compra-cabeca" class="form-control" name="tipo-produto">
+          <option value="1">Macho</option>
+          <option value="2">Fêmea</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="periodo-compra-cabeca">Idade</label>
+        <select id="periodo-compra-cabeca" class="form-control" name="periodo-cabeca">
+          <option value="1">Jovem</option>
+          <option value="2">Adulto</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+<h3>Nascimento</h3>
+<section>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="quantidade-nascimento-cabeca">Quantidade de Nascimentos</label>
+        <input type="number" id="quantidade-nascimento-cabeca" class="form-control" value="">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="sexo-compra-cabeca">Sexo</label>
+        <select id="sexo-compra-cabeca" class="form-control" name="tipo-produto">
+          <option value="1">Macho</option>
+          <option value="2">Fêmea</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <div class="form-group">
+        <label for="unidade-venda-produto">Peso ao Nascer</label>
+        <input type="number" id="peso-nascimento-cabeca" class="form-control" value="">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label for="unidade-venda-produto">Medida</label>
+        <select type="text" id="unidade-venda-produto" class="form-control select2" value="">
+          <option></option>
+          <option value="1">KG</option>
+          <option value="2">@</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="valor-custos-nascimento">Custos com Nascimento</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white b-0">R$</span>
+          </div>
+          <input id="valor-custos-nascimento" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<h3>Morte</h3>
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="quantidade-mortes-cabeca">Quantidade de Mortes</label>
+        <input type="number" id="quantidade-mortes-cabeca" class="form-control" value="">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="sexo-morte-cabeca">Sexo</label>
+        <select id="sexo-morte-cabeca" class="form-control" name="tipo-produto">
+          <option value="1">Macho</option>
+          <option value="2">Fêmea</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="periodo-morte-cabeca">Idade</label>
+        <select id="periodo-morte-cabeca" class="form-control" name="periodo-cabeca">
+          <option value="1">Jovem</option>
+          <option value="2">Adulto</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="causa-mortes-cabeca">Causa da Morte</label>
+        <input type="text" id="causa-mortes-cabeca" class="form-control" value="">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="valor-custos-morte">Custos com Morte</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white b-0">R$</span>
+          </div>
+          <input id="valor-custos-morte" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

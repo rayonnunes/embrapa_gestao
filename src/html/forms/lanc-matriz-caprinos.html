@@ -1,0 +1,109 @@
+<h3>Tipo</h3>
+<section>
+  <div class="mt-5 text-center">
+      <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input type="radio" id="tipo-matriz-caprino1" name="tipo-matriz-caprino" class="custom-control-input">
+          <label class="custom-control-label" for="tipo-matriz-caprino1">Venda</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input type="radio" id="tipo-matriz-caprino2" name="tipo-matriz-caprino" class="custom-control-input">
+          <label class="custom-control-label" for="tipo-matriz-caprino2">Compra</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input type="radio" id="tipo-matriz-caprino3" name="tipo-matriz-caprino" class="custom-control-input">
+          <label class="custom-control-label" for="tipo-matriz-caprino3">Crescimento</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input type="radio" id="tipo-matriz-caprino4" name="tipo-matriz-caprino" class="custom-control-input">
+          <label class="custom-control-label" for="tipo-matriz-caprino4">Morte</label>
+      </div>
+  </div>
+</section>
+<h3>Venda</h3>
+<section>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="quantidade-venda-matriz-caprino">Qtd. Cabeças</label>
+          <input type="number" id="quantidade-venda-matriz-caprino" class="form-control" value="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="valor-venda-matriz-caprino">Valor</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-primary text-white b-0">R$</span>
+            </div>
+            <input id="valor-venda-matriz-caprino" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-lg-12 control-label ">(*) Obrigatório</label>
+    </div>
+</section>
+<h3>Compra</h3>
+<section>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="quantidade-compra-matriz-caprino">Qtd. Cabeças</label>
+        <input type="number" id="quantidade-compra-matriz-caprino" class="form-control" value="">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="valor-compra-matriz-caprino">Valor</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white b-0">R$</span>
+          </div>
+          <input id="valor-compra-matriz-caprino" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<h3>Crescimento</h3>
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="quantidade-nascimento-matriz-caprino">Quantidade de Fêmeas que entraram na fase Reprodutiva</label>
+        <input type="number" id="quantidade-nascimento-matriz-caprino" class="form-control" value="">
+      </div>
+    </div>
+  </div>
+</section>
+<h3>Morte</h3>
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="quantidade-mortes-matriz-caprino">Quantidade de Mortes</label>
+        <input type="number" id="quantidade-mortes-matriz-caprino" class="form-control" value="">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="causa-mortes-matriz-caprino">Causa da Morte</label>
+        <input type="text" id="causa-mortes-matriz-caprino" class="form-control" value="">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="valor-custos-morte-matriz-caprino">Custos com Morte</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white b-0">R$</span>
+          </div>
+          <input id="valor-custos-morte-matriz-caprino" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

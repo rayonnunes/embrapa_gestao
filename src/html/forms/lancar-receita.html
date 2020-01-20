@@ -1,0 +1,90 @@
+<form>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="propriedade">Propriedade</label>
+        <select type="text" id="propriedade" class="form-control select2" value="">
+          <option value="1" selected>Fazenda 1</option>
+          <option value="2">Fazenda 2</option>
+          <option value="3">Fazenda 3</option>
+          <option value="4">Fazenda 4</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="nome-receita">Nome da Receita</label>
+        <input type="text" id="nome-receita" class="form-control" value="">
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="atividade-associada">Atividade Associada</label>
+        <select type="text" id="atividade-associada" class="form-control select2" value="">
+          <option></option>
+          <option value="1">Ovinos</option>
+          <option value="2">Caprinos</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="data-receita">Data da Receita</label>
+        <input id="data-receita" type="text" class="form-control" placeholder="dd/mm/yyyy" data-provide="datepicker" data-date-autoclose="true">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="categoria-receita">Categoria de Receita</label>
+        <select type="text" id="categoria-receita" class="form-control select2" value="">
+          <option></option>
+          <option value="1">Receita 1</option>
+          <option value="2">Receita 2</option>
+          <option value="3">Receita 3</option>
+          <option value="4">Receita 4</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="quantidade-receita">Quantidade</label>
+        <div class="input-group">
+          <input class="form-control" type="number" id="quantidade-receita" placeholder="10">
+          <div class="input-group-append">
+            <select class="form-control select2" name="select-unidade-receita">
+              <option value="1">KG</option>
+              <option value="2">@</option>
+              <option value="3">Ton</option>
+              <option value="4">Unidade(s)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="valor-receita">Valor</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white b-0">R$</span>
+          </div>
+          <input id="valor-receita" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="descricao-receita">Descrição</label>
+        <textarea rows="8" id="descricao-receita" class="form-control" value=""></textarea>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-lg float-right" type="submit">Adicionar Receita</button>
+  <button class="btn btn-danger btn-lg float-right mr-4" type="reset">Limpar Campos</button>
+</form>

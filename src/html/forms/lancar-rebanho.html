@@ -1,0 +1,84 @@
+<form id="lanc-rebanho" action="#">
+  <div>
+    <h3>Lançamento</h3>
+    <section>
+      <div class="mt-5 text-center">
+        <div class="custom-control custom-control-inline custom-radio mb-2">
+            <input type="radio" id="lancamento-novo" name="lancamento-rebanho" class="custom-control-input" checked>
+            <label class="custom-control-label" for="lancamento-novo">Cadastrar Novo Rebanho</label>
+        </div>
+        <div class="custom-control custom-control-inline custom-radio mb-2">
+            <input type="radio" id="lancamento-existente" name="lancamento-rebanho" class="custom-control-input" checked>
+            <label class="custom-control-label" for="lancamento-existente">Cadastrar Rebanho Existente</label>
+        </div>
+      </div>
+    </section>
+    <h3>Novo Rebanho</h3>
+    <section>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="especie-novo-rebanho">Especie do Rebanho</label>
+            <select id="especie-novo-rebanho" class="form-control" name="especie-rebanho">
+              <option value="1">Caprino</option>
+              <option value="1">Ovino</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="quantidade-machos-jovens">Quantidade de Machos Jovens</label>
+            <input type="number" id="quantidade-machos-jovens" class="form-control" value="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="quantidade-machos-adultos">Quantidade de Machos Adultos</label>
+            <input type="number" id="quantidade-machos-adultos" class="form-control" value="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="quantidade-femeas-jovens">Quantidade de Fêmeas Jovens</label>
+            <input type="number" id="quantidade-femeas-jovens" class="form-control" value="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="quantidade-matrizes">Quantidade de Matrizes</label>
+            <input type="number" id="quantidade-matrizes" class="form-control" value="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="quantidade-femeas-nreprodutivas
+            ">Quantidade de Fêmeas Não-Reprodutivas</label>
+            <input type="number" id="quantidade-femeas-nreprodutivas
+            " class="form-control" value="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <h3>Existente</h3>
+    <section>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="especie-existente-rebanho">Especie do Rebanho</label>
+            <select id="especie-existente-rebanho" class="form-control" name="especie-rebanho">
+              <option value="1">Caprino</option>
+              <option value="2">Ovino</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="custom-control custom-checkbox custom-control-inline mb-2 mt-4">
+              <input type="checkbox" class="custom-control-input" id="check-existente-matriz">
+              <label class="custom-control-label" for="check-existente-matriz">Lançar para Matriz?</label>
+          </div>
+        </div>
+      </div>
+    </section>
+    @@include('./lanc-ovinos.html')
+  </div>
+</form>
