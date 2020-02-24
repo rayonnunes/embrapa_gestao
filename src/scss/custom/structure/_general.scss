@@ -1,4 +1,4 @@
-// 
+//
 // general.scss
 //
 
@@ -10,4 +10,11 @@ html {
 body {
   padding-bottom: 60px;
   overflow-x: hidden;
+}
+.card-body-center {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
