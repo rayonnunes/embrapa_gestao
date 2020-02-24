@@ -21,6 +21,9 @@
     </head>
 
     <body class="bg-white">
+      <div id="wrapper">
+          @@include('./partials/topbar-initial.html')
+      </div>
         <div class="account-pages my-5">
             <div class="container">
                 <div class="row justify-content-center">
@@ -31,8 +34,8 @@
                                 <h2>Cadastrar Nova Propriedade</h2>
                             </div>
 
-                            <form action="dashboard.html">
-
+                            <form action="cadastrar-rebanho.html">
+                                <h4 class="my-3">Informações Básicas </h4>
                                 <div class="form-group mb-3">
                                     <label for="emailaddress">Nome</label>
                                     <input class="form-control" type="text" id="nome-propriedade" placeholder="Nome da Propriedade">
@@ -87,191 +90,19 @@
                                     <input class="form-control" type="text" id="municipio-propriedade" placeholder="Cidade">
                                 </div>
 
-                                <div class="form-group mb-4">
-                                    <label for="area-total-propriedade">Área Total da Propriedade</label>
+                                <div class="form-group mb-3">
+                                    <label for="georref">Gerorreferenciamento</label>
+                                    <input class="form-control" type="text" id="gerroref" placeholder="-3.693167, -40.355052">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="area-total-propriedade">Área Total da Propriedade <span style="font-size: 7pt; " class="text-danger">&nbsp;Áreas da Propriedade devem somar a Área Total</span> </label>
                                     <div class="input-group">
-                                      <input id="area-total-propriedade" type="number" class="form-control">
+                                      <input id="area-total-propriedade" type="number" class="form-control parsley-error">
                                       <div class="input-group-append">
                                         <select class="form-control select2" name="select-unidade-area">
                                           <option value="m2">m²</option>
-                                          <option label="ha">ha</option>
-                                          <option value="outro">Outro...</option>
-                                        </select>
-                                      </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="atividades-exercidas mb-4">
-                                  <label>Divisão da Propriedade: </label>
-                                  <div class="col-md-12 pr-0">
-                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                                      <div class="row">
-                                        <div class="col-md-5 mt-1">
-                                          <input type="checkbox" class="custom-control-input" id="check-atividade-ovinos">
-                                          <label class="custom-control-label" for="check-atividade-ovinos">Criação de Ovinos</label>
-                                        </div>
-                                        <div class="col-md-7 pl-0">
-                                          <div class="input-group">
-                                            <input class="form-control" type="number" id="area-criacao-ovinos" placeholder="Área" disabled>
-                                            <div class="input-group-append">
-                                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                                <option value="m2">m²</option>
-                                                <option label="ha">ha</option>
-                                                <option value="outro">Outro...</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-12 pr-0">
-                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                                      <div class="row">
-                                        <div class="col-md-5 mt-1">
-                                          <input type="checkbox" class="custom-control-input" id="check-atividade-caprinos">
-                                          <label class="custom-control-label" for="check-atividade-caprinos">Criação de Caprinos</label>
-                                        </div>
-                                        <div class="col-md-7 pl-0">
-                                          <div class="input-group">
-                                            <input class="form-control" type="number" id="area-criacao-caprinos" placeholder="Área" disabled>
-                                            <div class="input-group-append">
-                                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                                <option value="m2">m²</option>
-                                                <option label="ha">ha</option>
-                                                <option value="outro">Outro...</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-12 pr-0">
-                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                                      <div class="row">
-                                        <div class="col-md-5 mt-1">
-                                          <input type="checkbox" class="custom-control-input" id="check-atividade-pastagem-nativa">
-                                          <label class="custom-control-label" for="check-atividade-pastagem-nativa">Pastagem Nativa</label>
-                                        </div>
-                                        <div class="col-md-7 pl-0">
-                                          <div class="input-group">
-                                            <input class="form-control" type="number" id="area-pastagem-nativa" placeholder="Área" disabled>
-                                            <div class="input-group-append">
-                                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                                <option value="m2">m²</option>
-                                                <option label="ha">ha</option>
-                                                <option value="outro">Outro...</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-12 pr-0">
-                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                                      <div class="row">
-                                        <div class="col-md-5 mt-1">
-                                          <input type="checkbox" class="custom-control-input" id="check-atividade-pastagem-cultivada">
-                                          <label class="custom-control-label" for="check-atividade-pastagem-cultivada">Pastagem Cultivada</label>
-                                        </div>
-                                        <div class="col-md-7 pl-0">
-                                          <div class="input-group">
-                                            <input class="form-control" type="number" id="area-pastagem-cultivada" placeholder="Área" disabled>
-                                            <div class="input-group-append">
-                                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                                <option value="m2">m²</option>
-                                                <option label="ha">ha</option>
-                                                <option value="outro">Outro...</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-12 pr-0">
-                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                                      <div class="row">
-                                        <div class="col-md-5 mt-1">
-                                          <input type="checkbox" class="custom-control-input" id="check-atividade-cultivo-agricola">
-                                          <label class="custom-control-label" for="check-atividade-cultivo-agricola">Cultivo Agrícola (não Forrageiro)</label>
-                                        </div>
-                                        <div class="col-md-7 pl-0">
-                                          <div class="input-group">
-                                            <input class="form-control" type="number" id="area-cultivo-agricola" placeholder="Área" disabled>
-                                            <div class="input-group-append">
-                                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                                <option value="m2">m²</option>
-                                                <option label="ha">ha</option>
-                                                <option value="outro">Outro...</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-12 pr-0">
-                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                                      <div class="row">
-                                        <div class="col-md-5 mt-1">
-                                          <input type="checkbox" class="custom-control-input" id="check-atividade-reserva">
-                                          <label class="custom-control-label" for="check-atividade-reserva">Área de Reserva</label>
-                                        </div>
-                                        <div class="col-md-7 pl-0">
-                                          <div class="input-group">
-                                            <input class="form-control" type="number" id="area-reserva" placeholder="Área" disabled>
-                                            <div class="input-group-append">
-                                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                                <option value="m2">m²</option>
-                                                <option label="ha">ha</option>
-                                                <option value="outro">Outro...</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-12 pr-0">
-                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                                      <div class="row">
-                                        <div class="col-md-5 mt-1">
-                                          <input type="checkbox" class="custom-control-input" id="check-atividade-benfeitorias">
-                                          <label class="custom-control-label" for="check-atividade-benfeitorias">Área de Benfeitorias (Casas, açudes e etc.)</label>
-                                        </div>
-                                        <div class="col-md-7 pl-0">
-                                          <div class="input-group">
-                                            <input class="form-control" type="number" id="area-benfeitorias" placeholder="Área" disabled>
-                                            <div class="input-group-append">
-                                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                                <option value="m2">m²</option>
-                                                <option label="ha">ha</option>
-                                                <option value="outro">Outro...</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-12 pt-3">
-                                    <button type="button" class="btn btn-link" name="adicionar-atividade">
-                                      <label style="font-weight: bold"> + Adicionar Atividade</label>
-                                    </button>
-                                  </div>
-                                </div>
-
-                                <div class="form-group mb-4">
-                                    <label for="perimetro-cercado">Perímetro de Cercado</label>
-                                    <div class="input-group">
-                                      <input id="perimetro-cercado" type="number" class="form-control" >
-                                      <div class="input-group-append">
-                                        <select class="form-control select2" name="select-unidade-perimetro">
-                                          <option value="m2">m</option>
-                                          <option label="ha">km</option>
+                                          <option value="ha">ha</option>
                                           <option value="outro">Outro...</option>
                                         </select>
                                       </div>
@@ -288,6 +119,233 @@
                                     </div>
                                 </div>
 
+                                <div class="atividades-exercidas my-4">
+                                  <h4>Divisão da Propriedade </h4>
+
+                                  <!--div class="col-md-12 pr-0">
+                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
+                                      <div class="row">
+                                        <div class="col-md-5 mt-1">
+                                          <input type="checkbox" class="custom-control-input" id="check-atividade-ovinos">
+                                          <label class="custom-control-label" for="check-atividade-ovinos">Criação de Ovinos</label>
+                                        </div>
+                                        <div class="col-md-7 pl-0">
+                                          <div class="input-group">
+                                            <input class="form-control" type="number" id="area-criacao-ovinos" placeholder="Área" disabled>
+                                            <div class="input-group-append">
+                                              <select class="form-control select2" name="select-unidade-area" disabled>
+                                                <option value="m2">m²</option>
+                                                <option value="ha">ha</option>
+                                                <option value="outro">Outro...</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div-->
+
+                                  <!--div class="col-md-12 pr-0">
+                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
+                                      <div class="row">
+                                        <div class="col-md-5 mt-1">
+                                          <input type="checkbox" class="custom-control-input" id="check-atividade-caprinos">
+                                          <label class="custom-control-label" for="check-atividade-caprinos">Criação de Caprinos</label>
+                                        </div>
+                                        <div class="col-md-7 pl-0">
+                                          <div class="input-group">
+                                            <input class="form-control" type="number" id="area-criacao-caprinos" placeholder="Área" disabled>
+                                            <div class="input-group-append">
+                                              <select class="form-control select2" name="select-unidade-area" disabled>
+                                                <option value="m2">m²</option>
+                                                <option value="ha">ha</option>
+                                                <option value="outro">Outro...</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div-->
+
+                                  <div class="col-md-12 pr-0">
+                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
+                                      <div class="row">
+                                        <div class="col-md-5 mt-1">
+                                          <input type="checkbox" class="custom-control-input" id="check-forrageira-cultivada">
+                                          <label class="custom-control-label" for="check-forrageira-cultivada">Forrageiras Cultivadas</label>
+                                        </div>
+                                        <div class="col-md-7 pl-0">
+                                          <div class="input-group">
+                                            <input class="form-control" type="number" id="area-forrageira-cultivada" placeholder="Área" disabled>
+                                            <div class="input-group-append">
+                                              <select class="form-control select2" name="select-unidade-area-forrageira-cultivada" disabled>
+                                                <option value="m2">m²</option>
+                                                <option value="ha">ha</option>
+                                                <option value="outro">Outro...</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12 ml-4 mt-2 pr-0">
+                                    <div class="form-group row ml-auto">
+                                      <label for="forrageira-cultivada-1" class="col-sm-3 col-form-label">Forrageira 1</label>
+                                      <div class="col-sm-6">
+                                        <input type="email" class="form-control" id="forrageira-cultivada-1" placeholder="Sorgo" disabled>
+                                      </div>
+                                      <div class="col-sm-3">
+                                        <button class="btn btn-success " title="Adicionar nova Cultura Forrageira (Cultivada)">
+                                          <i class="fas fa-seedling"> + </i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12 pr-0">
+                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
+                                      <div class="row">
+                                        <div class="col-md-5 mt-1">
+                                          <input type="checkbox" class="custom-control-input" id="check-forrageira-nativa">
+                                          <label class="custom-control-label" for="check-forrageira-nativa">Forrageiras Nativa</label>
+                                        </div>
+                                        <div class="col-md-7 pl-0">
+                                          <div class="input-group">
+                                            <input class="form-control" type="number" id="area-forrageira-nativa" placeholder="Área" disabled>
+                                            <div class="input-group-append">
+                                              <select class="form-control select2" name="select-unidade-area-forrageira-nativa" disabled>
+                                                <option value="m2">m²</option>
+                                                <option value="ha">ha</option>
+                                                <option value="outro">Outro...</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12 ml-4 mt-2 pr-0">
+                                    <div class="form-group row ml-auto">
+                                      <label for="forrageira-nativa-1" class="col-sm-3 col-form-label">Forrageira 1</label>
+                                      <div class="col-sm-6">
+                                        <input type="email" class="form-control" id="forrageira-nativa-1" placeholder="Palma" disabled>
+                                      </div>
+                                      <div class="col-sm-3">
+                                        <button class="btn btn-success " title="Adicionar nova Cultura Forrageira (Nativa)">
+                                          <i class="fas fa-seedling"> + </i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12 pr-0">
+                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
+                                      <div class="row">
+                                        <div class="col-md-5 mt-1">
+                                          <input type="checkbox" class="custom-control-input" id="check-atividade-cultivo-agricola">
+                                          <label class="custom-control-label" for="check-atividade-cultivo-agricola">Cultivo Agrícola (não Forrageiro)</label>
+                                        </div>
+                                        <div class="col-md-7 pl-0">
+                                          <div class="input-group">
+                                            <input class="form-control" type="number" id="area-cultivo-agricola" placeholder="Área" disabled>
+                                            <div class="input-group-append">
+                                              <select class="form-control select2" name="select-unidade-area" disabled>
+                                                <option value="m2">m²</option>
+                                                <option value="ha">ha</option>
+                                                <option value="outro">Outro...</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12 ml-4 mt-2 pr-0">
+                                    <div class="form-group row ml-auto">
+                                      <label for="cultivo-agricola-1" class="col-sm-3 col-form-label">Cultura 1</label>
+                                      <div class="col-sm-6">
+                                        <input type="email" class="form-control" id="cultivo-agricola-1" placeholder="Milho" disabled>
+                                      </div>
+                                      <div class="col-sm-3">
+                                        <button class="btn btn-success " title="Adicionar nova Cultura Forrageira (Nativa)">
+                                          <i class="fas fa-seedling"> + </i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12 pr-0">
+                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
+                                      <div class="row">
+                                        <div class="col-md-5 mt-1">
+                                          <input type="checkbox" class="custom-control-input" id="check-atividade-reserva">
+                                          <label class="custom-control-label" for="check-atividade-reserva">Área de Reserva</label>
+                                        </div>
+                                        <div class="col-md-7 pl-0">
+                                          <div class="input-group">
+                                            <input class="form-control" type="number" id="area-reserva" placeholder="Área" disabled>
+                                            <div class="input-group-append">
+                                              <select class="form-control select2" name="select-unidade-area" disabled>
+                                                <option value="m2">m²</option>
+                                                <option value="ha">ha</option>
+                                                <option value="outro">Outro...</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12 pr-0">
+                                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
+                                      <div class="row">
+                                        <div class="col-md-5 mt-1">
+                                          <input type="checkbox" class="custom-control-input" id="check-atividade-benfeitorias">
+                                          <label class="custom-control-label" for="check-atividade-benfeitorias">Área de Benfeitorias (Casas, açudes e etc.)</label>
+                                        </div>
+                                        <div class="col-md-7 pl-0">
+                                          <div class="input-group">
+                                            <input class="form-control" type="number" id="area-benfeitorias" placeholder="Área" disabled>
+                                            <div class="input-group-append">
+                                              <select class="form-control select2" name="select-unidade-area" disabled>
+                                                <option value="m2">m²</option>
+                                                <option value="ha">ha</option>
+                                                <option value="outro">Outro...</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12 pt-3">
+                                    <button type="button" class="btn btn-link" name="adicionar-atividade">
+                                      <label style="font-weight: bold"> + Adicionar Atividade</label>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <!--div class="form-group mb-4">
+                                    <label for="perimetro-cercado">Perímetro de Cercado</label>
+                                    <div class="input-group">
+                                      <input id="perimetro-cercado" type="number" class="form-control" >
+                                      <div class="input-group-append">
+                                        <select class="form-control select2" name="select-unidade-perimetro">
+                                          <option value="m2">m</option>
+                                          <option value="ha">km</option>
+                                          <option value="outro">Outro...</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                </div-->
+
                                 <div class="form-group mb-3">
                                     <label for="saldo-propriedade">Saldo Atual da Fazenda</label>
                                     <div class="input-group">
@@ -299,8 +357,15 @@
                                 </div>
 
                                 <div class="form-group text-center my-3">
-                                  <button class="btn btn-outline-primary btn-lg width-lg btn-rounded" type="reset"> Limpar Campos </button>
-                                  <button class="btn btn-primary btn-lg width-lg btn-rounded ml-3" type="submit"> Acessar </button>
+                                  <a href="selecionar-propriedade.html" class="btn btn-danger width-md btn-rounded" type="reset">
+                                    <i class="fas fa-arrow-circle-left"></i>
+                                     Cancelar
+                                   </a>
+                                  <button class="btn btn-outline-primary width-md btn-rounded ml-1" type="reset"> Limpar Campos </button>
+                                  <button class="btn btn-primary width-md btn-rounded ml-1" type="submit">
+                                     Cadastrar Rebanho &nbsp;
+                                     <i class="fas fa-arrow-circle-right"></i>
+                                  </button>
                                 </div>
 
                             </form>
