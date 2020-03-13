@@ -35,13 +35,29 @@
                             </div>
 
                             <form action="dashboard.html">
-                                <h4 class="mb-3">Cadastro de Benfeitorias</h4>
-
+                                <div class="form-group row">
+                                  <div class="col-md-12">
+                                    <div>
+                                        <div class="custom-control custom-radio custom-control-inline mb-2">
+                                            <input type="radio" id="tipo-estrutura1" name="tipo-estrutura" class="custom-control-input">
+                                            <label class="custom-control-label" for="tipo-estrutura1">Benfeitoria</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline mb-2">
+                                            <input type="radio" id="tipo-estrutura2" name="tipo-estrutura" class="custom-control-input">
+                                            <label class="custom-control-label" for="tipo-estrutura2">Equipamento</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline mb-2">
+                                            <input type="radio" id="tipo-estrutura3" name="tipo-estrutura" class="custom-control-input">
+                                            <label class="custom-control-label" for="tipo-estrutura3">Animais de Trabalho</label>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
                                 <div class="form-group mb-3">
-                                  <label for="benfeitoria-princ-1">Benfeitoria</label>
+                                  <label for="benfeitoria-princ-1">Estrutura</label>
                                   <select class="form-control select2" id="benfeitoria-princ-1">
                                       <option>Selecione</option>
-                                      <optgroup>
+                                      <optgroup label="Benfeitorias">
                                         <option value="ACUD">Açudes ou Barragens</option>
                                         <option value="BEBA">Bebedouro de Alvenaria</option>
                                         <option value="BEBT">Bebedouro de Tambor/Pneu</option>
@@ -71,6 +87,46 @@
                                         <option value="SALT">Saleiros de Tambor/Pneu</option>
                                         <option value="SILO">Silo</option>
                                       </optgroup>
+                                      <optgroup label="Equipamento">
+                                        <option value="TRAT">Trator</option>
+                                        <option value="IMPL">Implementos</option>
+                                        <option value="ROCM">Roçadeira Manual</option>
+                                        <option value="CARB">Carro de Boi</option>
+                                        <option value="CARR">Caroças</option>
+                                        <option value="TRIT">Triturador, Picadeira, Forrageira ou Desintegrador</option>
+                                        <option value="ARRE">Arreios ou Selaria </option>
+                                        <option value="FERR">Ferramentas</option>
+                                        <option value="BOMB">Bombas D'água</option>
+                                        <option value="GERA">Gerador de Energia</option>
+                                        <option value="MTSR">Motosserra</option>
+                                        <option value="PISV">Pistola de Vacinação</option>
+                                        <option value="PULV">Pulverizador Costal</option>
+                                        <option value="BTJS">Botijão de Sêmen</option>
+                                        <option value="TAMBL">Tambor de Leite</option>
+                                        <option value="ORDB">Ordenha - Balde ao pé (conjunto)</option>
+                                        <option value="ORDM">Ordenha Mecânica (conjunto)</option>
+                                        <option value="TNXP">Tanque de Expansão</option>
+                                        <option value="RESL">Resfriador de Leite</option>
+                                        <option value="LAVJ">Lavadora à Jato</option>
+                                        <option value="BALN">Balança</option>
+                                        <option value="ANTN">Antena</option>
+                                        <option value="TELF">Telefone</option>
+                                        <option value="CAMN">Caminhonete</option>
+                                        <option value="CARL">Carro Leve</option>
+                                        <option value="MOTO">Moto</option>
+                                        <option value="CMAO">Caminhão</option>
+                                        <option value="TQCB">Tanque de Combustível</option>
+                                        <option value="MTBB">Motobomba</option>
+                                        <option value="MTOR">Motor</option>
+                                        <option value="KTOR">Kit de Ordenha</option>
+                                      </optgroup>
+                                      <optgroup label="Animais de Trabalho">
+                                        <option value="CAVL">Cavalos (Equinos)</option>
+                                        <option value="ASNN">Jumentos (Asininos)</option>
+                                        <option value="BOVN">Bois (Bovinos)</option>
+                                        <option value="MUAR">Burros (Muares)</option>
+                                        <option value="CAES">Cães (Caninos)</option>
+                                      </optgroup>
                                       <optgroup>
                                         <option value="-1">Outro (Informe...)</option>
                                       </optgroup>
@@ -78,12 +134,12 @@
                                 </div>
 
                                 <div class="form-group d-none">
-                                    <label for="outra-benfeitoria-nome-1">Outra Benfeitoria</label>
+                                    <label for="outra-benfeitoria-nome-1">Outra Estrutura</label>
                                     <input id="outra-benfeitoria-nome-1" type="text" class="form-control" disabled>
                                 </div>
 
                                 <div class="form-group mb-3">
-                                  <label for="detalhes-benfeitoria-principal-1">Detalhes da Benfeitoria</label>
+                                  <label for="detalhes-benfeitoria-principal-1">Detalhes da Estrutura</label>
                                   <input id="detalhes-benfeitoria-principal-1" type="text" class="form-control">
                                 </div>
 
@@ -168,12 +224,12 @@
 
                                 <div class="row justify-content-center">
                                   <button class="btn btn-success" name="button">
-                                    <span class="position-relative" style="bottom: 3px;">Adicionar Outra Benfeitoria &nbsp;</span>
+                                    <span class="position-relative" style="bottom: 3px;">Adicionar Outra Estrutura &nbsp;</span>
                                     <i class="mdi mdi-silo mdi-24px"></i>+
                                   </button>
                                 </div>
 
-                                <hr class="my-4">
+                                <!--hr class="my-4">
 
                                 <h4 class="mb-3">Cadastro de Equipamento</h4>
 
@@ -431,7 +487,7 @@
                                     <i class="mdi mdi-horseshoe mdi-24px"></i>+
                                   </button>
                                 </div>
-
+                                -->
                                 <div class="form-group text-center my-5">
                                   <a href="cadastrar-rebanho.html" class="btn btn-dark width-md btn-rounded" type="reset">
                                     <i class="fas fa-arrow-circle-left"></i>

@@ -34,29 +34,42 @@
                                 <h2>Cadastrar Novo Rebanho</h2>
                             </div>
 
-                            <form action="cadastrar-atividades-agropecuarias.html">
-                                <h4 class="mb-3">Cadastro de Ovinos / Caprinos</h4>
+                            <form action="cadastrar-estrutura.html">
+                                <h4 class="mb-3">Cadastro de Outras Atividades Pecuárias</h4>
 
-                                <div class="form-group mb-3">
-                                  <label for="tipo-rebanho-princ-1">Tipo de Rebanho</label>
-                                  <select class="form-control select2" id="tipo-rebanho-princ-1">
+                                <div class="form-group">
+                                  <label for="outra-atividade-1">Atividade Pecuária</label>
+                                  <select class="form-control select2" id="outra-atividade-1">
                                       <option>Selecione</option>
                                       <optgroup>
-                                        <option value="OVI">Ovinos</option>
-                                        <option value="CAP">Caprinos</option>
+                                        <option value="BOVC">Bovino de Corte</option>
+                                        <option value="BOVL">Bovino de Leite</option>
+                                        <option value="BOVM">Bovino Misto</option>
+                                        <option value="AVIC">Aves de Corte</option>
+                                        <option value="AVIP">Aves de Postura</option>
+                                        <option value="APIC">Abelhas</option>
+                                        <option value="PEIX">Peixes</option>
+                                      </optgroup>
+                                      <optgroup>
+                                        <option value="-1">Outro (Informe...)</option>
                                       </optgroup>
                                   </select>
                                 </div>
 
-                                <div class="form-group mb-3">
-                                    <label for="qtd-rebanho-principal-1">Quantidade de Cabeças</label>
+                                <div class="form-group">
+                                    <label for="outra-atividade-nome-1">Outra Atividade</label>
+                                    <input id="outra-atividade-nome-1" type="number" class="form-control" disabled>
+                                </div>
+
+                                <div class="form-group my-3">
+                                    <label for="qtd-rebanho-principal-1">Quantidade de Animais</label>
                                     <input id="qtd-rebanho-principal-1" type="number" class="form-control">
                                 </div>
 
                                 <div class="row justify-content-center">
                                   <button class="btn btn-success" name="button">
-                                    <span class="position-relative" style="bottom: 3px;">Adicionar Outro Rebanho &nbsp;</span>
-                                    <i class="mdi mdi-sheep mdi-24px"></i>+
+                                    <span class="position-relative" style="bottom: 3px;">Adicionar Outra Atividade &nbsp;</span>
+                                    <i class="mdi mdi-cow mdi-24px"></i>+
                                   </button>
                                 </div>
 
@@ -67,7 +80,7 @@
                                    </a>
                                   <button class="btn btn-outline-primary width-md btn-rounded ml-1" type="reset"> Limpar Campos </button>
                                   <button class="btn btn-primary width-md btn-rounded ml-1" type="submit">
-                                     Próximo &nbsp;
+                                     Cadastrar Estrutura &nbsp;
                                      <i class="fas fa-arrow-circle-right"></i>
                                   </button>
                                 </div>
