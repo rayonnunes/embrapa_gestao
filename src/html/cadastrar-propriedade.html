@@ -1,145 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cadastrar Propriedade - Emprapa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Cadastrar Propriedade - Emprapa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-  <meta content="Coderthemes" name="author" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- App favicon -->
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- Bootstrap select pluings -->
+    <link
+      href="assets/libs/bootstrap-select/bootstrap-select.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <!-- Bootstrap select pluings -->
-  <link href="assets/libs/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  </head>
 
-  <!-- App css -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-
-</head>
-
-<body class="bg-white">
-  <div id="wrapper">
-    @@include('./partials/topbar-initial.html')
-  </div>
-  <div class="account-pages my-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6 col-xl-5">
-          <div>
-
-            <div class="text-center mb-4">
-              <h2>Cadastrar Nova Propriedade</h2>
-            </div>
-
-            <form action="cadastrar-rebanho.html">
-              <h4 class="my-3">Informações Básicas </h4>
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="form-group mb-3">
-                    <label for="emailaddress">Nome</label>
-                    <input class="form-control" type="text" id="nome-propriedade" placeholder="Nome da Propriedade">
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group mb-3">
-                    <label for="estado-propriedade">Estado</label>
-                    <select class="form-control select2" id="estado-propriedade">
-                      <option>Selecione</option>
-                      <optgroup label="Região Norte">
-                        <option value="AC">Acre</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="PA">Pará</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="TO">Tocantins</option>
-                      </optgroup>
-                      <optgroup label="Região Nordeste">
-                        <option value="AL">Alagoas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="SE">Sergipe</option>
-                      </optgroup>
-                      <optgroup label="Região Centro-Oeste">
-                        <option value="DF">Distrito Federal</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                      </optgroup>
-                      <optgroup label="Região Sudeste">
-                        <option value="ES">Espírito Santo</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="SP">São Paulo</option>
-                      </optgroup>
-                      <optgroup label="Região Sul">
-                        <option value="PR">Paraná</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="SC">Santa Catarina</option>
-                      </optgroup>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group mb-3">
-                    <label for="municipio-propriedade">Municipio</label>
-                    <input class="form-control" type="text" id="municipio-propriedade" placeholder="Cidade">
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group mb-3">
-                    <label for="georref">Gerorreferenciamento</label>
-                    <input class="form-control" type="text" id="gerroref" placeholder="-3.693167, -40.355052">
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group mb-3">
-                    <label for="area-total-propriedade">Registro do INCRA</label>
-                    <div class="input-group">
-                      <input id="area-total-propriedade" type="text" class="form-control">
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-12">
-                  <div class="form-group mb-3">
-                    <label for="area-total-propriedade">Área Total da Propriedade <span style="font-size: 7pt; " class="text-danger">&nbsp;Áreas da Propriedade devem somar a Área Total</span> </label>
-                    <div class="input-group">
-                      <input id="area-total-propriedade" type="number" class="form-control parsley-error">
-                      <div class="input-group-append">
-                        <select class="form-control select2" name="select-unidade-area">
-                          <option value="ha" selected>ha</option>
-                          <option value="m2">m²</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-12">
-                  <div class="form-group mb-3">
-                    <label for="municipio-propriedade">Valor do Hectare na Região</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text bg-primary text-white b-0">R$</span>
-                      </div>
-                      <input id="valor-hectare" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
-                    </div>
-                  </div>
-                </div>
+  <body class="bg-white">
+    <div id="wrapper">
+      @@include('./partials/topbar-initial.html')
+    </div>
+    <div class="account-pages my-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+            <div>
+              <div class="text-center mb-4">
+                <h2>Cadastrar Nova Propriedade</h2>
               </div>
-              <div class="row">
-                <div class="atividades-exercidas my-4">
-                  <h4>Utilização da área da Propriedade </h4>
 
-                  <!--div class="col-md-12 pr-0">
+              <form action="cadastrar-rebanho.html">
+                <h4 class="my-3">Informações Básicas</h4>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group mb-3">
+                      <label for="emailaddress">Nome</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        id="nome-propriedade"
+                        placeholder="Nome da Propriedade"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="form-group mb-3">
+                      <label for="estado-propriedade">Estado</label>
+                      <select
+                        class="form-control select2"
+                        id="estado-propriedade"
+                      >
+                        <option>Selecione</option>
+                        <optgroup label="Região Norte">
+                          <option value="AC">Acre</option>
+                          <option value="AP">Amapá</option>
+                          <option value="AM">Amazonas</option>
+                          <option value="PA">Pará</option>
+                          <option value="RO">Rondônia</option>
+                          <option value="RR">Roraima</option>
+                          <option value="TO">Tocantins</option>
+                        </optgroup>
+                        <optgroup label="Região Nordeste">
+                          <option value="AL">Alagoas</option>
+                          <option value="BA">Bahia</option>
+                          <option value="CE">Ceará</option>
+                          <option value="MA">Maranhão</option>
+                          <option value="PB">Paraíba</option>
+                          <option value="PE">Pernambuco</option>
+                          <option value="PI">Piauí</option>
+                          <option value="RN">Rio Grande do Norte</option>
+                          <option value="SE">Sergipe</option>
+                        </optgroup>
+                        <optgroup label="Região Centro-Oeste">
+                          <option value="DF">Distrito Federal</option>
+                          <option value="GO">Goiás</option>
+                          <option value="MT">Mato Grosso</option>
+                          <option value="MS">Mato Grosso do Sul</option>
+                        </optgroup>
+                        <optgroup label="Região Sudeste">
+                          <option value="ES">Espírito Santo</option>
+                          <option value="MG">Minas Gerais</option>
+                          <option value="RJ">Rio de Janeiro</option>
+                          <option value="SP">São Paulo</option>
+                        </optgroup>
+                        <optgroup label="Região Sul">
+                          <option value="PR">Paraná</option>
+                          <option value="RS">Rio Grande do Sul</option>
+                          <option value="SC">Santa Catarina</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="form-group mb-3">
+                      <label for="municipio-propriedade">Municipio</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        id="municipio-propriedade"
+                        placeholder="Cidade"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="form-group mb-3">
+                      <label for="georref">Coordenadas Geográficas</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        id="georef1"
+                        placeholder="-3.693167"
+                      />
+                    </div>
+                    <div class="form-group mb-3">
+                      <div class="input-group">
+                        <input
+                          id="georef2"
+                          type="text"
+                          class="form-control"
+                          placeholder="-40.355052"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="form-group mb-3">
+                      <label for="area-total-propriedade"
+                        >Registro do INCRA</label
+                      >
+                      <div class="input-group">
+                        <input
+                          id="area-total-propriedade"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group mb-3">
+                      <label for="area-total-propriedade"
+                        >Área Total da Propriedade
+                        <span style="font-size: 7pt;" class="text-danger"
+                          >&nbsp;Áreas da Propriedade devem somar a Área
+                          Total</span
+                        >
+                      </label>
+                      <div class="input-group">
+                        <input
+                          id="area-total-propriedade"
+                          type="number"
+                          class="form-control parsley-error"
+                        />
+                        <div class="input-group-append">
+                          <select
+                            class="form-control select2"
+                            name="select-unidade-area"
+                          >
+                            <option value="ha" selected>ha</option>
+                            <option value="m2">m²</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group mb-3">
+                      <label for="municipio-propriedade"
+                        >Valor do Hectare na Região</label
+                      >
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span
+                            class="input-group-text bg-primary text-white b-0"
+                            >R$</span
+                          >
+                        </div>
+                        <input
+                          id="valor-hectare"
+                          type="text"
+                          class="form-control"
+                          data-toggle="input-mask"
+                          data-mask-format="000.000.000.000.000,00"
+                          data-reverse="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="atividades-exercidas my-4">
+                    <h4>Utilização da área da Propriedade</h4>
+
+                    <!--div class="col-md-12 pr-0">
                                     <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
                                     <div class="row">
                                     <div class="col-md-5 mt-1">
@@ -162,7 +229,7 @@
                       </div>
                     </div-->
 
-                  <!--div class="col-md-12 pr-0">
+                    <!--div class="col-md-12 pr-0">
                     <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
                     <div class="row">
                     <div class="col-md-5 mt-1">
@@ -185,111 +252,67 @@
       </div>
     </div-->
 
-                  <div class="col-md-12 pr-0">
-                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                      <div class="row">
-                        <div class="col-md-12 my-1">
-                          <input type="checkbox" class="custom-control-input" id="check-forrageira-cultivada">
-                          <label class="custom-control-label" for="check-forrageira-cultivada">Forrageiras Cultivadas</label>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group row ml-auto">
-                            <input type="email" class="form-control" id="forrageira-cultivada-1" placeholder="Sorgo" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-8">
-                          <div class="input-group">
-                            <input class="form-control" type="number" id="area-forrageira-cultivada" placeholder="Área" disabled>
-                            <div class="input-group-append">
-                              <select class="form-control select2" name="select-unidade-area-forrageira-cultivada" disabled>
-                                <option value="ha" selected>ha</option>
-                                <option value="m2">m²</option>
-                              </select>
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <button
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Cultura Forrageira (Cultivada)"
+                                data-toggle="modal"
+                                data-target="#cadastrar-forrageira"
+                              >
+                                <i class="fas fa-seedling"> + </i> Cadastrar
+                                Forrageira
+                              </button>
                             </div>
-                            <button class="btn btn-success ml-1" title="Adicionar nova Cultura Forrageira (Cultivada)">
-                              <i class="fas fa-seedling"> + </i>
-                            </button>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-md-12 pr-0">
-                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                      <div class="row">
-                        <div class="col-md-12 my-1">
-                          <input type="checkbox" class="custom-control-input" id="check-forrageira-nativa">
-                          <label class="custom-control-label" for="check-forrageira-nativa">Forrageiras Nativa</label>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group row ml-auto">
-                            <input type="email" class="form-control" id="forrageira-nativa-1" placeholder="Palma" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-8">
-                          <div class="input-group">
-                            <input class="form-control" type="number" id="area-forrageira-nativa" placeholder="Área" disabled>
-                            <div class="input-group-append">
-                              <select class="form-control select2" name="select-unidade-area-forrageira-nativa" disabled>
-                                <option value="ha" selected>ha</option>
-                                <option value="m2">m²</option>
-                              </select>
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <button
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Cultura Forrageira (Nativa)"
+                                data-toggle="modal"
+                                data-target="#adicionar-cultura-agricola"
+                              >
+                                <i class="fas fa-seedling">
+                                  + Adicionar Cultura Agrícola
+                                </i>
+                              </button>
                             </div>
-                            <button class="btn btn-success ml-1" title="Adicionar nova Cultura Forrageira (Nativa)">
-                              <i class="fas fa-seedling"> + </i>
-                            </button>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-md-12 pr-0">
-                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                      <div class="row">
-                        <div class="col-md-12 my-1">
-                          <input type="checkbox" class="custom-control-input" id="check-atividade-cultivo-agricola">
-                          <label class="custom-control-label" for="check-atividade-cultivo-agricola">Cultivo Agrícola (não Forrageiro)</label>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group row ml-auto">
-                              <input type="email" class="form-control" id="cultivo-agricola-1" placeholder="Milho" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-8">
-                          <div class="input-group">
-                            <input class="form-control" type="number" id="area-cultivo-agricola" placeholder="Área" disabled>
-                            <div class="input-group-append">
-                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                <option value="ha" selected>ha</option>
-                                <option value="m2">m²</option>
-                              </select>
-                            </div>
-                            <button class="btn btn-success ml-1" title="Adicionar nova Cultura Forrageira (Nativa)">
-                              <i class="fas fa-seedling"> + </i>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="col-md-12 pr-0">
-                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                      <div class="row">
-                        <div class="col-md-12 my-1">
-                          <label>Área de Reserva/Mata</label>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="input-group">
-                            <input class="form-control" type="number" id="area-reserva" placeholder="Área" disabled>
-                            <div class="input-group-append">
-                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                <option value="ha" selected>ha</option>
-                                <option value="m2">m²</option>
-                              </select>
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-benfeitorias.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  + Cadastrar Estrutura da Propriedade
+                                </i>
+                              </a>
                             </div>
                           </div>
                         </div>
@@ -297,34 +320,74 @@
                     </div>
                   </div>
 
-                  <div class="col-md-12 pr-0">
-                    <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
-                      <div class="row">
-                        <div class="col-md-12 my-1">
-                          <label>Área de Benfeitorias (Casas, açudes e etc.)</label>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="input-group">
-                            <input class="form-control" type="number" id="area-benfeitorias" placeholder="Área" disabled>
-                            <div class="input-group-append">
-                              <select class="form-control select2" name="select-unidade-area" disabled>
-                                <option value="ha" selected>ha</option>
-                                <option value="m2">m²</option>
-                              </select>
+                  <div class="ovinos-caprinos my-4">
+                    <h4>Ovinos e Caprinos</h4>
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-rebanho-simplificado.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  Cadastrar Rebanho Simplificado
+                                </i>
+                              </a>
+                              O cadastro de rebanho simplificado permite
+                              realizar um cadastro de rebanho mais simples,
+                              cadastrando um rebanho inteiro de uma só vez.
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-md-12 pt-3">
-                    <button type="button" class="btn btn-link" name="adicionar-atividade">
-                      <label style="font-weight: bold"> + Adicionar Atividade</label>
-                    </button>
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-rebanho-detalhado.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  Cadastrar Rebanho Detalhado
+                                </i>
+                              </a>
+                              O cadastro de rebanho detalhado permite que seja
+                              realizado um cadastro de rebanho mais específico,
+                              sendo possível cadastrar um animal do rebanho de
+                              cada vez.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 pt-3">
+                      <button
+                        type="button"
+                        class="btn btn-link"
+                        name="adicionar-atividade"
+                        data-toggle="modal"
+                        data-target="#adicionar-outra-atividade"
+                      >
+                        <label style="font-weight: bold;">
+                          + Adicionar Atividade</label
+                        >
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
                 <!--div class="form-group mb-4">
                                   <label for="perimetro-cercado">Perímetro de Cercado</label>
                                   <div class="input-group">
@@ -343,50 +406,158 @@
                   <label for="saldo-propriedade">Saldo Atual da Fazenda</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text bg-primary text-white b-0">R$</span>
+                      <span class="input-group-text bg-primary text-white b-0"
+                        >R$</span
+                      >
                     </div>
-                    <input id="saldo-propriedade" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+                    <input
+                      id="saldo-propriedade"
+                      type="text"
+                      class="form-control"
+                      data-toggle="input-mask"
+                      data-mask-format="000.000.000.000.000,00"
+                      data-reverse="true"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  id="cadastrar-forrageira"
+                  class="modal fade"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="cadastrarForrageira"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="cadastrarForrageira">
+                          Cadastrar Forrageira
+                        </h4>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-hidden="true"
+                        >
+                          ×
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        @@include('./cadastrar-forrageira.html')
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  id="adicionar-cultura-agricola"
+                  class="modal fade"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="adicionarCultura"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="adicionarCultura">
+                          Cadastrar Cultura Agrícola
+                        </h4>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-hidden="true"
+                        >
+                          ×
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        @@include('./cadastrar-cultura-agricola.html')
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  id="adicionar-outra-atividade"
+                  class="modal fade"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="outraAtividade"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="adicionarAtividade">
+                          Adicionar outra atividade Pecuária
+                        </h4>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-hidden="true"
+                        >
+                          ×
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        @@include('./cadastrar-outro-pecuaria.html')
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 <div class="form-group text-center my-3">
-                  <a href="selecionar-propriedade.html" class="btn btn-danger width-md btn-rounded" type="reset">
+                  <a
+                    href="selecionar-propriedade.html"
+                    class="btn btn-danger width-md btn-rounded"
+                    type="reset"
+                  >
                     <i class="fas fa-arrow-circle-left"></i>
                     Cancelar
                   </a>
-                  <button class="btn btn-outline-primary width-md btn-rounded ml-1" type="reset"> Limpar Campos </button>
-                  <button class="btn btn-primary width-md btn-rounded ml-1" type="submit">
+                  <button
+                    class="btn btn-outline-primary width-md btn-rounded ml-1"
+                    type="reset"
+                  >
+                    Limpar Campos
+                  </button>
+                  <button
+                    class="btn btn-primary width-md btn-rounded ml-1"
+                    type="submit"
+                  >
                     Próximo &nbsp;
                     <i class="fas fa-arrow-circle-right"></i>
                   </button>
                 </div>
-            </form>
-
+              </form>
+            </div>
+            <!-- end card -->
           </div>
-          <!-- end card -->
-
-        </div> <!-- end col -->
+          <!-- end col -->
+        </div>
+        <!-- end row -->
       </div>
-      <!-- end row -->
+      <!-- end container -->
     </div>
-    <!-- end container -->
-  </div>
-  <!-- end page -->
+    <!-- end page -->
 
-  <!-- Vendor js -->
-  <script src="assets/js/vendor.min.js"></script>
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
 
-  <!-- Bootstrap select plugin -->
-  <script src="assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
-  <script src="assets/libs/select2/select2.min.js"></script>
-  <!-- Plugins js -->
-  <script src="assets/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
-  <script src="assets/libs/autonumeric/autoNumeric-min.js"></script>
-  <script src="assets/js/pages/form-masks.init.js"></script>
+    <!-- Bootstrap select plugin -->
+    <script src="assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <!-- Plugins js -->
+    <script src="assets/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
+    <script src="assets/libs/autonumeric/autoNumeric-min.js"></script>
+    <script src="assets/js/pages/form-masks.init.js"></script>
 
-  <!-- App js -->
-  <script src="assets/js/app.min.js"></script>
-
-</body>
-
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+  </body>
 </html>

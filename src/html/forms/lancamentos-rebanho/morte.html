@@ -1,0 +1,91 @@
+<div class="tab-content" id="myTabContent">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="morte-rebanho">Rebanho</label>
+        <select id="morte-rebanho" class="form-control" name="tipo-produto">
+          <option value="1">Ovino Rebanho 1</option>
+          <option value="2">Caprino Rebanho 1</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="nascimento-rebanho">Categoria</label>
+        <select id="morte-categoria" class="form-control" name="tipo-produto">
+          <option value="matriz">Matriz</option>
+          <option value="reprodutor">Reprodutor</option>
+          <option value="femeaJovem">Fêmea Jovem</option>
+          <option value="machoJovem">Macho Jovem</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="quantidade-mortes-cabeca">Quantidade de Mortes</label>
+        <input
+          type="number"
+          id="quantidade-mortes-cabeca"
+          class="form-control"
+          value=""
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="sexo-morte-cabeca">Sexo</label>
+        <select id="sexo-morte-cabeca" class="form-control" name="tipo-produto">
+          <option value="1">Macho</option>
+          <option value="2">Fêmea</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="periodo-morte-cabeca">Idade</label>
+        <select
+          id="periodo-morte-cabeca"
+          class="form-control"
+          name="periodo-cabeca"
+        >
+          <option value="1">Jovem</option>
+          <option value="2">Adulto</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="causa-mortes-cabeca">Causa da Morte</label>
+        <input
+          type="text"
+          id="causa-mortes-cabeca"
+          class="form-control"
+          value=""
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="valor-custos-morte">Custos com Morte</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white b-0">R$</span>
+          </div>
+          <input
+            id="valor-custos-morte"
+            type="text"
+            class="form-control"
+            data-toggle="input-mask"
+            data-mask-format="000.000.000.000.000,00"
+            data-reverse="true"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary">Ok</button>
+</div>

@@ -1,0 +1,58 @@
+<form action="#">
+  <div class="form-group mb-3">
+    <label for="culture">Cultura</label>
+    <input
+      class="form-control"
+      type="text"
+      id="culture"
+      placeholder="Cultura"
+      required
+    />
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="area">Área</label>
+    <input
+      class="form-control"
+      type="text"
+      id="area"
+      placeholder="Área"
+      required
+    />
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="cycle">Ciclo</label><br />
+    <input type="radio" id="perene" name="cycle" value="perene" required />
+    <label for="perene">Perene</label><br />
+    <input type="radio" id="anual" value="anual" name="cycle" required />
+    <label for="anual">Anual</label><br />
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="uso">Uso</label><br />
+    <input type="radio" id="silagem" value="silagem" name="use" required />
+    <label for="silagem">Silagem</label><br />
+    <input type="radio" id="feno" value="feno" name="use" required />
+    <label for="feno">Feno</label><br />
+    <input type="radio" id="pastejo" value="pastejo" name="use" required />
+    <label for="pastejo">Pastejo</label><br />
+    <input
+      type="radio"
+      id="corteCoxo"
+      value="corteParaCoxo"
+      name="use"
+      required
+    />
+    <label for="corteCoxo">Corte para Coxo</label><br />
+  </div>
+
+  <div class="form-group mb-3 text-center">
+    <button class="btn btn-primary btn-lg width-lg btn-rounded" type="submit">
+      Concluído
+    </button>
+    <a href="#" class="btn btn-primary btn-lg width-lg btn-rounded"
+      >Adicionar nova Forrageira</a
+    >
+  </div>
+</form>
