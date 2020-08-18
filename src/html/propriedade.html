@@ -42,100 +42,464 @@
       <!-- ============================================================== -->
       <div class="content-page">
         <div class="content">
-          <div class="container-fluid">
-            <div class="row mt-3">
-              <div class="col-sm-12">
-                <div class="card card-border">
-                    <div class="card-header border-primary pb-0">
-                      <div class="card-head-row d-flex">
-                        <h4 class="card-title text-primary mb-0">Fazenda 1</h4>
-                        <div class="card-tools ml-auto">
-                          <button class="btn btn-info" type="button" name="editar-propriedade" data-toggle="modal" data-target="#editar-propriedade">
-                            <i class="fas fa-edit">&nbsp;</i>Editar Dados
-                          </button>
+          <div class="row mt-3">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#fazenda1" role="tab" aria-controls="home" aria-selected="true">Fazenda 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#fazenda2" role="tab" aria-controls="profile" aria-selected="false">Fazenda 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Fazenda 3</a>
+              </li>
+            </ul>
+          </div>          
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="fazenda1"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >    
+              <div class="container-fluid">
+                <div class="row mt-3">
+                  <div class="col-sm-12">
+                    <div class="card card-border">                    
+                        <div class="card-body">
+                            <p><b>Proprietário: </b>Fulano da Silva &emsp;
+                              <b>Municipio: </b>Porto Velho - RO &emsp;
+                              <b>Área Total: </b>7,3 ha &emsp;
+                              <b>Valor do Hectare: </b>R$100.000,00 
+                            </p>
                         </div>
-                      </div>
                     </div>
-                    <div class="card-body">
-                        <p><b>Proprietário: </b>Fulano da Silva &emsp;
-                          <b>Municipio: </b>Porto Velho - RO &emsp;
-                          <b>Área Total: </b>7,3 ha &emsp;
-                          <b>Valor do Hectare: </b>R$100.000,00 </p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="row">
-
-                  <div class="col-xl-3 col-md-6">
-                    <div class="card widget-box-two bg-danger">
-                      <div class="card-body">
-                        <button class="float-right avatar bg-soft-light mt-2" title="Cadastrar Nova Despesa" data-toggle="modal" data-target="#lancar-despesa">
-                          <i class="mdi mdi-plus font-22 avatar-title text-white"></i>
-                        </button>
-                        <div class="wigdet-two-content">
-                          <p class="m-0 text-uppercase text-white" title="Despesas">Despesas</p>
-                          <h4 class="text-white">R$ <span data-plugin="counterup">2500.00</span></h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- end col -->
-
-                  <div class="col-xl-3 col-md-6">
-                    <div class="card widget-box-two bg-success">
-                      <div class="card-body">
-                        <button class="float-right avatar bg-soft-light mt-2" title="Cadastrar Nova Receita" data-toggle="modal" data-target="#lancar-receita">
-                          <i class="mdi mdi-plus  font-22 avatar-title text-white"></i>
-                        </button>
-
-                        <div class="wigdet-two-content">
-                          <p class="m-0 text-white text-uppercase" title="Receitas">Receitas</p>
-                          <h4 class="text-white">R$ <span data-plugin="counterup">7800.00</span></h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- end col -->
-
-                  <div class="col-xl-3 col-md-6">
-                    <div class="card widget-box-two bg-warning">
-                      <div class="card-body">
-                        <button class="float-right avatar bg-soft-light mt-2" title="Cadastrar Novo Investimento" data-toggle="modal" data-target="#lancar-investimento">
-                          <i class="mdi mdi-plus font-22 avatar-title text-white"></i>
-                        </button>
-                        <div class="wigdet-two-content">
-                          <p class="m-0 text-uppercase text-white" title="Investimentos">Investimentos</p>
-                          <h4 class="text-white">R$ <span data-plugin="counterup">1687.44</span></h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- end col -->
-
-                  <div class="col-xl-3 col-md-6">
-                    <div class="card widget-box-two bg-primary" style="border-radius: 50px">
-                      <div class="card-body">
-                        <button class="float-right avatar rounded-circle bg-soft-light mt-2" title="Lançamento de Rebanho" data-toggle="modal" data-target="#lancar-rebanho">
-                          <i class="mdi mdi-plus font-22 avatar-title text-white"></i>
-                        </button>
-                        <div class="wigdet-two-content">
-                          <p class="m-0 text-white text-uppercase" title="Rebanho">Rebanho</p>
-                          <h4 class="text-white"><span data-plugin="counterup">33</span></h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div><!-- end col -->
-
-                  <div class="col-xl-3 col-md-6 mb-3">
-                    <button type="button" class="btn btn-link" name="lancamento-outras-atividades" data-toggle="modal" data-target="#lancar-outras-atividades">
-                      <b>Lançamento em Outras Atividades</b>&nbsp;
-                      <i class="fas fa-plus-circle"></i>
-                    </button>
                   </div>
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <div class="card-body">
+                        <div class="button-list">
+                          <button
+                            type="button"
+                            class="btn btn-success waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#adicionar-propriedade"
+                          >
+                          <i class="mdi mdi-plus">&nbsp;</i>Adicionar Propriedade                      
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-primary waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#editar-propriedade"
+                          >
+                          <i class="fas fa-edit">&nbsp;</i>
+                            Editar Propriedade
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-info waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#adicionar-forrageira"
+                          >
+                            Adicionar Forrageira
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-warning waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#adicionar-cultura"
+                          >
+                            Adicionar Cultura Agrícola
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-danger waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#adicionar-estrutura"
+                          >
+                            <i class="mdi mdi-silo"></i>+
+                            Adicionar Estrutura
+                          </button>                      
+                        </div>
+                      </div>
+                    </div>
+                  
 
+                    <div class="row">
+                      <div class="col-xl-6">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="header-title mb-3">Categorias de Despesas</h4>
+        
+                            <div dir="ltr">
+                              <div id="donut-chart"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="header-title mb-3">
+                              Acompanhamento das finanças
+                            </h4>
+                            <div dir="ltr">
+                              <div id="combine-chart"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>                                       
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xl-6">
+                          <div class="card">
+                              <div class="card-body">
+                                  <h4 class="header-title mb-3">Forrageiras</h4>
+
+                                  <div class="table-responsive">
+                                      <table class="table mb-0">
+                                          <thead>
+                                          <tr>
+                                              <th>Cultura</th>
+                                              <th>Área</th>
+                                              <th>Ciclo</th>
+                                              <th>Uso</th>                                              
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                              <tr>
+                                                  <td>Cultura 1</td>
+                                                  <td>50 ha</td>
+                                                  <td>Perene</td>
+                                                  <td>Uso 1</td>                                                  
+                                              </tr>
+                                              <tr>
+                                                <td>Cultura 2</td>
+                                                <td>40 ha</td>
+                                                <td>Anual</td>
+                                                <td>Uso 2</td>                                                  
+                                              </tr>
+                                              <tr>
+                                                <td>Cultura 3</td>
+                                                <td>50 ha</td>
+                                                <td>Anual</td>
+                                                <td>Uso 3</td>                                                  
+                                              </tr>
+                                              <tr>
+                                                <td>Cultura 4</td>
+                                                <td>60 ha</td>
+                                                <td>Perene</td>
+                                                <td>Uso 2</td>                                                  
+                                              </tr>                                              
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-xl-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card widget-box-three">
+                                    <div class="card-body">
+                                        <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
+                                            <i class="mdi mdi-sprout-outline h2 text-muted m-0 avatar-title"></i>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-uppercase">Área pastagem nativa</p>
+                                            <h3 class="mb-0"><span data-plugin="counterup">2.562 </span> ha</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card widget-box-three">
+                                    <div class="card-body">
+                                        <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
+                                            <i class="fe-briefcase h2 text-muted m-0 avatar-title"></i>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-uppercase">Área com benfeitorias</p>
+                                            <h3 class="mb-0"><span data-plugin="counterup">8.542 </span> ha</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card widget-box-three">
+                                    <div class="card-body">
+                                        <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
+                                            <i class="mdi mdi-leaf h2 text-muted m-0 avatar-title"></i>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-uppercase">Área com reserva legal</p>
+                                            <h3 class="mb-0"><span data-plugin="counterup">6.254 </span>ha</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                                        
+                            
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xl-6">
+                          <div class="card">
+                              <div class="card-body">
+                                  <h4 class="header-title mb-3">Cultura Agrícola</h4>
+
+                                  <div class="table-responsive">
+                                      <table class="table mb-0">
+                                          <thead>
+                                            <tr>
+                                                <th>Cultura</th>
+                                                <th>Área</th>
+                                                <th>Ciclo</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                              <tr>
+                                                  <td>Cultura 1</td>
+                                                  <td>50 ha</td>
+                                                  <td>Perene</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Cultura 2</td>
+                                                <td>40 ha</td>
+                                                <td>Anual</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Cultura 3</td>
+                                                <td>50 ha</td>
+                                                <td>Anual</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Cultura 4</td>
+                                                <td>60 ha</td>
+                                                <td>Perene</td>
+                                              </tr>                                              
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                          <div class="card">
+                              <div class="card-body">
+                                  <h4 class="header-title mb-3">Estrutura da Propriedade</h4>                                      
+
+                                  <div class="table-responsive">
+                                      <table 
+                                      class="table mb-4" 
+                                      style="border-collapse: collapse;
+                                      border-spacing: 0;
+                                      width: 100%;
+                                    ">
+                                          <thead class="bg-primary text-white">
+                                          <tr>
+                                              <th>Tipo</th>
+                                              <th>Nome</th>
+                                              <th>Características</th>
+                                              <th>Quantidade</th>                                              
+                                              <th>Valor (R$)</th>
+                                              <th>Vida Útil (anos)</th>
+                                              <th>Tempo de Uso (anos)</th>
+                                              <th>Uso para Caprinos (%)</th>                                              
+                                              <th>Uso para Ovinos (%)</th>                                              
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                              <tr>
+                                                  <td>Benfeitorias</td>
+                                                  <td>Nome 1</td>
+                                                  <td>Característica 1</td>
+                                                  <td>1</td>                                                  
+                                                  <td>456,49</td>
+                                                  <td>5</td>
+                                                  <td>2</td>
+                                                  <td>50%</td>                                                  
+                                                  <td>50%</td>                                                  
+                                              </tr>
+                                              <tr>
+                                                <td>Equipamentos</td>
+                                                  <td>Nome 2</td>
+                                                  <td>Característica 2</td>
+                                                  <td>2</td>                                                  
+                                                  <td>156,49</td>
+                                                  <td>7</td>
+                                                  <td>3</td>
+                                                  <td>50%</td>                                                  
+                                                  <td>50%</td>                                                 
+                                              </tr>
+                                              <tr>
+                                                <td>Animais de trabalho</td>
+                                                  <td>Nome 3</td>
+                                                  <td>Característica 3</td>
+                                                  <td>4</td>                                                  
+                                                  <td>1456,49</td>
+                                                  <td>15</td>
+                                                  <td>6</td>
+                                                  <td>60%</td>                                                  
+                                                  <td>40%</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Benfeitorias</td>
+                                                  <td>Nome 4</td>
+                                                  <td>Característica 4</td>
+                                                  <td>2</td>                                                  
+                                                  <td>2056,49</td>
+                                                  <td>10</td>
+                                                  <td>5</td>
+                                                  <td>66%</td>                                                  
+                                                  <td>24%</td>                                                 
+                                              </tr>                                              
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+              </div>
+            </div>
+          
+            <div
+              class="tab-pane fade"
+              id="fazenda2"
+              role="tabpanel"
+              aria-labelledby="profile-tab"
+            >
+              <div class="container-fluid">
+                <div class="row mt-3">
+                  <div class="col-sm-12">
+                    <div class="card card-border">                    
+                        <div class="card-body">
+                            <p><b>Proprietário: </b>Fulano da Silva &emsp;
+                              <b>Municipio: </b>Porto Velho - RO &emsp;
+                              <b>Área Total: </b>5,8 ha &emsp;
+                              <b>Valor do Hectare: </b>R$60.000,00 </p>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <div class="card-body">
+                        <div class="button-list">
+                          <button
+                            type="button"
+                            class="btn btn-success waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#adicionar-propriedade"
+                          >
+                          <i class="mdi mdi-plus">&nbsp;</i>Adicionar Propriedade                      
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-primary waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#editar-propriedade"
+                          >
+                          <i class="fas fa-edit">&nbsp;</i>
+                            Editar Propriedade
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-info waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#adicionar-forrageira"
+                          >
+                            Adicionar Forrageira
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-warning waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#adicionar-cultura"
+                          >
+                            Adicionar Cultura Agrícola
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-danger waves-effect waves-light"
+                            data-toggle="modal"
+                            data-target="#adicionar-estrutura"
+                          >
+                            <i class="mdi mdi-silo"></i>+
+                            Adicionar Estrutura
+                          </button>                      
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xl-6">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="header-title mb-3">Categorias de Despesas</h4>
+        
+                            <div dir="ltr">
+                              <div id="donut-chart"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-6">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="header-title mb-3">
+                              Acompanhamento das finanças
+                            </h4>
+                            <div dir="ltr">
+                              <div id="combine-chart"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>                                       
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xl-6">
+                        <div class="card">
+                          <ul class="list-group">
+                            <li class="list-group-item active">
+                              Últimos lançamentos
+                            </li>
+                            <li class="list-group-item">
+                              Despesa Milho: R$150,00 - 29/07/2020
+                            </li>
+                            <li class="list-group-item">
+                              Rebanho Nascimento: 28/07/2020
+                            </li>
+                            <li class="list-group-item">
+                              Despesas com medicamento: R$250,00 - 13/06/2020
+                            </li>
+                            <li class="list-group-item">
+                              Rebanho Venda: R$1600,00 - 09/07/2020
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>          
         @@include('./partials/footer.html')
       </div>
 
@@ -153,41 +517,180 @@
         </div>
       </div>
 
-      <div id="lancar-despesa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoDespesa" aria-hidden="true">
+      <div id="adicionar-propriedade" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editarPropriedade" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="editarPropriedade">Adicionar Propriedade</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+              @@include('./forms/adicionar-propriedade.html')
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="adicionar-forrageira" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoDespesa" aria-hidden="true">
           <div class="modal-dialog ">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h4 class="modal-title" id="adicionarLancamentoDespesa">Adicionar Despesa</h4>
+                      <h4 class="modal-title" id="adicionarLancamentoDespesa">Adicionar Forrageira</h4>
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                   </div>
                   <div class="modal-body">
-                    @@include('./forms/lancar-despesa.html')
+                    <form action="#">
+                      <div class="form-group mb-3">
+                          <label for="culture">Cultura</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            id="culture"
+                            placeholder="Cultura"
+                            required
+                          />
+                        </div>
+                      
+                        <div class="form-group mb-3">
+                          <label for="area">Área</label>
+                          <input
+                            class="form-control"
+                            type="text"
+                            id="area"
+                            placeholder="Área"
+                            required
+                          />
+                        </div>
+                      
+                        <div class="form-group mb-3">
+                          <label for="cycle">Ciclo</label><br />
+                          <input type="radio" id="perene" name="cycle" value="perene" required />
+                          <label for="perene">Perene</label><br />
+                          <input type="radio" id="anual" value="anual" name="cycle" required />
+                          <label for="anual">Anual</label><br />
+                        </div>
+                      
+                        <div class="form-group mb-3">
+                          <label for="uso">Uso</label><br />
+                          <input type="radio" id="silagem" value="silagem" name="use" required />
+                          <label for="silagem">Silagem</label><br />
+                          <input type="radio" id="feno" value="feno" name="use" required />
+                          <label for="feno">Feno</label><br />
+                          <input type="radio" id="pastejo" value="pastejo" name="use" required />
+                          <label for="pastejo">Pastejo</label><br />
+                          <input
+                            type="radio"
+                            id="corteCoxo"
+                            value="corteParaCoxo"
+                            name="use"
+                            required
+                          />
+                          <label for="corteCoxo">Corte para Coxo</label><br />
+                        </div>
+                      
+                        
+                        </div>
+      
+                      <div class="row justify-content-center">                        
+                      </div>
+                      <div class="form-group text-center my-3">
+                        <button
+                          class="btn btn-outline-primary btn-lg width-lg btn-rounded"
+                          type="reset"
+                        >
+                          Limpar Campos
+                        </button>
+                        <button
+                          class="btn btn-primary btn-lg width-lg btn-rounded ml-3"
+                          type="submit"
+                        >
+                          Atualizar Dados
+                        </button>
+                      </div>                            
+                    </form>
                   </div>
               </div>
           </div>
       </div>
-      <div id="lancar-receita" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoReceita" aria-hidden="true">
+      <div id="adicionar-cultura" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoReceita" aria-hidden="true">
           <div class="modal-dialog ">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h4 class="modal-title" id="adicionarLancamentoReceita">Adicionar Receita</h4>
+                      <h4 class="modal-title" id="adicionarLancamentoReceita">Adicionar Cultura Agrícola</h4>
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                   </div>
                   <div class="modal-body">
-                    @@include('./forms/lancar-receita.html')
+                    <form action="#">
+                      <div class="form-group mb-3">
+                        <label for="culture">Cultura</label>
+                        <input
+                          class="form-control"
+                          type="text"
+                          id="culture"
+                          placeholder="Cultura"
+                          required
+                        />
+                      </div>
+      
+                      <div class="form-group mb-3">
+                        <label for="area">Área (hectares)</label>
+                        <input
+                          class="form-control"
+                          type="text"
+                          id="area"
+                          placeholder="Área"
+                          required
+                        />
+                      </div>
+      
+                      <div class="form-group mb-3">
+                        <label for="cycle">Ciclo</label><br />
+                        <input
+                          type="radio"
+                          id="perene"
+                          name="cycle"
+                          value="perene"
+                          required
+                        />
+                        <label for="perene">Perene</label><br />
+                        <input
+                          type="radio"
+                          id="anual"
+                          value="anual"
+                          name="cycle"
+                          required
+                        />
+                        <label for="anual">Anual</label><br />
+                      </div>
+      
+                      <div class="form-group text-center my-3">
+                        <button
+                          class="btn btn-outline-primary btn-lg width-lg btn-rounded"
+                          type="reset"
+                        >
+                          Limpar Campos
+                        </button>
+                        <button
+                          class="btn btn-primary btn-lg width-lg btn-rounded ml-3"
+                          type="submit"
+                        >
+                          Atualizar Dados
+                        </button>
+                      </div> 
+                    </form>
                   </div>
               </div>
           </div>
       </div>
-      <div id="lancar-investimento" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoInvestimento" aria-hidden="true">
+      <div id="adicionar-estrutura" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="adicionarLancamentoInvestimento" aria-hidden="true">
           <div class="modal-dialog ">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h4 class="modal-title" id="adicionarLancamentoInvestimento">Adicionar Investimento</h4>
+                      <h4 class="modal-title" id="adicionarLancamentoInvestimento">Adicionar Estrutura</h4>
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                   </div>
                   <div class="modal-body">
-                    @@include('./forms/lancar-investimento.html')
+                    @@include('./forms/adicionar-estrutura.html')
                   </div>
               </div>
           </div>

@@ -22,6 +22,14 @@ const folder = {
     dist_assets: "dist/assets/" //build assets files
 };
 
+// const ghPages = require('gulp-gh-pages');
+
+// gulp.task('deploy', function() {
+  // return gulp.src('./dist/**/*')
+    // .pipe(ghPages(
+    // ));
+// });
+
 /*
 Copy assets/vendors from their node_module package to scss & js folder
 Read More: https://florian.ec/articles/frontend-dependencies-npm/

@@ -46,7 +46,9 @@
 
               <form action="#">
                 <div class="form-group mb-3">
-                  <label for="benfeitoria-princ-1">Estrutura</label>
+                  <label for="benfeitoria-princ-1"
+                    >Selecione a Benfeitoria</label
+                  >
                   <select class="form-control select2" id="benfeitoria-princ-1">
                     <option>Selecione</option>
                     <optgroup label="Benfeitorias">
@@ -102,7 +104,7 @@
 
                 <div class="form-group mb-3">
                   <label for="detalhes-benfeitoria-principal-1"
-                    >Detalhes da Estrutura</label
+                    >Características da Estrutura</label
                   >
                   <input
                     id="detalhes-benfeitoria-principal-1"
@@ -151,7 +153,7 @@
                   <div class="col">
                     <div class="form-group mb-3">
                       <label for="vida-util-benfeitoria-1"
-                        >Vida Útil do Bem</label
+                        >Vida Útil do Bem (anos)</label
                       >
                       <div class="input-group">
                         <input
@@ -159,17 +161,6 @@
                           type="number"
                           id="vida-util-benfeitoria-1"
                         />
-                        <div class="input-group-append">
-                          <select
-                            class="form-control select2"
-                            name="tempo-uso-animal-trabalho-1"
-                            id="select-vida-util-benfeitoria-1"
-                          >
-                            <option value="MES">Meses</option>
-                            <option value="ANO">Anos</option>
-                            <option value="-1">Outro...</option>
-                          </select>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -190,7 +181,7 @@
                             id="select-tempo-uso-benfeitoria-1"
                           >
                             <option value="MES">Meses</option>
-                            <option value="ANO">Anos</option>
+                            <option value="ANO" selected>Anos</option>
                             <option value="-1">Outro...</option>
                           </select>
                         </div>
@@ -260,11 +251,18 @@
                     Voltar
                   </a>
                   <a
+                    href="cadastrar-propriedade.html"
+                    class="btn btn-danger width-md btn-rounded"
+                    type="reset"
+                  >
+                    Retornar Cadastro Inicial
+                  </a>
+                  <a
                     href="cadastrar-equipamentos.html"
                     class="btn btn-success width-md btn-rounded"
                   >
-                    Finalizar &nbsp;
-                    <i class="fas fa-check-circle"></i>
+                    Próximo &nbsp;
+                    <i class="fas fa-arrow-circle-right"></i>
                   </a>
                 </div>
               </form>

@@ -43,7 +43,7 @@
                 <h2>Cadastrar Nova Propriedade</h2>
               </div>
 
-              <form action="cadastrar-rebanho.html">
+              <form action="finalizar-cadastro.html">
                 <h4 class="my-3">Informações Básicas</h4>
                 <div class="row">
                   <div class="col-sm-12">
@@ -203,6 +203,7 @@
                   </div>
                 </div>
                 <div class="row">
+                  
                   <div class="atividades-exercidas my-4">
                     <h4>Utilização da área da Propriedade</h4>
 
@@ -252,22 +253,59 @@
       </div>
     </div-->
 
+    
+
                     <div class="col-md-12 pr-0">
+                      <div class="col-md-12">                    
+                        <p>
+                          <div class="form-group">
+                            <label for="area-pastagem"
+                              >Área com Pastagem Nativa</label
+                            >
+                            <div class="input-group">
+                              <input type="text" id="area-pastagem"/>
+                              <span class="input-group-text" id="basic-addon1">ha</span>
+                            </div>
+                          </div>
+                        </p>
+                        <p>
+                          <div class="form-group">
+                            <label for="area-benfeitorias"
+                              >Área Benfeitorias</label
+                            >
+                            <div class="input-group">
+                              <input type="text" id="area-benfeitorias"/>
+                              <span class="input-group-text" id="basic-addon1">ha</span>
+                            </div>
+                          </div>
+                        </p>
+                        <p>
+                          <div class="form-group">
+                            <label for="area-reserva"
+                              >Área Reserva Legal/mata</label
+                            >
+                            <div class="input-group">
+                              <input type="text" id="area-reserva"/>
+                              <span class="input-group-text" id="basic-addon1">ha</span>
+                            </div>
+                          </div>
+                        </p>                          
+                      </div>
+
                       <div
                         class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
                       >
                         <div class="row">
                           <div class="col-md-12">
                             <div class="input-group">
-                              <button
+                              <a
+                                href="cadastrar-forrageira.html"
                                 class="btn btn-success ml-1"
                                 title="Adicionar nova Cultura Forrageira (Cultivada)"
-                                data-toggle="modal"
-                                data-target="#cadastrar-forrageira"
                               >
                                 <i class="fas fa-seedling"> + </i> Cadastrar
                                 Forrageira
-                              </button>
+                              </a>                              
                             </div>
                           </div>
                         </div>
@@ -281,16 +319,15 @@
                         <div class="row">
                           <div class="col-md-12">
                             <div class="input-group">
-                              <button
+                              <a
+                                href="cadastrar-cultura-agricola.html"
                                 class="btn btn-success ml-1"
-                                title="Adicionar nova Cultura Forrageira (Nativa)"
-                                data-toggle="modal"
-                                data-target="#adicionar-cultura-agricola"
+                                title="Adicionar nova Cultura Agricola (Nativa)"
                               >
                                 <i class="fas fa-seedling">
                                   + Adicionar Cultura Agrícola
                                 </i>
-                              </button>
+                              </a>                              
                             </div>
                           </div>
                         </div>
@@ -338,9 +375,13 @@
                                   Cadastrar Rebanho Simplificado
                                 </i>
                               </a>
-                              O cadastro de rebanho simplificado permite
-                              realizar um cadastro de rebanho mais simples,
-                              cadastrando um rebanho inteiro de uma só vez.
+                              <p>
+                                O cadastro de rebanho simplificado apresenta
+                                informações menos detalhadas do rebanho, de
+                                forma mais agregada, e por isso, o controle do
+                                rebanho é feito de forma menos detalhada e gera
+                                relatórios com menos informações.
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -363,10 +404,13 @@
                                   Cadastrar Rebanho Detalhado
                                 </i>
                               </a>
-                              O cadastro de rebanho detalhado permite que seja
-                              realizado um cadastro de rebanho mais específico,
-                              sendo possível cadastrar um animal do rebanho de
-                              cada vez.
+                              <p>
+                                O cadastro de rebanho detalhado requer
+                                informações mais completas por animal, e permite
+                                um controle mais preciso e detalhado da
+                                movimentação de animais, gerando relatórios mais
+                                completos.
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -374,17 +418,15 @@
                     </div>
 
                     <div class="col-md-12 pt-3">
-                      <button
-                        type="button"
+                      <a
+                        href="cadastrar-outro-pecuaria.html"
                         class="btn btn-link"
-                        name="adicionar-atividade"
-                        data-toggle="modal"
-                        data-target="#adicionar-outra-atividade"
+                        name="adicionar-atividade"                        
                       >
                         <label style="font-weight: bold;">
-                          + Adicionar Atividade</label
+                          + Outra Atividade Pecuária</label
                         >
-                      </button>
+                        </a>
                     </div>
                   </div>
                 </div>
@@ -419,97 +461,7 @@
                       data-reverse="true"
                     />
                   </div>
-                </div>
-
-                <div
-                  id="cadastrar-forrageira"
-                  class="modal fade"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="cadastrarForrageira"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title" id="cadastrarForrageira">
-                          Cadastrar Forrageira
-                        </h4>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-hidden="true"
-                        >
-                          ×
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        @@include('./cadastrar-forrageira.html')
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  id="adicionar-cultura-agricola"
-                  class="modal fade"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="adicionarCultura"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title" id="adicionarCultura">
-                          Cadastrar Cultura Agrícola
-                        </h4>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-hidden="true"
-                        >
-                          ×
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        @@include('./cadastrar-cultura-agricola.html')
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  id="adicionar-outra-atividade"
-                  class="modal fade"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="outraAtividade"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title" id="adicionarAtividade">
-                          Adicionar outra atividade Pecuária
-                        </h4>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-hidden="true"
-                        >
-                          ×
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        @@include('./cadastrar-outro-pecuaria.html')
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </div>                                                
 
                 <div class="form-group text-center my-3">
                   <a
@@ -526,13 +478,13 @@
                   >
                     Limpar Campos
                   </button>
-                  <button
+                  <a
                     class="btn btn-primary width-md btn-rounded ml-1"
-                    type="submit"
+                    href="finalizar-cadastro.html"
                   >
-                    Próximo &nbsp;
-                    <i class="fas fa-arrow-circle-right"></i>
-                  </button>
+                    Finalizar &nbsp;
+                    <i class="fas fa-check-circle"></i>
+                  </a>
                 </div>
               </form>
             </div>

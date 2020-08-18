@@ -1,0 +1,276 @@
+<form action="dashboard.html">
+  <div class="form-group row">
+    <div class="col-md-12">
+      <div>
+        <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input
+            type="radio"
+            id="tipo-estrutura1"
+            name="tipo-estrutura"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="tipo-estrutura1"
+            >Benfeitoria</label
+          >
+        </div>
+        <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input
+            type="radio"
+            id="tipo-estrutura2"
+            name="tipo-estrutura"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="tipo-estrutura2"
+            >Equipamento</label
+          >
+        </div>
+        <div class="custom-control custom-radio custom-control-inline mb-2">
+          <input
+            type="radio"
+            id="tipo-estrutura3"
+            name="tipo-estrutura"
+            class="custom-control-input"
+          />
+          <label class="custom-control-label" for="tipo-estrutura3"
+            >Animais de Trabalho</label
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group mb-3">
+    <label for="benfeitoria-princ-1">Estrutura</label>
+    <select class="form-control select2" id="benfeitoria-princ-1">
+      <option>Selecione</option>
+      <optgroup label="Benfeitorias">
+        <option value="ACUD">Açudes ou Barragens</option>
+        <option value="BEBA">Bebedouro de Alvenaria</option>
+        <option value="BEBT">Bebedouro de Tambor/Pneu</option>
+        <option value="CERC">Cercas</option>
+        <option value="CXDA">Caixa d'água</option>
+        <option value="CASS">Casa de Sede</option>
+        <option value="CASE">Casa de Empregados</option>
+        <option value="CIST">Cisterna</option>
+        <option value="COCH">Cocho</option>
+        <option value="COCT">Cocho de Tambor/Pneu</option>
+        <option value="CURO">Curral p/ Ovinos e Caprinos</option>
+        <option value="CURR">Curral</option>
+        <option value="ESTQ">Esterqueira</option>
+        <option value="ESTR">Estrada</option>
+        <option value="GALP">Galpão</option>
+        <option value="MATB">Mataburro</option>
+        <option value="POCP"
+          >Poço Profundo: Artesiano, Semi-artesiano ou Tubular</option
+        >
+        <option value="POCR">Poço Raso: Cisterna, Cacimbão ou Aluvião</option>
+        <option value="PONT">Ponte</option>
+        <option value="PORT">Porteira</option>
+        <option value="REDM">Rede Elétrica Monofásica</option>
+        <option value="REDT">Rede Elétrica Trifásica</option>
+        <option value="REDH">Rede Hidráulica</option>
+        <option value="RODD">Roda D'água</option>
+        <option value="SALO">Sala de Ordenha</option>
+        <option value="SALE">Saleiros</option>
+        <option value="SALT">Saleiros de Tambor/Pneu</option>
+        <option value="SILO">Silo</option>
+      </optgroup>
+      <optgroup label="Equipamento">
+        <option value="TRAT">Trator</option>
+        <option value="IMPL">Implementos</option>
+        <option value="ROCM">Roçadeira Manual</option>
+        <option value="CARB">Carro de Boi</option>
+        <option value="CARR">Caroças</option>
+        <option value="TRIT"
+          >Triturador, Picadeira, Forrageira ou Desintegrador</option
+        >
+        <option value="ARRE">Arreios ou Selaria </option>
+        <option value="FERR">Ferramentas</option>
+        <option value="BOMB">Bombas D'água</option>
+        <option value="GERA">Gerador de Energia</option>
+        <option value="MTSR">Motosserra</option>
+        <option value="PISV">Pistola de Vacinação</option>
+        <option value="PULV">Pulverizador Costal</option>
+        <option value="BTJS">Botijão de Sêmen</option>
+        <option value="TAMBL">Tambor de Leite</option>
+        <option value="ORDB">Ordenha - Balde ao pé (conjunto)</option>
+        <option value="ORDM">Ordenha Mecânica (conjunto)</option>
+        <option value="TNXP">Tanque de Expansão</option>
+        <option value="RESL">Resfriador de Leite</option>
+        <option value="LAVJ">Lavadora à Jato</option>
+        <option value="BALN">Balança</option>
+        <option value="ANTN">Antena</option>
+        <option value="TELF">Telefone</option>
+        <option value="CAMN">Caminhonete</option>
+        <option value="CARL">Carro Leve</option>
+        <option value="MOTO">Moto</option>
+        <option value="CMAO">Caminhão</option>
+        <option value="TQCB">Tanque de Combustível</option>
+        <option value="MTBB">Motobomba</option>
+        <option value="MTOR">Motor</option>
+        <option value="KTOR">Kit de Ordenha</option>
+      </optgroup>
+      <optgroup label="Animais de Trabalho">
+        <option value="CAVL">Cavalos (Equinos)</option>
+        <option value="ASNN">Jumentos (Asininos)</option>
+        <option value="BOVN">Bois (Bovinos)</option>
+        <option value="MUAR">Burros (Muares)</option>
+        <option value="CAES">Cães (Caninos)</option>
+      </optgroup>
+      <optgroup>
+        <option value="-1">Outro (Informe...)</option>
+      </optgroup>
+    </select>
+  </div>
+
+  <div class="form-group d-none">
+    <label for="outra-benfeitoria-nome-1">Outra Estrutura</label>
+    <input
+      id="outra-benfeitoria-nome-1"
+      type="text"
+      class="form-control"
+      disabled
+    />
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="detalhes-benfeitoria-principal-1">Detalhes da Estrutura</label>
+    <input
+      id="detalhes-benfeitoria-principal-1"
+      type="text"
+      class="form-control"
+    />
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-group mb-3">
+        <label for="quantidade-benfeitoria-principal-1">Quantidade</label>
+        <input
+          id="quantidade-benfeitoria-principal-1"
+          type="number"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group mb-3">
+        <label for="valor-benfeitoria-1">Valor do Bem</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-primary text-white b-0">R$</span>
+          </div>
+          <input
+            id="valor-benfeitoria-1"
+            type="text"
+            class="form-control"
+            data-toggle="input-mask"
+            data-mask-format="000.000.000.000.000,00"
+            data-reverse="true"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-group mb-3">
+        <label for="vida-util-benfeitoria-1">Vida Útil do Bem</label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            type="number"
+            id="vida-util-benfeitoria-1"
+          />
+          <div class="input-group-append">
+            <select
+              class="form-control select2"
+              name="tempo-uso-animal-trabalho-1"
+              id="select-vida-util-benfeitoria-1"
+            >
+              <option value="MES">Meses</option>
+              <option value="ANO">Anos</option>
+              <option value="-1">Outro...</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group mb-3">
+        <label for="tempo-uso-benfeitoria-1">Tempo de Uso</label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            type="number"
+            id="tempo-uso-benfeitoria-1"
+          />
+          <div class="input-group-append">
+            <select
+              class="form-control select2"
+              name="tempo-uso-benfeitoria-1"
+              id="select-tempo-uso-benfeitoria-1"
+            >
+              <option value="MES">Meses</option>
+              <option value="ANO">Anos</option>
+              <option value="-1">Outro...</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-group mb-3">
+        <label for="porcentagem-caprinos-benfeitoria-1"
+          >Uso para Caprinos</label
+        >
+        <div class="input-group">
+          <input
+            id="porcentagem-caprinos-benfeitoria-1"
+            type="number"
+            class="form-control"
+            disabled
+          />
+          <div class="input-group-append">
+            <span class="input-group-text bg-primary text-white b-0">%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group mb-3">
+        <label for="porcentagem-ovinos-benfeitoria-1">Uso para Ovinos</label>
+        <div class="input-group">
+          <input
+            id="porcentagem-ovinos-benfeitoria-1"
+            type="number"
+            class="form-control"
+            disabled
+          />
+          <div class="input-group-append">
+            <span class="input-group-text bg-primary text-white b-0">%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div class="form-group text-center my-3">
+    <button
+      class="btn btn-outline-primary btn-lg width-lg btn-rounded"
+      type="reset"
+    >
+      Limpar Campos
+    </button>
+    <button
+      class="btn btn-primary btn-lg width-lg btn-rounded ml-3"
+      type="submit"
+    >
+      Atualizar Dados
+    </button>
+  </div>
+</form>

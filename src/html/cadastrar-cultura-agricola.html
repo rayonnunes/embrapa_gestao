@@ -1,40 +1,140 @@
-<form action="#">
-  <div class="form-group mb-3">
-    <label for="culture">Cultura</label>
-    <input
-      class="form-control"
-      type="text"
-      id="culture"
-      placeholder="Cultura"
-      required
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cadastrar Cultura Agrícola - Emprapa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
     />
-  </div>
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
-  <div class="form-group mb-3">
-    <label for="area">Área (hectares)</label>
-    <input
-      class="form-control"
-      type="text"
-      id="area"
-      placeholder="Área"
-      required
+    <!-- Bootstrap select pluings -->
+    <link
+      href="assets/libs/bootstrap-select/bootstrap-select.min.css"
+      rel="stylesheet"
+      type="text/css"
     />
-  </div>
 
-  <div class="form-group mb-3">
-    <label for="cycle">Ciclo</label><br />
-    <input type="radio" id="perene" name="cycle" value="perene" required />
-    <label for="perene">Perene</label><br />
-    <input type="radio" id="anual" value="anual" name="cycle" required />
-    <label for="anual">Anual</label><br />
-  </div>
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  </head>
 
-  <div class="form-group mb-3 text-center">
-    <button class="btn btn-primary btn-lg width-lg btn-rounded" type="submit">
-      Concluído
-    </button>
-    <a href="#" class="btn btn-primary btn-lg width-lg btn-rounded"
-      >Adicionar nova Forrageira</a
-    >
-  </div>
-</form>
+  <body class="bg-white">
+    <div id="wrapper">
+      @@include('./partials/topbar-initial.html')
+    </div>
+    <div class="account-pages my-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+            <div>
+              <div class="text-center mb-4">
+                <h2>Cadastrar Cultura Agrícola</h2>
+              </div>
+
+              <form action="#">
+                <div class="form-group mb-3">
+                  <label for="culture">Cultura</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="culture"
+                    placeholder="Cultura"
+                    required
+                  />
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="area">Área (hectares)</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="area"
+                    placeholder="Área"
+                    required
+                  />
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="cycle">Ciclo</label><br />
+                  <input
+                    type="radio"
+                    id="perene"
+                    name="cycle"
+                    value="perene"
+                    required
+                  />
+                  <label for="perene">Perene</label><br />
+                  <input
+                    type="radio"
+                    id="anual"
+                    value="anual"
+                    name="cycle"
+                    required
+                  />
+                  <label for="anual">Anual</label><br />
+                </div>
+
+                <div class="row justify-content-center">
+                  <button class="btn btn-link" name="button">
+                    <span class="position-relative" style="font-weight: bold;"
+                      >Adicionar Outra Cultura Agrícola &nbsp;</span
+                    >
+                  </button>
+                </div>
+
+                <div class="form-group text-center my-5">
+                  <a
+                    href="cadastrar-propriedade.html"
+                    class="btn btn-dark width-md btn-rounded"
+                    type="reset"
+                  >
+                    <i class="fas fa-arrow-circle-left"></i>
+                    Voltar
+                  </a>
+                  <a
+                    href="cadastrar-propriedade.html"
+                    class="btn btn-success width-md btn-rounded"
+                  >
+                    Concluido &nbsp;
+                    <i class="fas fa-arrow-circle-right"></i>
+                  </a>
+                </div>
+              </form>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end page -->
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- Bootstrap select plugin -->
+    <script src="assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <!-- Plugins js -->
+    <script src="assets/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
+    <script src="assets/libs/autonumeric/autoNumeric-min.js"></script>
+    <script src="assets/js/pages/form-masks.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+  </body>
+</html>

@@ -46,9 +46,11 @@
                 </h3>
               </div>
 
-              <form action="#">
+              <form action="cadastrar-propriedade.html">
                 <div class="form-group mb-3">
-                  <label for="animais-trabalho">Estrutura</label>
+                  <label for="animais-trabalho"
+                    >Selecione o Animal de Trabalho</label
+                  >
                   <select class="form-control select2" id="animais-trabalho">
                     <option>Selecione</option>
                     <optgroup label="Animais de Trabalho">
@@ -73,7 +75,7 @@
 
                 <div class="form-group mb-3">
                   <label for="detalhes-benfeitoria-principal-1"
-                    >Detalhes da Estrutura</label
+                    >Características da Estrutura</label
                   >
                   <input
                     id="detalhes-benfeitoria-principal-1"
@@ -137,7 +139,7 @@
                             id="select-vida-util-benfeitoria-1"
                           >
                             <option value="MES">Meses</option>
-                            <option value="ANO">Anos</option>
+                            <option value="ANO" selected>Anos</option>
                             <option value="-1">Outro...</option>
                           </select>
                         </div>
@@ -161,7 +163,7 @@
                             id="select-tempo-uso-benfeitoria-1"
                           >
                             <option value="MES">Meses</option>
-                            <option value="ANO">Anos</option>
+                            <option value="ANO" selected>Anos</option>
                             <option value="-1">Outro...</option>
                           </select>
                         </div>
@@ -216,14 +218,14 @@
                 <div class="row justify-content-center">
                   <button class="btn btn-link" name="button">
                     <span class="position-relative" style="font-weight: bold;"
-                      >Adicionar Outra Benfeitoria &nbsp;</span
+                      >Adicionar Outro Animal de Trabalho &nbsp;</span
                     >
                   </button>
                 </div>
 
                 <div class="form-group text-center my-5">
                   <a
-                    href="cadastrar-rebanho.html"
+                    href="cadastrar-equipamentos.html"
                     class="btn btn-dark width-md btn-rounded"
                     type="reset"
                   >
@@ -231,12 +233,19 @@
                     Voltar
                   </a>
                   <a
-                    href="dashboard.html"
+                    href="cadastrar-propriedade.html"
+                    class="btn btn-danger width-md btn-rounded"
+                    type="reset"
+                  >
+                    Retornar Cadastro Inicial
+                  </a>
+                  <a
+                    href="cadastrar-propriedade.html"
                     class="btn btn-success width-md btn-rounded ml-1"
                     type="submit"
                   >
-                    Finalizar &nbsp;
-                    <i class="fas fa-check-circle"></i>
+                    Próximo &nbsp;
+                    <i class="fas fa-arrow-circle-right"></i>
                   </a>
                 </div>
               </form>

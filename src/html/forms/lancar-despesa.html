@@ -24,17 +24,37 @@
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label for="atividade-associada">Atividade Associada</label>
-        <select
-          type="text"
-          id="atividade-associada"
-          class="form-control select2"
-          value=""
-        >
-          <option></option>
-          <option value="1">Ovinos</option>
-          <option value="2">Caprinos</option>
-        </select>
+
+        <p>
+          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Atividade Associada
+          </a>          
+        </p>        
+
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            
+            <p>
+              <input type="checkbox" name="ovinocultura">
+              <label for="ovinocultura">Ovinocultura (%)</label>
+              <input type="number" name="ovinocultura" id="ovinocultura-associada" min="0" max="100">
+            </p>
+            <p>
+              <input type="checkbox" name="caprinocultura">
+              <label for="caprinocultura">Caprinocultura (%)<label>
+              <input type="number" name="caprinocultura" id="caprinocultura-associada" min="0" max="100">              
+            </p>
+            <p>
+              <input type="checkbox" name="bovinocultura">
+              <label for="bovinocultura">Bovinocultura (%)<label>
+              <input type="number" name="bovinocultura" id="bovinocultura-associada" min="0" max="100">                
+            </p>
+          </div>
+        </div>
+
+        <p>
+          <a href="../cadastrar-propriedade.html" class="btn btn-link">Adicionar Atividade Associada</a>
+        </p>
       </div>
     </div>
   </div>
