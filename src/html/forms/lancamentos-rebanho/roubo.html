@@ -1,28 +1,49 @@
-<div class="tab-content" id="myTabContent">
-  <div class="row">
+<form>
+  <div class="row" id="row-roubo">
     <div class="col-md-6">
       <div class="form-group">
         <label for="roubo-rebanho">Rebanho</label>
-        <select id="roubo-rebanho" class="form-control" name="tipo-produto">
-          <option value="1">Ovino Rebanho 1</option>
-          <option value="2">Caprino Rebanho 1</option>
+        <select
+          id="roubo-rebanho"
+          class="form-control"
+          name="tipo-produto"
+          onchange="addCamposRoubo()"
+        >
+          <option value="simplificado">Simplificado</option>
+          <option value="detalhado">Detalhado</option>
         </select>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="form-group">
-        <label for="nascimento-rebanho">Categoria</label>
+      <div class="form-group" id="form-roubo">
+        <label for="nascimento-rebanho" id="label-categoria-roubo"
+          >Categoria</label
+        >
         <select id="roubo-categoria" class="form-control" name="tipo-produto">
           <option value="matriz">Matriz</option>
           <option value="reprodutor">Reprodutor</option>
           <option value="femeaJovem">Fêmea Jovem</option>
           <option value="machoJovem">Macho Jovem</option>
+          <option value="femeaLactacao">Fêmea em Lactação</option>
+          <option value="machoLactacao">Macho em Lactação</option>
         </select>
       </div>
     </div>
-  </div>
 
-  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="observacoes-roubo">Observações</label>
+        <textarea
+          name="causa-morte"
+          id="observacoes-roubo"
+          cols="30"
+          rows="10"
+          class="form-control"
+        >
+        </textarea>
+      </div>
+    </div>
+
     <div class="col-md-6">
       <div class="form-group">
         <label for="data-roubo">Data da Ocorrência</label>
@@ -34,7 +55,127 @@
         />
       </div>
     </div>
+
+    <div class="col-md-6">
+      <div class="form-group" id="form-group2">
+        <label for="qtd-roubo" id="label-qtd-roubo">Qtd. de Roubada</label>
+        <input
+          type="number"
+          id="qtd-roubo"
+          class="form-control"
+          name="qtd-roubo"
+        />
+      </div>
+    </div>
   </div>
-</div>
-<button type="button" class="btn btn-primary">Ok</button>
-</div>
+
+  <button class="btn btn-primary btn-lg" type="submit">
+    Adicionar Ocorrencia
+  </button>
+
+  <button
+    type="button"
+    class="btn btn-danger btn-lg mr-4"
+    data-dismiss="modal"
+    aria-hidden="true"
+  >
+    Fechar
+  </button>
+</form>
+
+<script type="text/javascript">
+  function addCamposRoubo() {
+    let selectedValue = document.getElementById('roubo-rebanho').value;
+    let row = document.getElementById('row-roubo');
+
+    let col1 = document.createElement('div');
+    col1.className = 'col-md-6';
+    col1.id = 'div-roubo1';
+
+    let formGroup1 = document.getElementById('form-roubo');
+
+    if (selectedValue === 'simplificado') {
+      let child1 = document.getElementById('label-id-roubo');
+      let child2 = document.getElementById('input-id-roubo');
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+
+      let labelCategoria = document.createElement('label');
+      labelCategoria.innerText = 'Categoria';
+      labelCategoria.id = 'label-categoria-roubo';
+
+      let selectCategoria = document.createElement('select');
+      selectCategoria.className = 'form-control';
+      selectCategoria.id = 'roubo-categoria';
+
+      let categoria1 = document.createElement('option');
+      categoria1.innerText = 'Matriz';
+      categoria1.value = 'matriz';
+
+      let categoria2 = document.createElement('option');
+      categoria2.innerText = 'Reprodutor';
+      categoria2.value = 'reprodutor';
+
+      let categoria3 = document.createElement('option');
+      categoria3.innerText = 'Fêmea Jovem';
+      categoria3.value = 'Fêmea Jovem';
+
+      let categoria4 = document.createElement('option');
+      categoria4.innerText = 'Macho Jovem';
+      categoria4.value = 'Macho Jovem';
+
+      let categoria5 = document.createElement('option');
+      categoria5.innerText = 'Fêmea em Lactação';
+      categoria5.value = 'Femea Lactacao';
+
+      let categoria6 = document.createElement('option');
+      categoria6.innerText = 'Macho Lactacao';
+      categoria6.value = 'Macho Lactacao';
+
+      selectCategoria.appendChild(categoria1);
+      selectCategoria.appendChild(categoria2);
+      selectCategoria.appendChild(categoria3);
+      selectCategoria.appendChild(categoria4);
+      selectCategoria.appendChild(categoria5);
+      selectCategoria.appendChild(categoria6);
+
+      formGroup1.appendChild(labelCategoria);
+      formGroup1.appendChild(selectCategoria);
+
+      let formGroup2 = document.getElementById('form-group2');
+
+      let labelQtd = document.createElement('label');
+      labelQtd.innerText = 'Qtd Roubada';
+      labelQtd.id = 'label-qtd-roubo';
+
+      let inputQtd = document.createElement('input');
+      inputQtd.className = 'form-control';
+      inputQtd.type = 'number';
+      inputQtd.id = 'qtd-roubo';
+
+      formGroup2.appendChild(labelQtd);
+      formGroup2.appendChild(inputQtd);
+    } else if (selectedValue === 'detalhado') {
+      let child1 = document.getElementById('label-categoria-roubo');
+      let child2 = document.getElementById('roubo-categoria');
+      let child3 = document.getElementById('label-qtd-roubo');
+      let child4 = document.getElementById('qtd-roubo');
+
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+      child3.parentNode.removeChild(child3);
+      child4.parentNode.removeChild(child4);
+
+      let labelIdAnimal = document.createElement('label');
+      labelIdAnimal.innerText = 'Identificação do Animal (nº ou nome)';
+      labelIdAnimal.id = 'label-id-roubo';
+
+      let inputIdAnimal = document.createElement('input');
+      inputIdAnimal.className = 'form-control';
+      inputIdAnimal.id = 'input-id-roubo';
+
+      formGroup1.appendChild(labelIdAnimal);
+      formGroup1.appendChild(inputIdAnimal);
+    }
+  }
+</script>

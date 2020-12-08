@@ -1,227 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <title>Página Inicial - Embrapa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-  <meta content="Coderthemes" name="author" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- App favicon -->
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-  <!-- Bootstrap select pluings -->
-  <link href="assets/libs/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
-
-  <link href="assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
-  <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-  <link href="assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-
-  <!-- Table datatable css -->
-  <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/datatables/fixedHeader.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/datatables/scroller.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css" />
-  <link href="assets/libs/datatables/fixedColumns.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-  <!-- c3 plugin css -->
-  <link rel="stylesheet" type="text/css" href="assets/libs/c3/c3.min.css">
-
-  <!-- App css -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-
-</head>
-
-<body>
-
-  <!-- Begin page -->
-  <div id="wrapper">
-
-    @@include('./partials/topbar.html')
-
-    @@include('./partials/left-sidebar.html')
-
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
-
-    <div class="content-page">
-      <div class="content">
-
-        <!-- Start Content-->
-        <div class="container-fluid">
-
-          <!-- start page title -->
-          <div class="row">
-            <div class="col-12">
-              <div class="page-title-box">
-                <h4 class="page-title">Investimentos</h4>
-              </div>
-            </div>
-          </div>
-          <!-- end page title -->
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card widget-box-three">
-                  <div class="card-body">
-                      <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
-                          <img class="avatar-sm" alt="receita" src="assets/images/icons/money_transfer.svg" title="Investimentos"/>
-                      </div>
-                      <div class="text-right">
-                          <p class="text-uppercase">Inestimentos Totais</p>
-                          <h2 class="mb-0">R$ <span data-plugin="counterup">1687.44</span></h2>
-                      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card widget-box-three">
-                  <div class="card-body">
-                      <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
-                          <img class="avatar-sm" alt="receita" src="assets/images/icons/money_transfer.svg" title="Investimentos"/>
-                      </div>
-                      <div class="text-right">
-                          <p class="text-uppercase">Ultimo Investimento</p>
-                          <h2 class="mb-0">R$<span data-plugin="counterup">300.00</span></h2>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">Categorias</h4>
-                  <p class="text-muted">Clique em uma categoria para editá-la</p>
-                  <hr>
-                </div>
-                <div class="card-body">
-                  <div class="button-list">
-                      <button type="button" class="btn btn-primary waves-effect waves-light">Alimentação</button>
-                      <button type="button" class="btn btn-success waves-effect waves-light">Forragem</button>
-                      <button type="button" class="btn btn-info waves-effect waves-light">Rebanho</button>
-                      <button type="button" class="btn btn-warning waves-effect waves-light">Sanidade</button>
-                      <button type="button" class="btn btn-danger waves-effect waves-light">Mão de Obra</button>
-                      <button type="button" class="btn btn-purple waves-effect waves-light">Manutenção</button>
-                      <button type="button" class="btn btn-pink waves-effect waves-light">Custos Gerais</button>
-                  </div>
-                  <hr>
-                  <div class="header-title mt-4">
-                    <h4>Adicionar Nova Categoria</h4>
-                  </div>
-                  <div class="mt-3">
-                    <form class="form-inline">
-                        <div class="form-group mr-2">
-                            <label for="nome-categoria" class="mr-2">Nome da Categoria</label>
-                            <input type="text" class="form-control" id="nome-categoria" placeholder="Categoria">
-                        </div>
-                        <div class="form-group mr-2">
-                            <label for="exampleInputEmail2" class="mr-2">Cor</label>
-                            <div class="input-group colorpicker-default" title="Using format option">
-                                <input type="text" class="form-control input-lg" value="#000000"/>
-                                <span class="input-group-append">
-                                    <span class="input-group-text colorpicker-input-addon"><i></i></span>
-                                </span>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary waves-effect waves-light btn-md">
-                            Adicionar
-                        </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-sm-12">
-                  <div class="card">
-                    <div class="card-header">
-                      <h4 class="card-title">Histórico de Investimentos</h4>
-                      <hr>
-                    </div>
-                      <div class="card-body table-responsive">
-                          @@include('./tabelas/financas.html')
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-
-        </div> <!-- end container-fluid -->
-
-      </div> <!-- end content -->
-
-      @@include('./partials/footer.html')
-
+<div class="container-fluid">
+  <!-- start page title -->
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box">
+        <h4 class="page-title">Investimentos</h4>
+      </div>
     </div>
-
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
-
   </div>
-  <!-- END wrapper -->
-
-  @@include('./partials/right-sidebar.html')
-
-  <!-- Vendor js -->
-  <script src="assets/js/vendor.min.js"></script>
-
-  <!-- Bootstrap select plugin -->
-  <script src="assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
-
-  <!-- plugins -->
-  <script src="assets/libs/moment/moment.min.js"></script>
-  <script src="assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-  <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
-  <script src="assets/libs/bootstrap-daterangepicker/daterangepicker.js"></script>
-  <script src="assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
-  <script src="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-
-  <!-- Init js-->
-  <script src="assets/js/pages/form-pickers.init.js"></script>
-
-  <!-- Datatable plugin js -->
-  <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
-  <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
-
-  <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
-  <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
-
-  <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
-  <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
-
-  <script src="assets/libs/datatables/buttons.html5.min.js"></script>
-  <script src="assets/libs/datatables/buttons.print.min.js"></script>
-
-  <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
-  <script src="assets/libs/datatables/dataTables.fixedHeader.min.js"></script>
-  <script src="assets/libs/datatables/dataTables.scroller.min.js"></script>
-  <script src="assets/libs/datatables/dataTables.colVis.js"></script>
-  <script src="assets/libs/datatables/dataTables.fixedColumns.min.js"></script>
-
-  <script src="assets/libs/jszip/jszip.min.js"></script>
-  <script src="assets/libs/pdfmake/pdfmake.min.js"></script>
-  <script src="assets/libs/pdfmake/vfs_fonts.js"></script>
-
-  <script src="assets/js/pages/datatables.init.js"></script>
-  <!-- Table Editable plugin-->
-  <script src="assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
-
-  <!-- Table editable init-->
-  <script src="assets/js/pages/tabledit.init.js"></script>
-
-  <!-- App js -->
-  <script src="assets/js/app.min.js"></script>
-
-</body>
-
-</html>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card widget-box-three">
+        <div class="card-body">
+          <div
+            class="bg-icon float-left avatar-lg text-center bg-light rounded-circle"
+          >
+            <img
+              class="avatar-sm"
+              alt="receita"
+              src="assets/images/icons/money_transfer.svg"
+              title="Investimentos"
+            />
+          </div>
+          <div class="text-right">
+            <p class="text-uppercase">Inestimentos Totais</p>
+            <h2 class="mb-0">
+              R$ <span data-plugin="counterup">1687.44</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card widget-box-three">
+        <div class="card-body">
+          <div
+            class="bg-icon float-left avatar-lg text-center bg-light rounded-circle"
+          >
+            <img
+              class="avatar-sm"
+              alt="receita"
+              src="assets/images/icons/money_transfer.svg"
+              title="Investimentos"
+            />
+          </div>
+          <div class="text-right">
+            <p class="text-uppercase">Ultimo Investimento</p>
+            <h2 class="mb-0">R$<span data-plugin="counterup">300.00</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Categorias</h4>
+          <p class="text-muted">Clique em uma categoria para editá-la</p>
+          <hr />
+        </div>
+        <div class="card-body">
+          <div class="button-list">
+            <button
+              type="button"
+              class="btn btn-primary waves-effect waves-light"
+            >
+              Alimentação
+            </button>
+            <button
+              type="button"
+              class="btn btn-success waves-effect waves-light"
+            >
+              Forragem
+            </button>
+            <button type="button" class="btn btn-info waves-effect waves-light">
+              Rebanho
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning waves-effect waves-light"
+            >
+              Sanidade
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger waves-effect waves-light"
+            >
+              Mão de Obra
+            </button>
+            <button
+              type="button"
+              class="btn btn-purple waves-effect waves-light"
+            >
+              Manutenção
+            </button>
+            <button type="button" class="btn btn-pink waves-effect waves-light">
+              Custos Gerais
+            </button>
+          </div>
+          <hr />
+          <div class="header-title mt-4">
+            <h4>Adicionar Nova Categoria</h4>
+          </div>
+          <div class="mt-3">
+            <form class="form-inline">
+              <div class="form-group mr-2">
+                <label for="nome-categoria" class="mr-2"
+                  >Nome da Categoria</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nome-categoria"
+                  placeholder="Categoria"
+                />
+              </div>
+              <div class="form-group mr-2">
+                <label for="exampleInputEmail2" class="mr-2">Cor</label>
+                <div
+                  class="input-group colorpicker-default"
+                  title="Using format option"
+                >
+                  <input
+                    type="text"
+                    class="form-control input-lg"
+                    value="#000000"
+                  />
+                  <span class="input-group-append">
+                    <span class="input-group-text colorpicker-input-addon"
+                      ><i></i
+                    ></span>
+                  </span>
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary waves-effect waves-light btn-md"
+              >
+                Adicionar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Histórico de Investimentos</h4>
+          <hr />
+        </div>
+        <div class="card-body table-responsive">
+          @@include('./tabelas/financas.html')
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end container-fluid -->

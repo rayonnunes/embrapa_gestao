@@ -36,16 +36,16 @@
                                   <span class="text-center my-3">
                                     <i class="fas fa-home fa-5x"></i>
                                   </span>
-                                  <div class="card-body">
-                                    <h5 class="card-title">Fazenda 1</h5>
-                                    <p><b>Municipio: </b>Porto Velho - RO &emsp;</p>
+                                  <div class="card-body" id="propriedade-card">
+                                    <!-- <h5 class="card-title">Fazenda 1</h5>
+                                    <p><b>Municipio: </b>Porto Velho - RO &emsp;</p> -->
                                   </div>
-                                  <div class="card-footer mx-auto">
+                                  <!-- <div class="card-footer mx-auto">
                                     <a href="dashboard.html" class="btn btn-success btn-lg width-lg btn-rounded ml-3">
                                       Acessar &nbsp;
                                       <i class="fas fa-sign-in-alt"></i>
                                     </a>
-                                  </div>
+                                  </div> -->
                                 </div>
                               </div>
                             </div>
@@ -57,9 +57,9 @@
                                       <i class="fas fa-home fa-5x"></i>
                                       <i class="fas fa-plus fa-2x"></i>
                                     </a-->
-                                    <a href="cadastrar-propriedade.html" class="btn btn-primary btn-lg width-lg btn-rounded ml-3">
+                                    <button href="cadastrar-propriedade.html" class="btn btn-primary btn-lg width-lg btn-rounded ml-3" onclick="adicionarPropriedade()">
                                       <i class="fas fa-plus-circle">&nbsp;</i>
-                                      Nova Propriedade </a>
+                                      Nova Propriedade </button>
                                   </div>
                                   <!--div class="card-footer mx-auto">
                                   </div-->
@@ -91,6 +91,51 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+		
+    		<script src="assets/libs/jquery-steps/jquery.steps.min.js"></script>		
+    		
+    		<script type="text/javascript">
+          function carregarPropriedade() {
+            let id = document.URL.slice(53);
+
+            let url = 'http://localhost/php-getovi/api/propriedade/mostrar/'+id;  
+             //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+            $.ajax({
+              url: url,
+              method: 'GET',      
+              dataType: 'json',
+            }).done(function (res) {
+              console.log(res)
+              if (res.status === 'Sucesso') {      
+                for (let i = 0; i < res.dados.length; i++) {
+                  $('#propriedade-card').prepend(
+                    '<h5 class="card-title">' +
+                      res.dados[i].nome +
+                      '</h5><p><b>Municipio: </b>' +
+                      res.dados[i].municipio +
+                      ' - ' +
+                      res.dados[i].estado +
+                      ' &emsp;</p> <div class="card-footer mx-auto"><a href="dashboard.html" class="btn btn-success btn-lg width-lg btn-rounded ml-3">Acessar &nbsp;<i class="fas fa-sign-in-alt"></i></a></div>'
+                  );        
+                }
+              } else {
+                $('#propriedade-card').prepend(
+                  '<center><p>' + res.dados + '</p></center>'
+                );      
+              }
+            });
+          }
+
+          function adicionarPropriedade(){
+            let id = document.URL.slice(53);
+
+            window.location.href = 'http://localhost:3000/cadastrar-propriedade.html?id='+id
+          }
+
+          carregarPropriedade();  
+        </script>
 
     </body>
 </html>

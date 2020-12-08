@@ -1,0 +1,63 @@
+<form>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="reproducao-rebanho">Tipo de Evento</label>
+        <select
+          id="reproducao-ocorrencia"
+          class="form-control"
+          name="tipo-produto"
+        >
+          <option value="">Selecione</option>
+          <option value="cio">Cio</option>
+          <option value="cobertura">Cobertura</option>
+          <option value="confirmacao-prenhez">Confirmação Prenhez</option>
+          <option value="secagem">Secagem</option>
+          <option value="aborto">Aborto</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="identificaocao-animal"
+          >Identificação do Animal (nome ou nº)</label
+        >
+        <select id="id-registro" class="form-control" name="id-animal">
+          <option value="1">Selecione</option>
+          <option value="animal1">Animal 1</option>
+          <option value="animal2">Animal 2</option>
+          <option value="animal3">Animal 3</option>
+          <option value="animal4">Animal 4</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="data-roubo">Data do Registro</label>
+        <input
+          type="date"
+          id="data-registro"
+          class="form-control"
+          name="data-registro"
+        />
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary btn-lg" type="submit">
+    Adicionar Registro
+  </button>
+
+  <button
+    type="button"
+    class="btn btn-danger btn-lg mr-4"
+    data-dismiss="modal"
+    aria-hidden="true"
+  >
+    Fechar
+  </button>
+</form>

@@ -1,214 +1,177 @@
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a
-      class="nav-link active"
-      id="home-tab"
-      data-toggle="tab"
-      href="#home"
-      role="tab"
-      aria-controls="home"
-      aria-selected="true"
-      >Simplificado</a
-    >
-  </li>
-  <li class="nav-item">
-    <a
-      class="nav-link"
-      id="profile-tab"
-      data-toggle="tab"
-      href="#profile"
-      role="tab"
-      aria-controls="profile"
-      aria-selected="false"
-      >Detalhado</a
-    >
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div
-    class="tab-pane fade show active"
-    id="home"
-    role="tabpanel"
-    aria-labelledby="home-tab"
-  >
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="nascimento-rebanho">Rebanho</label>
-          <select
-            id="nascimento-rebanho"
-            class="form-control"
-            name="tipo-produto"
-          >
-            <option value="1">Ovino Rebanho 1</option>
-            <option value="2">Caprino Rebanho 1</option>
-          </select>
-        </div>
+<form>
+  <div class="row" id="mean-row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="rebanho-nascimento">Rebanho</label>
+        <select
+          id="nascimento-rebanho"
+          class="form-control"
+          name="nasc-rebanho"
+          onchange="addFields()"
+        >
+          <option value="simplificado">Rebanho Simplificado</option>
+          <option value="detalhado">Rebanho Detalhado</option>
+        </select>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="nascimento-rebanho">Tipo de Parto</label>
-          <select
-            id="nascimento-parto"
-            class="form-control"
-            name="tipo-produto"
-          >
-            <option value="simples">Simples</option>
-            <option value="duplo">Duplo</option>
-            <option value="triplo">Triplo</option>
-            <option value="quadruplo">Quádruplo</option>
-          </select>
-        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="nascimento-parto">Tipo de Parto</label>
+        <select id="nascimento-parto" class="form-control" name="tipo-produto">
+          <option value="simples">Simples</option>
+          <option value="duplo">Duplo</option>
+          <option value="triplo">Triplo</option>
+          <option value="quadruplo">Quádruplo</option>
+        </select>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="quantidade-nascimento-cabeca"
-            >Quantidade de Nascimentos</label
-          >
-          <input
-            type="number"
-            id="quantidade-nascimento-cabeca"
-            class="form-control"
-            value=""
-          />
-        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="sexo-nascimento">Sexo</label>
+        <select id="sexo-nascimento" class="form-control" name="tipo-produto">
+          <option value="1">Macho</option>
+          <option value="2">Fêmea</option>
+        </select>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="sexo-compra-cabeca">Sexo</label>
-          <select
-            id="sexo-compra-cabeca"
-            class="form-control"
-            name="tipo-produto"
-          >
-            <option value="1">Macho</option>
-            <option value="2">Fêmea</option>
-          </select>
-        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="peso-nascimento">Peso</label>
+        <input
+          class="form-control"
+          type="number"
+          name="peso-nasc"
+          id="peso-nascimento"
+        />
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="data-nascimento-simp">Data do Parto</label>
-          <input
-            type="date"
-            id="data-nascimento-simp"
-            class="form-control"
-            name="data-nascimento"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-10">
-          <div class="form-group">
-            <label for="unidade-venda-produto">Peso da Cria (kg)</label>
-            <input
-              type="number"
-              id="peso-nascimento-cabeca"
-              class="form-control"
-              value=""
-            />
-          </div>
-        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="data-nascimento-simp">Data do Parto</label>
+        <input
+          type="date"
+          id="data-nascimento-simp"
+          class="form-control"
+          name="data-nascimento"
+        />
       </div>
     </div>
   </div>
-  <div
-    class="tab-pane fade"
-    id="profile"
-    role="tabpanel"
-    aria-labelledby="profile-tab"
+
+  <button class="btn btn-primary btn-lg" type="submit">
+    Adicionar Nascimento
+  </button>
+
+  <button
+    type="button"
+    class="btn btn-danger btn-lg mr-4"
+    data-dismiss="modal"
+    aria-hidden="true"
   >
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="identificacao-cria">Identificação da Cria</label>
-          <input
-            type="text"
-            id="identificacao-cria"
-            class="form-control"
-            value=""
-          />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="nascimento-rebanho-detal">Rebanho</label>
-          <select
-            id="nascimento-rebanho-detal"
-            class="form-control"
-            name="tipo-produto"
-          >
-            <option value="1">Ovino Rebanho 1</option>
-            <option value="2">Caprino Rebanho 1</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="identificacao-matriz">Identificação Matriz</label>
-          <select
-            id="identificacao-matriz"
-            class="form-control"
-            name="tipo-produto"
-          >
-            <option value="1">Matriz 1</option>
-            <option value="2">Matriz 2</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="identificacao-reprodutor">Identificação Reprodutor</label>
-          <select
-            id="identificacao-reprodutor"
-            class="form-control"
-            name="tipo-produto"
-          >
-            <option value="1">Reprodutor 1</option>
-            <option value="2">Reprodutor 2</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="nascimento-rebanho">Tipo de Parto</label>
-          <select
-            id="nascimento-parto"
-            class="form-control"
-            name="tipo-produto"
-          >
-            <option value="simples">Simples</option>
-            <option value="duplo">Duplo</option>
-            <option value="triplo">Triplo</option>
-            <option value="quadruplo">Quádruplo</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="sexo-compra-cabeca">Sexo</label>
-          <select
-            id="sexo-compra-cabeca"
-            class="form-control"
-            name="tipo-produto"
-          >
-            <option value="1">Macho</option>
-            <option value="2">Fêmea</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="data-nascimento-simp">Data</label>
-          <input
-            type="date"
-            id="data-nascimento-simp"
-            class="form-control"
-            name="data-nascimento"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <button type="button" class="btn btn-primary">Ok</button>
-</div>
+    Fechar
+  </button>
+</form>
+
+<script type="text/javascript">
+  function addFields() {
+    let selectedValue = document.getElementById('nascimento-rebanho').value;
+    let row = document.getElementById('mean-row');
+
+    let col1 = document.createElement('div');
+    col1.className = 'col-md-6';
+    col1.id = 'group-nascimento1';
+    let col2 = document.createElement('div');
+    col2.className = 'col-md-6';
+    col2.id = 'group-nascimento2';
+    let col3 = document.createElement('div');
+    col3.className = 'col-md-6';
+    col3.id = 'group-nascimento3';
+
+    let formGroup1 = document.createElement('div');
+    formGroup1.className = 'form-group';
+
+    let formGroup2 = document.createElement('div');
+    formGroup2.className = 'form-group';
+
+    let formGroup3 = document.createElement('div');
+    formGroup3.className = 'form-group';
+
+    if (selectedValue === 'simplificado') {
+      let child1 = document.getElementById('group-nascimento1');
+      let child2 = document.getElementById('group-nascimento2');
+      let child3 = document.getElementById('group-nascimento3');
+
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+      child3.parentNode.removeChild(child3);
+    } else if (selectedValue === 'detalhado') {
+      var labelMatriz = document.createElement('label');
+      labelMatriz.innerText = 'Matriz';
+
+      var inputMatriz = document.createElement('select');
+      inputMatriz.className = 'form-control';
+
+      var optionMatriz1 = document.createElement('option');
+      optionMatriz1.innerText = 'Matriz 1';
+      var optionMatriz2 = document.createElement('option');
+      optionMatriz2.innerText = 'Matriz 2';
+      var optionMatriz3 = document.createElement('option');
+      optionMatriz3.innerText = 'Matriz 3';
+      var optionMatriz4 = document.createElement('option');
+      optionMatriz4.innerText = 'Matriz 4';
+
+      var labelReprodutor = document.createElement('label');
+      labelReprodutor.innerText = 'Reprodutor';
+
+      var inputReprodutor = document.createElement('select');
+      inputReprodutor.className = 'form-control';
+
+      var optionReprodutor1 = document.createElement('option');
+      optionReprodutor1.innerText = 'Reprodutor 1';
+      var optionReprodutor2 = document.createElement('option');
+      optionReprodutor2.innerText = 'Reprodutor 2';
+      var optionReprodutor3 = document.createElement('option');
+      optionReprodutor3.innerText = 'Reprodutor 3';
+      var optionReprodutor4 = document.createElement('option');
+      optionReprodutor4.innerText = 'Reprodutor 4';
+      var optionReprodutor5 = document.createElement('option');
+      optionReprodutor5.innerText = 'Desconhecido';
+
+      var labelCria = document.createElement('label');
+      labelCria.innerText = 'Identificação Cria';
+
+      var inputCria = document.createElement('input');
+      inputCria.className = 'form-control';
+
+      inputMatriz.appendChild(optionMatriz1);
+      inputMatriz.appendChild(optionMatriz2);
+      inputMatriz.appendChild(optionMatriz3);
+      inputMatriz.appendChild(optionMatriz4);
+
+      formGroup1.appendChild(labelMatriz);
+      formGroup1.appendChild(inputMatriz);
+
+      col1.appendChild(formGroup1);
+
+      inputReprodutor.appendChild(optionReprodutor1);
+      inputReprodutor.appendChild(optionReprodutor2);
+      inputReprodutor.appendChild(optionReprodutor3);
+      inputReprodutor.appendChild(optionReprodutor4);
+      inputReprodutor.appendChild(optionReprodutor5);
+
+      formGroup2.appendChild(labelReprodutor);
+      formGroup2.appendChild(inputReprodutor);
+
+      col2.appendChild(formGroup2);
+
+      formGroup3.appendChild(labelCria);
+      formGroup3.appendChild(inputCria);
+
+      col3.appendChild(formGroup3);
+
+      row.appendChild(col1);
+      row.appendChild(col2);
+      row.appendChild(col3);
+    }
+  }
+</script>

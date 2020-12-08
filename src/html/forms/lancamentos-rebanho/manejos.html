@@ -1,0 +1,504 @@
+<form>
+  <div class="row" id="manejo-row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="rebanho-manejo">Rebanho</label>
+        <select
+          id="manejo-rebanho"
+          class="form-control"
+          name="tipo-produto"
+          onchange="addCampos()"
+        >
+          <option value="simplificado">Rebanho Simplificado</option>
+          <option value="detalhado">Rebanho Detalhado</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group" id="form-tipo-manejo">
+        <label for="tipo-manejo" id="label-tipo-manejo">Tipo de Manejo</label>
+        <select
+          id="manejo-ocorrencia"
+          class="form-control"
+          name="tipo-produto"
+          onchange="addCampos()"
+        >
+          <option value="">Selecione</option>
+          <option value="casqueamento">Casqueamento</option>
+          <option value="vacinação">Vacinação</option>
+          <option value="vermifugação">Vermifugação</option>
+          <option value="descarte">Descarte</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group" id="form-group-manejo1">
+        <label for="categoria-manejo" id="element1-manejo">Categoria</label>
+        <select id="element2-manejo" class="form-control" name="tipo-produto">
+          <option value="matriz">Matriz</option>
+          <option value="reprodutor">Reprodutor</option>
+          <option value="femeaJovem">Fêmea Jovem</option>
+          <option value="machoJovem">Macho Jovem</option>
+          <option value="femeaLactacao">Fêmea em Lactação</option>
+          <option value="machoLactacao">Macho em Lactação</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="data-manejo">Data Manejo</label>
+        <input
+          type="date"
+          id="data-manejo"
+          class="form-control"
+          name="data-registro"
+        />
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary btn-lg" type="submit">Adicionar Manejo</button>
+
+  <button
+    type="button"
+    class="btn btn-danger btn-lg mr-4"
+    data-dismiss="modal"
+    aria-hidden="true"
+  >
+    Fechar
+  </button>
+</form>
+
+<script type="text/javascript">
+  function addCampos() {
+    let selectedValue = document.getElementById('manejo-ocorrencia').value;
+    let selectedRebanho = document.getElementById('manejo-rebanho').value;
+
+    let row = document.getElementById('manejo-row');
+
+    let formGroup1 = document.getElementById('form-group-manejo1');
+
+    let col1 = document.createElement('div');
+    col1.className = 'col-md-6';
+    col1.id = 'div1-manejo';
+
+    let formGroup2 = document.createElement('div');
+    formGroup2.className = 'form-group';
+    formGroup2.id = 'form-group-manejo2';
+
+    let formGroupTipo = document.getElementById('form-tipo-manejo');
+
+    if (selectedRebanho === 'detalhado') {
+      let child4 = document.getElementById('manejo-ocorrencia');
+
+      child4.parentNode.removeChild(child4);
+
+      let selectTipo = document.createElement('select');
+      selectTipo.className = 'form-control';
+      selectTipo.id = 'manejo-ocorrencia';
+      selectTipo.setAttribute('onchange', 'addCampos()');
+      //selectTipo.onchange(addCampos());
+
+      let selectedOption = document.createElement('option');
+      selectedOption.innerText = selectedValue;
+
+      let manejoTipo1 = document.createElement('option');
+      manejoTipo1.innerText = 'Pesagem Leite';
+      manejoTipo1.value = 'pesagem leite';
+
+      let manejoTipo2 = document.createElement('option');
+      manejoTipo2.innerText = 'Pesagem Animal';
+      manejoTipo2.value = 'pesagem animal';
+
+      let manejoTipo3 = document.createElement('option');
+      manejoTipo3.innerText = 'Vacinação';
+      manejoTipo3.value = 'vacinação';
+
+      let manejoTipo4 = document.createElement('option');
+      manejoTipo4.innerText = 'Vermifugação';
+      manejoTipo4.value = 'vermifugação';
+
+      let manejoTipo5 = document.createElement('option');
+      manejoTipo5.innerText = 'Casqueamento';
+      manejoTipo5.value = 'casqueamento';
+
+      let manejoTipo6 = document.createElement('option');
+      manejoTipo6.innerText = 'Descarte';
+      manejoTipo6.value = 'descarte';
+
+      selectTipo.appendChild(selectedOption);
+      selectTipo.appendChild(manejoTipo1);
+      selectTipo.appendChild(manejoTipo2);
+      selectTipo.appendChild(manejoTipo3);
+      selectTipo.appendChild(manejoTipo4);
+      selectTipo.appendChild(manejoTipo5);
+      selectTipo.appendChild(manejoTipo6);
+
+      formGroupTipo.appendChild(selectTipo);
+
+      if (
+        selectedValue === 'pesagem animal' ||
+        selectedValue === 'pesagem leite' ||
+        selectedValue === 'descarte'
+      ) {
+        let child1 = document.getElementById('element1-manejo');
+        let child2 = document.getElementById('element2-manejo');
+        let child3 = document.getElementById('div1-manejo');
+
+        child1.parentNode.removeChild(child1);
+        child2.parentNode.removeChild(child2);
+
+        if (child3) {
+          child3.parentNode.removeChild(child3);
+        }
+
+        let labelPesagem = document.createElement('label');
+        labelPesagem.innerText = 'Pesagem (Kg)';
+        labelPesagem.id = 'element3-manejo';
+
+        let inputPesagem = document.createElement('input');
+        inputPesagem.className = 'form-control';
+        inputPesagem.id = 'element4-manejo';
+
+        let labelIdentificacao = document.createElement('label');
+        labelIdentificacao.innerText = 'Identificação do Animal (nome ou nº)';
+        labelIdentificacao.id = 'element1-manejo';
+
+        let inputIdentificacao = document.createElement('input');
+        inputIdentificacao.className = 'form-control';
+        inputIdentificacao.id = 'element2-manejo';
+
+        formGroup1.appendChild(labelIdentificacao);
+        formGroup1.appendChild(inputIdentificacao);
+        formGroup2.appendChild(labelPesagem);
+        formGroup2.appendChild(inputPesagem);
+
+        col1.appendChild(formGroup2);
+
+        row.appendChild(col1);
+      } else if (selectedValue === 'casqueamento') {
+        let child1 = document.getElementById('element1-manejo');
+        let child2 = document.getElementById('element2-manejo');
+        let child3 = document.getElementById('div1-manejo');
+
+        child1.parentNode.removeChild(child1);
+        child2.parentNode.removeChild(child2);
+
+        if (child3) {
+          child3.parentNode.removeChild(child3);
+        }
+
+        let labelObservation = document.createElement('label');
+        labelObservation.innerText = 'Observações';
+        labelObservation.id = 'element1-manejo';
+
+        let textObservation = document.createElement('textarea');
+        textObservation.rows = '8';
+        textObservation.className = 'form-control';
+        textObservation.id = 'element2-manejo';
+
+        formGroup1.appendChild(labelObservation);
+        formGroup1.appendChild(textObservation);
+      }
+    } else if (selectedRebanho === 'simplificado') {
+      let child4 = document.getElementById('manejo-ocorrencia');
+
+      child4.parentNode.removeChild(child4);
+
+      let selectTipo = document.createElement('select');
+      selectTipo.className = 'form-control';
+      selectTipo.id = 'manejo-ocorrencia';
+      // selectTipo.onchange = 'addCampos()';
+      selectTipo.setAttribute('onchange', 'addCampos()');
+
+      let selectedOption = document.createElement('option');
+      selectedOption.innerText = selectedValue;
+
+      let manejoTipo3 = document.createElement('option');
+      manejoTipo3.innerText = 'Vacinação';
+      manejoTipo3.value = 'vacinação';
+
+      let manejoTipo4 = document.createElement('option');
+      manejoTipo4.innerText = 'Vermifugação';
+      manejoTipo4.value = 'vermifugação';
+
+      let manejoTipo5 = document.createElement('option');
+      manejoTipo5.innerText = 'Casqueamento';
+      manejoTipo5.value = 'casqueamento';
+
+      let manejoTipo6 = document.createElement('option');
+      manejoTipo6.innerText = 'Descarte';
+      manejoTipo6.value = 'descarte';
+
+      selectTipo.appendChild(selectedOption);
+      selectTipo.appendChild(manejoTipo3);
+      selectTipo.appendChild(manejoTipo4);
+      selectTipo.appendChild(manejoTipo5);
+      selectTipo.appendChild(manejoTipo6);
+
+      formGroupTipo.appendChild(selectTipo);
+
+      if (selectedValue === 'descarte') {
+        let child1 = document.getElementById('element1-manejo');
+        let child2 = document.getElementById('element2-manejo');
+        let child3 = document.getElementById('div1-manejo');
+
+        child1.parentNode.removeChild(child1);
+        child2.parentNode.removeChild(child2);
+
+        if (child3) {
+          child3.parentNode.removeChild(child3);
+        }
+
+        let labelQtd = document.createElement('label');
+        labelQtd.innerText = 'Qtd de Descartados';
+
+        let inputQtd = document.createElement('input');
+        inputQtd.className = 'form-control';
+        inputQtd.type = 'number';
+
+        let labelCategory = document.createElement('label');
+        labelCategory.innerText = 'Categoria';
+        labelCategory.id = 'element1-manejo';
+
+        let selectCategory = document.createElement('select');
+        selectCategory.className = 'form-control';
+        selectCategory.id = 'element2-manejo';
+
+        let optionCategory1 = document.createElement('option');
+        let optionCategory2 = document.createElement('option');
+        let optionCategory3 = document.createElement('option');
+        let optionCategory4 = document.createElement('option');
+        let optionCategory5 = document.createElement('option');
+        let optionCategory6 = document.createElement('option');
+
+        optionCategory1.innerText = 'Matriz';
+        optionCategory1.value = 'Matriz';
+        optionCategory2.innerText = 'Reprodutor';
+        optionCategory2.value = 'Reprodutor';
+        optionCategory3.innerText = 'Fêmea Jovem';
+        optionCategory3.value = 'femea_jovem';
+        optionCategory4.innerText = 'Macho Jovem';
+        optionCategory4.value = 'macho_jovem';
+        optionCategory5.innerText = 'Fêmea em Lactação';
+        optionCategory5.value = 'femea_lactacao';
+        optionCategory6.innerText = 'Macho em Lactação';
+        optionCategory6.value = 'macho_lactacao';
+
+        selectCategory.appendChild(optionCategory1);
+        selectCategory.appendChild(optionCategory2);
+        selectCategory.appendChild(optionCategory3);
+        selectCategory.appendChild(optionCategory4);
+        selectCategory.appendChild(optionCategory5);
+        selectCategory.appendChild(optionCategory6);
+
+        formGroup1.appendChild(labelCategory);
+        formGroup1.appendChild(selectCategory);
+        formGroup2.appendChild(labelQtd);
+        formGroup2.appendChild(inputQtd);
+
+        col1.appendChild(formGroup2);
+
+        row.appendChild(col1);
+      } else if (selectedValue === 'casqueamento') {
+        let child1 = document.getElementById('element1-manejo');
+        let child2 = document.getElementById('element2-manejo');
+        let child3 = document.getElementById('div1-manejo');
+
+        child1.parentNode.removeChild(child1);
+        child2.parentNode.removeChild(child2);
+
+        if (child3) {
+          child3.parentNode.removeChild(child3);
+        }
+
+        let labelObservation = document.createElement('label');
+        labelObservation.innerText = 'Observações';
+        labelObservation.id = 'element1-manejo';
+
+        let textObservation = document.createElement('textarea');
+        textObservation.rows = '8';
+        textObservation.className = 'form-control';
+
+        let labelCategory = document.createElement('label');
+        labelCategory.innerText = 'Categoria';
+        labelCategory.id = 'element1-manejo';
+
+        let selectCategory = document.createElement('select');
+        selectCategory.className = 'form-control';
+        selectCategory.id = 'element2-manejo';
+
+        let optionCategory1 = document.createElement('option');
+        let optionCategory2 = document.createElement('option');
+        let optionCategory3 = document.createElement('option');
+        let optionCategory4 = document.createElement('option');
+        let optionCategory5 = document.createElement('option');
+        let optionCategory6 = document.createElement('option');
+
+        optionCategory1.innerText = 'Matriz';
+        optionCategory1.value = 'Matriz';
+        optionCategory2.innerText = 'Reprodutor';
+        optionCategory2.value = 'Reprodutor';
+        optionCategory3.innerText = 'Fêmea Jovem';
+        optionCategory3.value = 'femea_jovem';
+        optionCategory4.innerText = 'Macho Jovem';
+        optionCategory4.value = 'macho_jovem';
+        optionCategory5.innerText = 'Fêmea em Lactação';
+        optionCategory5.value = 'femea_lactacao';
+        optionCategory6.innerText = 'Macho em Lactação';
+        optionCategory6.value = 'macho_lactacao';
+
+        selectCategory.appendChild(optionCategory1);
+        selectCategory.appendChild(optionCategory2);
+        selectCategory.appendChild(optionCategory3);
+        selectCategory.appendChild(optionCategory4);
+        selectCategory.appendChild(optionCategory5);
+        selectCategory.appendChild(optionCategory6);
+
+        formGroup1.appendChild(labelCategory);
+        formGroup1.appendChild(selectCategory);
+        formGroup2.appendChild(labelObservation);
+        formGroup2.appendChild(textObservation);
+
+        col1.appendChild(formGroup2);
+
+        row.appendChild(col1);
+      }
+    }
+    if (selectedValue === 'vacinação') {
+      let child1 = document.getElementById('element1-manejo');
+      let child2 = document.getElementById('element2-manejo');
+      let child3 = document.getElementById('div1-manejo');
+
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+
+      if (child3) {
+        child3.parentNode.removeChild(child3);
+      }
+
+      let labelTipo = document.createElement('label');
+      labelTipo.innerText = 'Tipo';
+      labelTipo.id = 'element1-manejo';
+
+      let selectTipo = document.createElement('select');
+      selectTipo.className = 'form-control';
+      selectTipo.id = 'element2-manejo';
+
+      let optionTipo1 = document.createElement('option');
+      let optionTipo2 = document.createElement('option');
+      let optionTipo3 = document.createElement('option');
+
+      optionTipo1.innerText = 'Clostridiose';
+      optionTipo1.value = 'clostridiose';
+      optionTipo2.innerText = 'Raiva';
+      optionTipo2.value = 'raiva';
+      optionTipo3.innerText = 'Tipo 3';
+      optionTipo3.value = 'tipo3';
+
+      selectTipo.appendChild(optionTipo1);
+      selectTipo.appendChild(optionTipo2);
+      selectTipo.appendChild(optionTipo3);
+
+      let labelCategory = document.createElement('label');
+      labelCategory.innerText = 'Categoria';
+
+      let selectCategory = document.createElement('select');
+      selectCategory.className = 'form-control';
+
+      let optionCategory1 = document.createElement('option');
+      let optionCategory2 = document.createElement('option');
+      let optionCategory3 = document.createElement('option');
+      let optionCategory4 = document.createElement('option');
+      let optionCategory5 = document.createElement('option');
+      let optionCategory6 = document.createElement('option');
+
+      optionCategory1.innerText = 'Matriz';
+      optionCategory1.value = 'Matriz';
+      optionCategory2.innerText = 'Reprodutor';
+      optionCategory2.value = 'Reprodutor';
+      optionCategory3.innerText = 'Fêmea Jovem';
+      optionCategory3.value = 'femea_jovem';
+      optionCategory4.innerText = 'Macho Jovem';
+      optionCategory4.value = 'macho_jovem';
+      optionCategory5.innerText = 'Fêmea em Lactação';
+      optionCategory5.value = 'femea_lactacao';
+      optionCategory6.innerText = 'Macho em Lactação';
+      optionCategory6.value = 'macho_lactacao';
+
+      selectCategory.appendChild(optionCategory1);
+      selectCategory.appendChild(optionCategory2);
+      selectCategory.appendChild(optionCategory3);
+      selectCategory.appendChild(optionCategory4);
+      selectCategory.appendChild(optionCategory5);
+      selectCategory.appendChild(optionCategory6);
+
+      formGroup1.appendChild(labelTipo);
+      formGroup1.appendChild(selectTipo);
+      formGroup2.appendChild(labelCategory);
+      formGroup2.appendChild(selectCategory);
+
+      col1.appendChild(formGroup2);
+
+      row.appendChild(col1);
+    }
+    if (selectedValue === 'vermifugação') {
+      let child1 = document.getElementById('element1-manejo');
+      let child2 = document.getElementById('element2-manejo');
+      let child3 = document.getElementById('div1-manejo');
+
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+
+      if (child3) {
+        child3.parentNode.removeChild(child3);
+      }
+
+      let labelTipo = document.createElement('label');
+      labelTipo.innerText = 'Tipo';
+      labelTipo.id = 'element1-manejo';
+
+      let inputTipo = document.createElement('input');
+      inputTipo.className = 'form-control';
+      inputTipo.id = 'element2-manejo';
+
+      let labelCategory = document.createElement('label');
+      labelCategory.innerText = 'Categoria';
+
+      let selectCategory = document.createElement('select');
+      selectCategory.className = 'form-control';
+
+      let optionCategory1 = document.createElement('option');
+      let optionCategory2 = document.createElement('option');
+      let optionCategory3 = document.createElement('option');
+      let optionCategory4 = document.createElement('option');
+
+      optionCategory1.innerText = 'Matriz';
+      optionCategory1.value = 'Matriz';
+      optionCategory2.innerText = 'Reprodutor';
+      optionCategory2.value = 'Reprodutor';
+      optionCategory3.innerText = 'Fêmea Jovem';
+      optionCategory3.value = 'femea_jovem';
+      optionCategory4.innerText = 'Macho Jovem';
+      optionCategory4.value = 'macho_jovem';
+
+      selectCategory.appendChild(optionCategory1);
+      selectCategory.appendChild(optionCategory2);
+      selectCategory.appendChild(optionCategory3);
+      selectCategory.appendChild(optionCategory4);
+
+      formGroup1.appendChild(labelTipo);
+      formGroup1.appendChild(inputTipo);
+
+      formGroup2.appendChild(labelCategory);
+      formGroup2.appendChild(selectCategory);
+
+      col1.appendChild(formGroup2);
+
+      row.appendChild(col1);
+    }
+  }
+</script>
+
+<!-- Obs: Ainda falta fazer o manejo para o rebanho simplificado -->

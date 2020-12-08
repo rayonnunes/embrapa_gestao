@@ -1,44 +1,421 @@
 <form>
   <div class="row">
     <div class="col-md-12">
+      <label for="fazenda"><h4>Fazenda 1</h4></label>
+    </div>
+    <div class="col-md-6">
       <div class="form-group">
-        <label for="propriedade">Propriedade</label>
-        <select type="text" id="propriedade" class="form-control select2" value="">
-          <option value="1" selected>Fazenda 1</option>
-          <option value="2">Fazenda 2</option>
-          <option value="3">Fazenda 3</option>
-          <option value="4">Fazenda 4</option>
+        <label for="categoria-investimento">Itens de Investimento</label>
+        <select
+          type="text"
+          id="categoria-investimento"
+          class="form-control select2"
+          value=""
+        >
+          <option>Selecione</option>
+          <optgroup label="Benfeitorias">
+            <option value="ACUD">Açudes ou Barragens</option>
+            <option value="BEBA">Bebedouro de Alvenaria</option>
+            <option value="BEBT">Bebedouro de Tambor/Pneu</option>
+            <option value="CERC">Cercas</option>
+            <option value="CXDA">Caixa d'água</option>
+            <option value="CASS">Casa de Sede</option>
+            <option value="CASE">Casa de Empregados</option>
+            <option value="CIST">Cisterna</option>
+            <option value="COCH">Cocho</option>
+            <option value="COCT">Cocho de Tambor/Pneu</option>
+            <option value="CURO">Curral p/ Ovinos e Caprinos</option>
+            <option value="CURR">Curral</option>
+            <option value="ESTQ">Esterqueira</option>
+            <option value="ESTR">Estrada</option>
+            <option value="GALP">Galpão</option>
+            <option value="MATB">Mataburro</option>
+            <option value="POCP">
+              Poço Profundo: Artesiano, Semi-artesiano ou Tubular
+            </option>
+            <option value="POCR">
+              Poço Raso: Cisterna, Cacimbão ou Aluvião
+            </option>
+            <option value="PONT">Ponte</option>
+            <option value="PORT">Porteira</option>
+            <option value="REDM">Rede Elétrica Monofásica</option>
+            <option value="REDT">Rede Elétrica Trifásica</option>
+            <option value="REDH">Rede Hidráulica</option>
+            <option value="RODD">Roda D'água</option>
+            <option value="SALO">Sala de Ordenha</option>
+            <option value="SALE">Saleiros</option>
+            <option value="SALT">Saleiros de Tambor/Pneu</option>
+            <option value="SILO">Silo</option>
+          </optgroup>
+
+          <optgroup label="Equipamento/Veículos">
+            <option value="TRAT">Trator</option>
+            <option value="IMPL">Implementos</option>
+            <option value="ROCM">Roçadeira Manual</option>
+            <option value="CARB">Carro de Boi</option>
+            <option value="CARR">Caroças</option>
+            <option value="TRIT">
+              Triturador, Picadeira, Forrageira ou Desintegrador
+            </option>
+            <option value="ARRE">Arreios ou Selaria</option>
+            <option value="FERR">Ferramentas</option>
+            <option value="BOMB">Bombas D'água</option>
+            <option value="GERA">Gerador de Energia</option>
+            <option value="MTSR">Motosserra</option>
+            <option value="PISV">Pistola de Vacinação</option>
+            <option value="PULV">Pulverizador Costal</option>
+            <option value="BTJS">Botijão de Sêmen</option>
+            <option value="TAMBL">Tambor de Leite</option>
+            <option value="ORDB">Ordenha - Balde ao pé (conjunto)</option>
+            <option value="ORDM">Ordenha Mecânica (conjunto)</option>
+            <option value="TNXP">Tanque de Expansão</option>
+            <option value="RESL">Resfriador de Leite</option>
+            <option value="LAVJ">Lavadora à Jato</option>
+            <option value="BALN">Balança</option>
+            <option value="ANTN">Antena</option>
+            <option value="TELF">Telefone</option>
+            <option value="CAMN">Caminhonete</option>
+            <option value="CARL">Carro Leve</option>
+            <option value="MOTO">Moto</option>
+            <option value="CMAO">Caminhão</option>
+            <option value="TQCB">Tanque de Combustível</option>
+            <option value="MTBB">Motobomba</option>
+            <option value="MTOR">Motor</option>
+            <option value="KTOR">Kit de Ordenha</option>
+          </optgroup>
+          <optgroup label="Animais de Trabalho">
+            <option value="CAVL">Cavalos (Equinos)</option>
+            <option value="ASNN">Jumentos (Asininos)</option>
+            <option value="BOVN">Bois (Bovinos)</option>
+            <option value="MUAR">Burros (Muares)</option>
+            <option value="CAES">Cães (Caninos)</option>
+          </optgroup>
+          <option value="outro">Outro</option>
         </select>
       </div>
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label for="atividade-associada">Atividade Associada</label>
-        <select type="text" id="atividade-associada" class="form-control select2" value="">
-          <option></option>
-          <option value="1">Ovinos</option>
-          <option value="2">Caprinos</option>
-        </select>
+        <p>
+          <a
+            class="btn btn-primary"
+            data-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            Atividade Associada
+          </a>
+        </p>
+
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <div class="atividades-exercidas mb-4">
+              <label>Divisão da Propriedade: </label>
+              <div class="col-md-12 pr-0">
+                <div
+                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                >
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="check-atividade-ovinos"
+                        checked
+                      />
+                      <label
+                        class="custom-control-label"
+                        for="check-atividade-ovinos"
+                        >Criação de Ovinos</label
+                      >
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          id="inv-areaCriacao-ovinos"
+                          value="1.3"
+                        />
+                        <div class="input-group-append">
+                          <div class="input-group-append">
+                            <span
+                              class="input-group-text bg-primary text-white b-0"
+                              >%</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 pr-0">
+                <div
+                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                >
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="inv-atividade-caprinos"
+                        checked
+                      />
+                      <label
+                        class="custom-control-label"
+                        for="check-atividade-caprinos"
+                        >Criação de Caprinos</label
+                      >
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          id="inv-areaCriacao-caprinos"
+                          value="2.1"
+                        />
+                        <div class="input-group-append">
+                          <span
+                            class="input-group-text bg-primary text-white b-0"
+                            >%</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 pr-0">
+                <div
+                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                >
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="inv-pastagem-nativa"
+                        checked
+                      />
+                      <label
+                        class="custom-control-label"
+                        for="check-atividade-pastagem-nativa"
+                        >Pastagem Nativa</label
+                      >
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          id="inv-areaPastagem-nativa"
+                          value="3.0"
+                        />
+                        <div class="input-group-append">
+                          <div class="input-group-append">
+                            <span
+                              class="input-group-text bg-primary text-white b-0"
+                              >%</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 pr-0">
+                <div
+                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                >
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="inv-pastagem-cultivada"
+                      />
+                      <label
+                        class="custom-control-label"
+                        for="check-atividade-pastagem-cultivada"
+                        >Pastagem Cultivada</label
+                      >
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          id="inv-areaPastagem-cultivada"
+                          placeholder="Área"
+                          disabled
+                        />
+                        <div class="input-group-append">
+                          <div class="input-group-append">
+                            <span
+                              class="input-group-text bg-primary text-white b-0"
+                              >%</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 pr-0">
+                <div
+                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                >
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="inv-cultivo-agricola1"
+                      />
+                      <label
+                        class="custom-control-label"
+                        for="inv-cultivo-agricola"
+                        >Cultivo Agrícola (não Forrageiro)</label
+                      >
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          id="inv-cultivo-agricola2"
+                          placeholder="Área"
+                          disabled
+                        />
+                        <div class="input-group-append">
+                          <div class="input-group-append">
+                            <span
+                              class="input-group-text bg-primary text-white b-0"
+                              >%</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 pr-0">
+                <div
+                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                >
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="inv-atividade-reserva"
+                        checked
+                      />
+                      <label
+                        class="custom-control-label"
+                        for="check-atividade-reserva"
+                        >Área de Reserva</label
+                      >
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          id="inv-area-reserva"
+                          value="0.7"
+                        />
+                        <div class="input-group-append">
+                          <div class="input-group-append">
+                            <span
+                              class="input-group-text bg-primary text-white b-0"
+                              >%</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 pr-0">
+                <div
+                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                >
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="inv-benfeitorias"
+                        checked
+                      />
+                      <label
+                        class="custom-control-label"
+                        for="check-atividade-benfeitorias"
+                        >Área de Benfeitorias (Casas, açudes e etc.)</label
+                      >
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          id="inv-area-benfeitorias"
+                          value="0.2"
+                        />
+                        <div class="input-group-append">
+                          <div class="input-group-append">
+                            <span
+                              class="input-group-text bg-primary text-white b-0"
+                              >%</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          <a href="../cadastrar-propriedade.html" class="btn btn-link"
+            >Adicionar Atividade Associada</a
+          >
+        </p>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <label for="data-despesa">Data do Investimento</label>
-        <input id="data-despesa" type="text" class="form-control" placeholder="dd/mm/yyyy" data-provide="datepicker" data-date-autoclose="true">
+        <label for="data-investimento">Data do Investimento</label>
+        <input
+          id="data-investimento"
+          type="text"
+          class="form-control"
+          placeholder="dd/mm/yyyy"
+          data-provide="datepicker"
+          data-date-autoclose="true"
+        />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label for="categoria-despesa">Categoria de Investimento</label>
-        <select type="text" id="categoria-despesa" class="form-control select2" value="">
-          <option></option>
-          <option value="1">Investimento 1</option>
-          <option value="2">Investimento 2</option>
-          <option value="3">Investimento 3</option>
-          <option value="4">Investimento 4</option>
-        </select>
+        <label for="vida-util-investimento">Vida Útil (anos)</label>
+        <div class="input-group">
+          <input id="vida-util-investimento" type="text" class="form-control" />
+        </div>
       </div>
     </div>
   </div>
@@ -47,15 +424,12 @@
       <div class="form-group">
         <label for="quantidade-investimento">Quantidade</label>
         <div class="input-group">
-          <input class="form-control" type="number" id="quantidade-investimento" placeholder="10">
-          <div class="input-group-append">
-            <select class="form-control select2" name="select-unidade-investimento">
-              <option value="1">KG</option>
-              <option value="2">@</option>
-              <option value="3">Ton</option>
-              <option value="4">Unidade(s)</option>
-            </select>
-          </div>
+          <input
+            class="form-control"
+            type="number"
+            id="quantidade-investimento"
+            placeholder="10"
+          />
         </div>
       </div>
     </div>
@@ -66,7 +440,14 @@
           <div class="input-group-prepend">
             <span class="input-group-text bg-primary text-white b-0">R$</span>
           </div>
-          <input id="valor-investimento" type="text" class="form-control" data-toggle="input-mask" data-mask-format="000.000.000.000.000,00" data-reverse="true">
+          <input
+            id="valor-investimento"
+            type="text"
+            class="form-control"
+            data-toggle="input-mask"
+            data-mask-format="000.000.000.000.000,00"
+            data-reverse="true"
+          />
         </div>
       </div>
     </div>
@@ -74,11 +455,20 @@
   <div class="row">
     <div class="col-md-12">
       <div class="form-group">
-        <label for="descricao-despesa">Descrição</label>
-        <textarea rows="8" id="descricao-despesa" class="form-control" value=""></textarea>
+        <label for="descricao-investimento">Descrição</label>
+        <textarea
+          rows="8"
+          id="descricao-investimento"
+          class="form-control"
+          value=""
+        ></textarea>
       </div>
     </div>
   </div>
-  <button class="btn btn-primary btn-lg float-right" type="submit">Adicionar Investimento</button>
-  <button class="btn btn-danger btn-lg float-right mr-4" type="reset">Limpar Campos</button>
+  <button class="btn btn-primary btn-lg float-right" type="submit">
+    Adicionar Investimento
+  </button>
+  <button class="btn btn-danger btn-lg float-right mr-4" type="reset">
+    Limpar Campos
+  </button>
 </form>

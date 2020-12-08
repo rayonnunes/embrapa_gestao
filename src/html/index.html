@@ -44,10 +44,12 @@
                 </a>
               </div>
 
-              <form action="selecionar-propriedade.html">
+              <!-- <form id="form-login"> -->
+              <form action="http://localhost:80/php-getovi/api/login.php" method="POST" id="form_login">
                 <div class="form-group mb-3">
                   <label for="emailaddress">Email</label>
                   <input
+                    name="email"
                     class="form-control"
                     type="email"
                     id="emailaddress"
@@ -62,6 +64,7 @@
                 <div class="form-group mb-3">
                   <label for="password">Senha</label>
                   <input
+                    name="password"
                     class="form-control"
                     type="password"
                     id="password"
@@ -123,5 +126,35 @@
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+	
+	 <script src="assets/libs/jquery-steps/jquery.steps.min.js"></script>		
+
+	<!-- <script>
+		$('#form_login').submit(function (event){						
+			let email = $('#emailaddress').val()
+			let password = $('#password').val()
+			
+			$.ajax({
+				url: 'http://localhost/php-getovi/api/login2.php/',
+				method: 'POST',
+				data: { email: email, password: password },
+				dataType: 'json',
+			  }).done(function (res) {
+          
+  				console.log(res)
+  				 for (let i = 0; i < res.dados.length; i++) {
+  				  $('#propriedade-card').prepend(
+  					'<h5 class="card-title">' +
+  					  res.dados[i].nome +
+  					  '</h5><p><b>Municipio: </b>' +
+  					  res.dados[i].municipio +
+  					  ' - ' +
+  					  res.dados[i].estado +
+  					  ' &emsp;</p>'
+  				  );
+  				}
+			  })
+		})
+	</script> -->
   </body>
 </html>

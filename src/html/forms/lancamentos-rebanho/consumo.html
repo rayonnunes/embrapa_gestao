@@ -1,22 +1,31 @@
-<div class="tab-content" id="myTabContent">
-  <div class="row">
+<form>
+  <div class="row" id="row-consumo">
     <div class="col-md-6">
       <div class="form-group">
         <label for="consumo-rebanho">Rebanho</label>
-        <select id="consumo-rebanho" class="form-control" name="tipo-produto">
-          <option value="1">Ovino Rebanho 1</option>
-          <option value="2">Caprino Rebanho 1</option>
+        <select
+          id="consumo-rebanho"
+          class="form-control"
+          name="tipo-produto"
+          onchange="addCamposConsumo()"
+        >
+          <option value="simplificado">Rebanho Simplificado</option>
+          <option value="detalhado">Rebanho Detalhado</option>
         </select>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="form-group">
-        <label for="nascimento-rebanho">Categoria</label>
+      <div class="form-group" id="form-consumo">
+        <label for="nascimento-rebanho" id="label-categoria-consumo"
+          >Categoria</label
+        >
         <select id="consumo-categoria" class="form-control" name="tipo-produto">
           <option value="matriz">Matriz</option>
           <option value="reprodutor">Reprodutor</option>
           <option value="femeaJovem">Fêmea Jovem</option>
           <option value="machoJovem">Macho Jovem</option>
+          <option value="femeaLactacao">Fêmea em Lactação</option>
+          <option value="machoLactacao">Macho em Lactação</option>
         </select>
       </div>
     </div>
@@ -35,6 +44,94 @@
       </div>
     </div>
   </div>
-</div>
-<button type="button" class="btn btn-primary">Ok</button>
-</div>
+  <button class="btn btn-primary btn-lg" type="submit">
+    Adicionar Consumo
+  </button>
+
+  <button
+    type="button"
+    class="btn btn-danger btn-lg mr-4"
+    data-dismiss="modal"
+    aria-hidden="true"
+  >
+    Fechar
+  </button>
+</form>
+
+<script type="text/javascript">
+  function addCamposConsumo() {
+    let selectedValue = document.getElementById('consumo-rebanho').value;
+    let row = document.getElementById('row-consumo');
+
+    let col1 = document.createElement('div');
+    col1.className = 'col-md-6';
+    col1.id = 'div-consumo1';
+
+    let formGroup1 = document.getElementById('form-consumo');
+
+    if (selectedValue === 'simplificado') {
+      let child1 = document.getElementById('label-id-consumo');
+      let child2 = document.getElementById('input-id-consumo');
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+
+      let labelCategoria = document.createElement('label');
+      labelCategoria.innerText = 'Categoria';
+      labelCategoria.id = 'label-categoria-consumo';
+
+      let selectCategoria = document.createElement('select');
+      selectCategoria.className = 'form-control';
+      selectCategoria.id = 'consumo-categoria';
+
+      let categoria1 = document.createElement('option');
+      categoria1.innerText = 'Matriz';
+      categoria1.value = 'matriz';
+
+      let categoria2 = document.createElement('option');
+      categoria2.innerText = 'Reprodutor';
+      categoria2.value = 'reprodutor';
+
+      let categoria3 = document.createElement('option');
+      categoria3.innerText = 'Fêmea Jovem';
+      categoria3.value = 'Fêmea Jovem';
+
+      let categoria4 = document.createElement('option');
+      categoria4.innerText = 'Macho Jovem';
+      categoria4.value = 'Macho Jovem';
+
+      let categoria5 = document.createElement('option');
+      categoria5.innerText = 'Fêmea em Lactação';
+      categoria5.value = 'Femea Lactacao';
+
+      let categoria6 = document.createElement('option');
+      categoria6.innerText = 'Macho Lactacao';
+      categoria6.value = 'Macho Lactacao';
+
+      selectCategoria.appendChild(categoria1);
+      selectCategoria.appendChild(categoria2);
+      selectCategoria.appendChild(categoria3);
+      selectCategoria.appendChild(categoria4);
+      selectCategoria.appendChild(categoria5);
+      selectCategoria.appendChild(categoria6);
+
+      formGroup1.appendChild(labelCategoria);
+      formGroup1.appendChild(selectCategoria);
+    } else if (selectedValue === 'detalhado') {
+      let child1 = document.getElementById('label-categoria-consumo');
+      let child2 = document.getElementById('consumo-categoria');
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+
+      let labelIdAnimal = document.createElement('label');
+      labelIdAnimal.innerText = 'Identificação do Animal (nº ou nome)';
+      labelIdAnimal.id = 'label-id-consumo';
+
+      let inputIdAnimal = document.createElement('input');
+      inputIdAnimal.className = 'form-control';
+      inputIdAnimal.id = 'input-id-consumo';
+
+      formGroup1.appendChild(labelIdAnimal);
+      formGroup1.appendChild(inputIdAnimal);
+    }
+  }
+</script>

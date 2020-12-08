@@ -43,7 +43,8 @@
                 <h2>Cadastrar Nova Propriedade</h2>
               </div>
 
-              <form action="finalizar-cadastro.html">
+              <!-- <form action="http://localhost/php-getovi/api/cadastro_propriedade.php" id="form-cadastro-propriedade"> -->
+              <form  id="form-cadastro-propriedade">
                 <h4 class="my-3">Informações Básicas</h4>
                 <div class="row">
                   <div class="col-sm-12">
@@ -54,6 +55,7 @@
                         type="text"
                         id="nome-propriedade"
                         placeholder="Nome da Propriedade"
+                        name="nome"
                       />
                     </div>
                   </div>
@@ -63,6 +65,7 @@
                       <select
                         class="form-control select2"
                         id="estado-propriedade"
+                        name="estado"
                       >
                         <option>Selecione</option>
                         <optgroup label="Região Norte">
@@ -113,6 +116,7 @@
                         type="text"
                         id="municipio-propriedade"
                         placeholder="Cidade"
+                        name="municipio"
                       />
                     </div>
                   </div>
@@ -124,6 +128,7 @@
                         type="text"
                         id="georef1"
                         placeholder="-3.693167"
+                        name="coordenadas1"
                       />
                     </div>
                     <div class="form-group mb-3">
@@ -133,6 +138,7 @@
                           type="text"
                           class="form-control"
                           placeholder="-40.355052"
+                          name="coordenadas2"
                         />
                       </div>
                     </div>
@@ -147,6 +153,7 @@
                           id="area-total-propriedade"
                           type="text"
                           class="form-control"
+                          name="registro"
                         />
                       </div>
                     </div>
@@ -154,17 +161,14 @@
                   <div class="col-sm-12">
                     <div class="form-group mb-3">
                       <label for="area-total-propriedade"
-                        >Área Total da Propriedade
-                        <span style="font-size: 7pt;" class="text-danger"
-                          >&nbsp;Áreas da Propriedade devem somar a Área
-                          Total</span
-                        >
+                        >Área Total da Propriedade                        
                       </label>
                       <div class="input-group">
                         <input
                           id="area-total-propriedade"
                           type="number"
                           class="form-control parsley-error"
+                          name="area-total"
                         />
                         <div class="input-group-append">
                           <select
@@ -197,6 +201,7 @@
                           data-toggle="input-mask"
                           data-mask-format="000.000.000.000.000,00"
                           data-reverse="true"
+                          name="valor-hectare"
                         />
                       </div>
                     </div>
@@ -205,7 +210,12 @@
                 <div class="row">
                   
                   <div class="atividades-exercidas my-4">
-                    <h4>Utilização da área da Propriedade</h4>
+                    <h4>Utilização da área da Propriedade
+                      <br>
+                      <span style="font-size: 7pt;" class="text-danger">
+                          &nbsp;Áreas da Propriedade devem somar a Área Total
+                      </span>
+                    </h4>
 
                     <!--div class="col-md-12 pr-0">
                                     <div class="custom-control custom-checkbox custom-control-inline mt-3 mr-0">
@@ -263,7 +273,7 @@
                               >Área com Pastagem Nativa</label
                             >
                             <div class="input-group">
-                              <input type="text" id="area-pastagem"/>
+                              <input type="text" id="area-pastagem" name="area-pastagem" />
                               <span class="input-group-text" id="basic-addon1">ha</span>
                             </div>
                           </div>
@@ -274,7 +284,7 @@
                               >Área Benfeitorias</label
                             >
                             <div class="input-group">
-                              <input type="text" id="area-benfeitorias"/>
+                              <input type="text" id="area-benfeitorias" name="area-benfeitoria" />
                               <span class="input-group-text" id="basic-addon1">ha</span>
                             </div>
                           </div>
@@ -285,7 +295,7 @@
                               >Área Reserva Legal/mata</label
                             >
                             <div class="input-group">
-                              <input type="text" id="area-reserva"/>
+                              <input type="text" id="area-reserva" name="area-reserva" />
                               <span class="input-group-text" id="basic-addon1">ha</span>
                             </div>
                           </div>
@@ -333,7 +343,10 @@
                         </div>
                       </div>
                     </div>
+                  </div>
 
+                  <div class="ovinos-caprinos my-4">
+                    <h4>Cadastrar Estrutura da Propriedade</h4>
                     <div class="col-md-12 pr-0">
                       <div
                         class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
@@ -347,9 +360,53 @@
                                 title="Adicionar nova Estrutura"
                               >
                                 <i class="fas fa-seedling">
-                                  + Cadastrar Estrutura da Propriedade
+                                  Cadastrar Benfeitorias
                                 </i>
-                              </a>
+                              </a>                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-equipamentos.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  Cadastrar Equipamentos
+                                </i>
+                              </a>                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-animais-trabalho.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  Cadastrar Animais de Trabalho
+                                </i>
+                              </a>                              
                             </div>
                           </div>
                         </div>
@@ -358,6 +415,7 @@
                   </div>
 
                   <div class="ovinos-caprinos my-4">
+                    <h3><strong>Cadastrar Rebanho</strong></h3>
                     <h4>Ovinos e Caprinos</h4>
                     <div class="col-md-12 pr-0">
                       <div
@@ -417,17 +475,28 @@
                       </div>
                     </div>
 
-                    <div class="col-md-12 pt-3">
-                      <a
-                        href="cadastrar-outro-pecuaria.html"
-                        class="btn btn-link"
-                        name="adicionar-atividade"                        
+                    <h4>Outros</h4>
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
                       >
-                        <label style="font-weight: bold;">
-                          + Outra Atividade Pecuária</label
-                        >
-                        </a>
-                    </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-outro-pecuaria.html"
+                                class="btn btn-success ml-1"
+                                name="adicionar-atividade"                        
+                              >
+                                <i class="fas fa-seedling">
+                                  + Outra Atividade Pecuária
+                                </i>
+                              </a>                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                    
                   </div>
                 </div>
                 <!--div class="form-group mb-4">
@@ -459,6 +528,7 @@
                       data-toggle="input-mask"
                       data-mask-format="000.000.000.000.000,00"
                       data-reverse="true"
+                      name="saldo"
                     />
                   </div>
                 </div>                                                
@@ -478,13 +548,14 @@
                   >
                     Limpar Campos
                   </button>
-                  <a
+                  <!-- <input type="submit" name="submit-cadastro" value="Finalizar &nbsp;" class="btn btn-primary width-md btn-rounded ml-1"> -->
+                  <button
                     class="btn btn-primary width-md btn-rounded ml-1"
-                    href="finalizar-cadastro.html"
+                    id="btn-finalizar"
                   >
                     Finalizar &nbsp;
                     <i class="fas fa-check-circle"></i>
-                  </a>
+                  </button>
                 </div>
               </form>
             </div>
@@ -496,7 +567,7 @@
       </div>
       <!-- end container -->
     </div>
-    <!-- end page -->
+    <!-- end page -->    
 
     <!-- Vendor js -->
     <script src="assets/js/vendor.min.js"></script>
@@ -508,6 +579,50 @@
     <script src="assets/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
     <script src="assets/libs/autonumeric/autoNumeric-min.js"></script>
     <script src="assets/js/pages/form-masks.init.js"></script>
+
+    <!-- jQuery -->
+    <script src="assets/libs/jquery-steps/jquery.steps.min.js"></script>
+    <script type="text/javascript">
+      // function saveProperty(){
+      //   $('#form-cadastro-propriedade').submit(function(event){
+      //     event.preventDefault()
+      //     let data = $('#form-cadastro-propriedade').serialize()
+
+      //     console.log(data)
+      //   })        
+      // }
+
+      // saveProperty()
+      $('#btn-finalizar').click(function(event){
+          event.preventDefault()
+
+          let saldo = $('#saldo-propriedade').val()
+          saldo = saldo.replace('.','')
+          saldo = parseFloat(saldo.replace(',','.'))
+          $('#saldo-propriedade').val(saldo)
+
+          let valorHectare = $('#valor-hectare').val()
+          valorHectare = valorHectare.replace('.','')
+          valorHectare = parseFloat(valorHectare.replace(',','.'))
+          $('#valor-hectare').val(valorHectare)
+
+          let data = $('#form-cadastro-propriedade').serialize()
+          let id = document.URL.slice(-1);
+
+          // console.log(data)
+
+          let url = 'http://localhost/php-getovi/api/cadastro_propriedade.php?id='+id;  
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            console.log(res)
+          })
+      })        
+    </script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>

@@ -1,28 +1,38 @@
-<div class="tab-content" id="myTabContent">
-  <div class="row">
+<form>
+  <div class="row" id="row-venda">
     <div class="col-md-6">
       <div class="form-group">
         <label for="venda-rebanho">Rebanho</label>
-        <select id="venda-rebanho" class="form-control" name="tipo-produto">
-          <option value="1">Ovino Rebanho 1</option>
-          <option value="2">Caprino Rebanho 1</option>
+        <select
+          id="venda-rebanho"
+          class="form-control"
+          name="tipo-produto"
+          onchange="addCamposVenda()"
+        >
+          <option value="simplificado">Rebanho simplificado</option>
+          <option value="detalhado">Rebanho detalhado</option>
         </select>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="nascimento-rebanho">Categoria</label>
+    <div class="col-md-6" id="div-categoria">
+      <div class="form-group" id="form-venda">
+        <label for="nascimento-rebanho" id="label-categoria-venda"
+          >Categoria</label
+        >
         <select id="venda-categoria" class="form-control" name="tipo-produto">
+          <option value="">Selecione</option>
           <option value="matriz">Matriz</option>
           <option value="reprodutor">Reprodutor</option>
           <option value="femeaJovem">Fêmea Jovem</option>
           <option value="machoJovem">Macho Jovem</option>
+          <option value="femeaLactacao">Fêmea em Lactação</option>
+          <option value="machoLactacao">Macho em Lactação</option>
         </select>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" id="div-qtd">
       <div class="form-group">
-        <label for="quantidade-venda-cabeca">Qtd. Cabeças</label>
+        <label for="quantidade-venda-cabeca" id="label-qtd">Qtd. Cabeças</label>
         <input
           type="number"
           id="quantidade-venda-cabeca"
@@ -61,135 +71,112 @@
       </div>
     </div>
   </div>
-  <button type="button" class="btn btn-primary">Ok</button>
-</div>
-<!-- <div class="row">
-  <div class="col-md-6">
-    <div class="form-group">
-      <label for="sexo-venda-cabeca">Sexo</label>
-      <select id="sexo-venda-cabeca" class="form-control" name="sexo-cabeca">
-        <option value="1">Macho</option>
-        <option value="2">Fêmea</option>
-      </select>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="form-group">
-      <label for="periodo-venda-cabeca">Idade</label>
-      <select
-        id="periodo-venda-cabeca"
-        class="form-control"
-        name="periodo-cabeca"
-      >
-        <option value="1">Jovem</option>
-        <option value="2">Adulto</option>
-      </select>
-    </div>
-  </div>
-</div>
-<h4>Se Selecionado Produto</h4>
-<div class="row">
-  <div class="col-md-12">
-    <div class="form-group">
-      <label for="tipo-venda-produto">Tipo de Produto</label>
-      <select id="tipo-venda-produto" class="form-control" name="tipo-produto">
-        <option value="1">Carne</option>
-        <option value="2">Leite</option>
-        <option value="3">Couro</option>
-        <option value="4">Outros</option>
-      </select>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <div class="custom-control custom-checkbox custom-control-inline mb-2">
-      <input
-        type="checkbox"
-        class="custom-control-input"
-        id="check-venda-abate"
-      />
-      <label class="custom-control-label" for="check-venda-abate"
-        >Animal Abatido?</label
-      >
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="form-group">
-      <label for="quantidade-animais-abatidos">Quantidade</label>
-      <input
-        type="number"
-        id="quantidade-animais-abatidos"
-        class="form-control"
-        value=""
-        disabled
-      />
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="form-group">
-      <label for="sexo-abate-cabeca">Sexo</label>
-      <select
-        id="sexo-abate-cabeca"
-        class="form-control"
-        name="tipo-produto"
-        disabled
-      >
-        <option value="1">Macho</option>
-        <option value="2">Fêmea</option>
-      </select>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="form-group">
-        <label for="unidade-venda-produto">Medida</label>
-        <select
-          type="text"
-          id="unidade-venda-produto"
-          class="form-control select2"
-          value=""
-        >
-          <option></option>
-          <option value="1">KG</option>
-          <option value="2">@</option>
-          <option value="3">Ton</option>
-          <option value="4">Unidade</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <label for="quantidade-venda-produto">Quantidade</label>
-        <input
-          type="number"
-          id="quantidade-venda-produto"
-          class="form-control"
-          value=""
-        />
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="form-group">
-        <label for="valor-venda-caprinos">Valor</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text bg-primary text-white b-0">R$</span>
-          </div>
-          <input
-            id="valor-venda-caprinos"
-            type="text"
-            class="form-control"
-            data-toggle="input-mask"
-            data-mask-format="000.000.000.000.000,00"
-            data-reverse="true"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="form-group row">
-    <label class="col-lg-12 control-label">(*) Obrigatório</label>
-  </div>
-</div> -->
+  <button class="btn btn-primary btn-lg" type="submit">Adicionar Venda</button>
+
+  <button
+    type="button"
+    class="btn btn-danger btn-lg mr-4"
+    data-dismiss="modal"
+    aria-hidden="true"
+  >
+    Fechar
+  </button>
+</form>
+
+<script type="text/javascript">
+  function addCamposVenda() {
+    let selectedValue = document.getElementById('venda-rebanho').value;
+    let row = document.getElementById('row-venda');
+
+    let formGroup1 = document.getElementById('form-venda');
+
+    if (selectedValue === 'simplificado') {
+      let child1 = document.getElementById('label-id');
+      let child2 = document.getElementById('input-id');
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+
+      let labelQtdCabecas = document.createElement('label');
+      labelQtdCabecas.innerText = 'Qtd. Cabeças';
+      labelQtdCabecas.id = 'label-qtd';
+
+      let inputQtdCabecas = document.createElement('input');
+      inputQtdCabecas.className = 'form-control';
+      inputQtdCabecas.id = 'quantidade-venda-cabeca';
+
+      let col1 = document.createElement('div');
+      col1.className = 'col-md-6';
+      col1.id = 'div-categoria';
+
+      let col2 = document.createElement('div');
+      col2.className = 'col-md-6';
+      col2.id = 'div-qtd';
+
+      let formGroup2 = document.createElement('div');
+      formGroup2.className = 'form-group';
+      formGroup2.id = 'form-venda';
+
+      let labelCategoria = document.createElement('label');
+      labelCategoria.innerText = 'Categorias';
+      labelCategoria.id = 'label-categoria-venda';
+
+      let selectCategoria = document.createElement('select');
+      selectCategoria.id = 'venda-categoria';
+      selectCategoria.className = 'form-control';
+
+      let selecione = document.createElement('option');
+      selecione.innerText = 'Selecione';
+      let categoria1 = document.createElement('option');
+      categoria1.innerText = 'Matriz';
+      let categoria2 = document.createElement('option');
+      categoria2.innerText = 'Reprodutor';
+      let categoria3 = document.createElement('option');
+      categoria3.innerText = 'Fêmea Jovem';
+      let categoria4 = document.createElement('option');
+      categoria4.innerText = 'Macho Jovem';
+      let categoria5 = document.createElement('option');
+      categoria5.innerText = 'Fêmea em Lactação';
+      let categoria6 = document.createElement('option');
+      categoria6.innerText = 'Macho em Lactação';
+
+      selectCategoria.appendChild(selecione);
+      selectCategoria.appendChild(categoria1);
+      selectCategoria.appendChild(categoria2);
+      selectCategoria.appendChild(categoria3);
+      selectCategoria.appendChild(categoria4);
+      selectCategoria.appendChild(categoria5);
+      selectCategoria.appendChild(categoria6);
+
+      formGroup1.appendChild(labelCategoria);
+      formGroup1.appendChild(selectCategoria);
+
+      formGroup2.appendChild(labelQtdCabecas);
+      formGroup2.appendChild(inputQtdCabecas);
+
+      col2.appendChild(formGroup2);
+
+      row.appendChild(col2);
+    } else if (selectedValue === 'detalhado') {
+      let col2 = document.getElementById('div-qtd');
+
+      let child1 = document.getElementById('label-categoria-venda');
+      let child2 = document.getElementById('venda-categoria');
+
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+      col2.parentNode.removeChild(col2);
+
+      let labelIdAnimal = document.createElement('label');
+      labelIdAnimal.innerText = 'Identificação do Animal (nº ou nome)';
+      labelIdAnimal.id = 'label-id';
+
+      let inputIdAnimal = document.createElement('input');
+      inputIdAnimal.className = 'form-control';
+      inputIdAnimal.id = 'input-id';
+
+      formGroup1.appendChild(labelIdAnimal);
+      formGroup1.appendChild(inputIdAnimal);
+    }
+  }
+</script>

@@ -47,13 +47,17 @@
                 </a>
               </div>
 
-              <form action="#">
+              <form
+                action="http://localhost:80/php-getovi/api/cadastro_usuario.php"
+                method="POST"
+              >
                 <div class="form-group mb-3">
                   <label for="fullname">Nome Completo</label>
                   <input
                     class="form-control"
                     type="text"
                     id="fullname"
+                    name="name"
                     placeholder="Entre com o seu nome"
                     required
                   />
@@ -65,6 +69,7 @@
                     class="form-control"
                     type="text"
                     id="username"
+                    name="username"
                     placeholder="Digite um usuário"
                     required
                   />
@@ -77,6 +82,7 @@
                     type="password"
                     required
                     id="password"
+                    name="password"
                     placeholder="Entre com uma senha"
                   />
                 </div>
@@ -87,6 +93,7 @@
                     class="form-control"
                     type="email"
                     id="emailaddress"
+                    name="email"
                     required
                     placeholder="Entre com seu melhor e-mail"
                   />
@@ -98,6 +105,7 @@
                     class="form-control"
                     type="text"
                     id="city"
+                    name="city"
                     placeholder="Entre com a sua cidade"
                     required
                   />
@@ -109,6 +117,7 @@
                     class="form-control"
                     type="text"
                     id="state"
+                    name="state"
                     placeholder="Entre com seu estado"
                     required
                   />
@@ -121,6 +130,7 @@
                     type="text"
                     required
                     id="cep"
+                    name="cep"
                     placeholder="Entre com seu CEP"
                   />
                 </div>

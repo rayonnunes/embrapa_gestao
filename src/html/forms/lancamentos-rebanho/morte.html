@@ -1,28 +1,41 @@
-<div class="tab-content" id="myTabContent">
-  <div class="row">
+<form>
+  <div class="row" id="row-morte">
     <div class="col-md-6">
       <div class="form-group">
         <label for="morte-rebanho">Rebanho</label>
-        <select id="morte-rebanho" class="form-control" name="tipo-produto">
-          <option value="1">Ovino Rebanho 1</option>
-          <option value="2">Caprino Rebanho 1</option>
+        <select
+          id="morte-rebanho"
+          class="form-control"
+          name="tipo-produto"
+          onchange="addCamposMorte()"
+        >
+          <option value="simplificado">Rebanho Simplificado</option>
+          <option value="detalhado">Rebanho Detalhado</option>
         </select>
       </div>
     </div>
+
     <div class="col-md-6">
-      <div class="form-group">
-        <label for="nascimento-rebanho">Categoria</label>
+      <div class="form-group" id="form-morte">
+        <label for="nascimento-rebanho" id="label-categoria-morte"
+          >Categoria</label
+        >
         <select id="morte-categoria" class="form-control" name="tipo-produto">
           <option value="matriz">Matriz</option>
           <option value="reprodutor">Reprodutor</option>
           <option value="femeaJovem">Fêmea Jovem</option>
           <option value="machoJovem">Macho Jovem</option>
+          <option value="femeaLactacao">Fêmea em Lactação</option>
+          <option value="machoLactacao">Macho em Lactação</option>
         </select>
       </div>
     </div>
-    <div class="col-md-12">
+
+    <div class="col-md-6" id="div-qtd-mortes">
       <div class="form-group">
-        <label for="quantidade-mortes-cabeca">Quantidade de Mortes</label>
+        <label for="quantidade-mortes-cabeca" id="label-qtd-morte"
+          >Quantidade de Mortes</label
+        >
         <input
           type="number"
           id="quantidade-mortes-cabeca"
@@ -34,25 +47,13 @@
 
     <div class="col-md-6">
       <div class="form-group">
-        <label for="sexo-morte-cabeca">Sexo</label>
-        <select id="sexo-morte-cabeca" class="form-control" name="tipo-produto">
-          <option value="1">Macho</option>
-          <option value="2">Fêmea</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="periodo-morte-cabeca">Idade</label>
-        <select
-          id="periodo-morte-cabeca"
+        <label for="data-morte">Data da Morte</label>
+        <input
+          type="date"
+          id="data-morte"
           class="form-control"
-          name="periodo-cabeca"
-        >
-          <option value="1">Jovem</option>
-          <option value="2">Adulto</option>
-        </select>
+          name="data-morte"
+        />
       </div>
     </div>
   </div>
@@ -60,32 +61,124 @@
     <div class="col-md-6">
       <div class="form-group">
         <label for="causa-mortes-cabeca">Causa da Morte</label>
-        <input
-          type="text"
-          id="causa-mortes-cabeca"
+        <textarea
+          name="causa-morte"
+          id="causa-morte"
+          cols="30"
+          rows="10"
           class="form-control"
-          value=""
-        />
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="valor-custos-morte">Custos com Morte</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text bg-primary text-white b-0">R$</span>
-          </div>
-          <input
-            id="valor-custos-morte"
-            type="text"
-            class="form-control"
-            data-toggle="input-mask"
-            data-mask-format="000.000.000.000.000,00"
-            data-reverse="true"
-          />
-        </div>
+        >
+        </textarea>
       </div>
     </div>
   </div>
-  <button type="button" class="btn btn-primary">Ok</button>
-</div>
+  <button class="btn btn-primary btn-lg" type="submit">Adicionar Morte</button>
+
+  <button
+    type="button"
+    class="btn btn-danger btn-lg mr-4"
+    data-dismiss="modal"
+    aria-hidden="true"
+  >
+    Fechar
+  </button>
+</form>
+
+<script type="text/javascript">
+  function addCamposMorte() {
+    let selectedValue = document.getElementById('morte-rebanho').value;
+    let row = document.getElementById('row-morte');
+
+    let formGroup1 = document.getElementById('form-morte');
+
+    let formGroup2 = document.createElement('div');
+    formGroup2.className = 'form-group';
+
+    if (selectedValue === 'simplificado') {
+      let child1 = document.getElementById('label-id-morte');
+      let child2 = document.getElementById('input-id-morte');
+
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+
+      let col1 = document.createElement('div');
+      col1.className = 'col-md-6';
+      col1.id = 'div-qtd-mortes';
+
+      let labelCategoria = document.createElement('label');
+      labelCategoria.innerText = 'Categoria';
+      labelCategoria.id = 'label-categoria-morte';
+
+      let selectCategoria = document.createElement('select');
+      selectCategoria.className = 'form-control';
+      selectCategoria.id = 'morte-categoria';
+
+      let labelQtd = document.createElement('label');
+      labelQtd.innerText = 'Quatidade de mortes';
+
+      let inputQtd = document.createElement('input');
+      inputQtd.className = 'form-control';
+      inputQtd.id = 'quatidade-mortes-cabeca';
+
+      let categoria1 = document.createElement('option');
+      categoria1.innerText = 'Matriz';
+      categoria1.value = 'matriz';
+
+      let categoria2 = document.createElement('option');
+      categoria2.innerText = 'Reprodutor';
+      categoria2.value = 'reprodutor';
+
+      let categoria3 = document.createElement('option');
+      categoria3.innerText = 'Fêmea Jovem';
+      categoria3.value = 'Fêmea Jovem';
+
+      let categoria4 = document.createElement('option');
+      categoria4.innerText = 'Macho Jovem';
+      categoria4.value = 'Macho Jovem';
+
+      let categoria5 = document.createElement('option');
+      categoria5.innerText = 'Fêmea em Lactação';
+      categoria5.value = 'Femea Lactacao';
+
+      let categoria6 = document.createElement('option');
+      categoria6.innerText = 'Macho Lactacao';
+      categoria6.value = 'Macho Lactacao';
+
+      selectCategoria.appendChild(categoria1);
+      selectCategoria.appendChild(categoria2);
+      selectCategoria.appendChild(categoria3);
+      selectCategoria.appendChild(categoria4);
+      selectCategoria.appendChild(categoria5);
+      selectCategoria.appendChild(categoria6);
+
+      formGroup1.appendChild(labelCategoria);
+      formGroup1.appendChild(selectCategoria);
+
+      formGroup2.appendChild(labelQtd);
+      formGroup2.appendChild(inputQtd);
+
+      col1.appendChild(formGroup2);
+
+      row.appendChild(col1);
+    } else if (selectedValue === 'detalhado') {
+      let child1 = document.getElementById('label-categoria-morte');
+      let child2 = document.getElementById('morte-categoria');
+      let child3 = document.getElementById('div-qtd-mortes');
+
+      child1.parentNode.removeChild(child1);
+      child2.parentNode.removeChild(child2);
+      child3.parentNode.removeChild(child3);
+
+      let labelIdAnimal = document.createElement('label');
+      labelIdAnimal.innerText = 'Identificação do Animal (nº ou nome)';
+      labelIdAnimal.id = 'label-id-morte';
+
+      let inputIdAnimal = document.createElement('input');
+      inputIdAnimal.className = 'form-control';
+      inputIdAnimal.id = 'input-id-morte';
+
+      formGroup1.appendChild(labelIdAnimal);
+      formGroup1.appendChild(inputIdAnimal);
+    }
+  }
+</script>
