@@ -46,7 +46,7 @@
                 </h3>
               </div>
 
-              <form action="#">
+              <form id="form-equipamentos">
                 <div class="form-group mb-3">
                   <label for="equipamentos-princ-1"
                     >Selecione o Equipamento</label
@@ -54,45 +54,47 @@
                   <select
                     class="form-control select2"
                     id="equipamentos-princ-1"
+                    name="nome-equipamento"
+                    onchange="adicionarOutro()"
                   >
                     <option>Selecione</option>
                     <optgroup label="Equipamento/Veículos">
-                      <option value="TRAT">Trator</option>
-                      <option value="IMPL">Implementos</option>
-                      <option value="ROCM">Roçadeira Manual</option>
-                      <option value="CARB">Carro de Boi</option>
-                      <option value="CARR">Caroças</option>
-                      <option value="TRIT"
+                      <option value="Trator">Trator</option>
+                      <option value="Implementos">Implementos</option>
+                      <option value="Roçadeira Manual">Roçadeira Manual</option>
+                      <option value="Carro de Boi">Carro de Boi</option>
+                      <option value="Carroças">Carroças</option>
+                      <option value="Triturador, Picadeira, Forrageira ou Desintegrador"
                         >Triturador, Picadeira, Forrageira ou
                         Desintegrador</option
                       >
-                      <option value="ARRE">Arreios ou Selaria </option>
-                      <option value="FERR">Ferramentas</option>
-                      <option value="BOMB">Bombas D'água</option>
-                      <option value="GERA">Gerador de Energia</option>
-                      <option value="MTSR">Motosserra</option>
-                      <option value="PISV">Pistola de Vacinação</option>
-                      <option value="PULV">Pulverizador Costal</option>
-                      <option value="BTJS">Botijão de Sêmen</option>
-                      <option value="TAMBL">Tambor de Leite</option>
-                      <option value="ORDB"
+                      <option value="Arreios ou Selaria">Arreios ou Selaria </option>
+                      <option value="Ferramentas">Ferramentas</option>
+                      <option value="Bombas D'água">Bombas D'água</option>
+                      <option value="Gerador de Energia">Gerador de Energia</option>
+                      <option value="Motosserra">Motosserra</option>
+                      <option value="Pistola de Vacinação">Pistola de Vacinação</option>
+                      <option value="Pulverizador Costal">Pulverizador Costal</option>
+                      <option value="Botijão de Sêmen">Botijão de Sêmen</option>
+                      <option value="Tambor de Leite">Tambor de Leite</option>
+                      <option value="Ordenha - Balde ao pé (conjunto)"
                         >Ordenha - Balde ao pé (conjunto)</option
                       >
-                      <option value="ORDM">Ordenha Mecânica (conjunto)</option>
-                      <option value="TNXP">Tanque de Expansão</option>
-                      <option value="RESL">Resfriador de Leite</option>
-                      <option value="LAVJ">Lavadora à Jato</option>
-                      <option value="BALN">Balança</option>
-                      <option value="ANTN">Antena</option>
-                      <option value="TELF">Telefone</option>
-                      <option value="CAMN">Caminhonete</option>
-                      <option value="CARL">Carro Leve</option>
-                      <option value="MOTO">Moto</option>
-                      <option value="CMAO">Caminhão</option>
-                      <option value="TQCB">Tanque de Combustível</option>
-                      <option value="MTBB">Motobomba</option>
-                      <option value="MTOR">Motor</option>
-                      <option value="KTOR">Kit de Ordenha</option>
+                      <option value="Ordenha Mecânica">Ordenha Mecânica (conjunto)</option>
+                      <option value="Tanque de Expansão">Tanque de Expansão</option>
+                      <option value="Resfriador de Leite">Resfriador de Leite</option>
+                      <option value="Lavadora a Jato">Lavadora à Jato</option>
+                      <option value="Balança">Balança</option>
+                      <option value="Antena">Antena</option>
+                      <option value="Telefone">Telefone</option>
+                      <option value="Caminhonete">Caminhonete</option>
+                      <option value="Carro Leve">Carro Leve</option>
+                      <option value="Moto">Moto</option>
+                      <option value="Caminhão">Caminhão</option>
+                      <option value="Tanque de Combustível">Tanque de Combustível</option>
+                      <option value="Motobomba">Motobomba</option>
+                      <option value="Motor">Motor</option>
+                      <option value="Kit de Ordenha">Kit de Ordenha</option>
                     </optgroup>
                     <optgroup>
                       <option value="-1">Outro (Informe...)</option>
@@ -100,13 +102,13 @@
                   </select>
                 </div>
 
-                <div class="form-group d-none">
+                <div class="form-group d-none" id="outro-equipamento-div">
                   <label for="outra-benfeitoria-nome-1">Outro</label>
                   <input
-                    id="outra-benfeitoria-nome-1"
+                    id="outro-equipamento"
                     type="text"
                     class="form-control"
-                    disabled
+                    name="outro"                    
                   />
                 </div>
 
@@ -118,6 +120,7 @@
                     id="detalhes-benfeitoria-principal-1"
                     type="text"
                     class="form-control"
+                    name="caracteristica"
                   />
                 </div>
 
@@ -131,6 +134,7 @@
                         id="quantidade-benfeitoria-principal-1"
                         type="number"
                         class="form-control"
+                        name="qtd"
                       />
                     </div>
                   </div>
@@ -145,12 +149,13 @@
                           >
                         </div>
                         <input
-                          id="valor-benfeitoria-1"
+                          id="valor-equipamento"
                           type="text"
                           class="form-control"
                           data-toggle="input-mask"
                           data-mask-format="000.000.000.000.000,00"
                           data-reverse="true"
+                          name="valor"
                         />
                       </div>
                     </div>
@@ -161,49 +166,29 @@
                   <div class="col">
                     <div class="form-group mb-3">
                       <label for="vida-util-benfeitoria-1"
-                        >Vida Útil do Bem</label
+                        >Vida Útil do Bem (Anos)</label
                       >
                       <div class="input-group">
                         <input
                           class="form-control"
                           type="number"
                           id="vida-util-benfeitoria-1"
-                        />
-                        <div class="input-group-append">
-                          <select
-                            class="form-control select2"
-                            name="tempo-uso-animal-trabalho-1"
-                            id="select-vida-util-benfeitoria-1"
-                          >
-                            <option value="MES">Meses</option>
-                            <option value="ANO" selected>Anos</option>
-                            <option value="-1">Outro...</option>
-                          </select>
-                        </div>
+                          name="vida-util"
+                        />                        
                       </div>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="form-group mb-3">
-                      <label for="tempo-uso-benfeitoria-1">Tempo de Uso</label>
+                      <label for="tempo-uso-benfeitoria-1">Tempo de Uso (Anos)</label>
                       <div class="input-group">
                         <input
                           class="form-control"
                           type="number"
                           id="tempo-uso-benfeitoria-1"
-                        />
-                        <div class="input-group-append">
-                          <select
-                            class="form-control select2"
-                            name="tempo-uso-benfeitoria-1"
-                            id="select-tempo-uso-benfeitoria-1"
-                          >
-                            <option value="MES">Meses</option>
-                            <option value="ANO" selected>Anos</option>
-                            <option value="-1">Outro...</option>
-                          </select>
-                        </div>
+                          name="tempo-uso"
+                        />                        
                       </div>
                     </div>
                   </div>
@@ -220,6 +205,7 @@
                           id="porcentagem-caprinos-benfeitoria-1"
                           type="number"
                           class="form-control"
+                          name="uso-caprinos"
                         />
                         <div class="input-group-append">
                           <span
@@ -240,6 +226,7 @@
                           id="porcentagem-ovinos-benfeitoria-1"
                           type="number"
                           class="form-control"
+                          name="uso-ovinos"
                         />
                         <div class="input-group-append">
                           <span
@@ -253,7 +240,7 @@
                 </div>
 
                 <div class="row justify-content-center">
-                  <button class="btn btn-link" name="button">
+                  <button class="btn btn-link" name="button" id="adicionar-equipamento">
                     <span class="position-relative" style="font-weight: bold;"
                       >Adicionar Outro Equipamento &nbsp;</span
                     >
@@ -270,7 +257,7 @@
                     Voltar
                   </a>
                   <a
-                    href="cadastrar-propriedade.html"
+                    href="cadastrar-propriedade2.html"
                     class="btn btn-danger width-md btn-rounded"
                     type="reset"
                   >
@@ -309,5 +296,58 @@
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+
+    <script type="text/javascript">
+      function adicionarOutro(){
+        let select = document.getElementById('equipamentos-princ-1').value
+        
+        let outroEquipamento = document.getElementById('outro-equipamento-div')
+
+        if(select === '-1'){          
+          outroEquipamento.className = "form-group d-block"
+        }else{
+          outroEquipamento.className = "form-group d-none"
+        }        
+      }
+
+      function cadastrarEquipamento(){
+        $('#adicionar-equipamento').click(function(event){          
+          event.preventDefault()
+
+          tratarValores('#valor-equipamento')          
+
+          let data = $('#form-equipamentos').serialize()                    
+
+          url = 'http://localhost/php-getovi/api/cadastro_equipamento.php';          
+          
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              
+              window.alert(res.value)
+
+              window.location.href = 'cadastrar-equipamentos.html'                          
+            }else{
+              console.log(res.value)              
+              window.alert('Erro')
+            }
+          })     
+        })
+      }
+
+      function tratarValores(id){
+        let valor = $(id).val()
+          valor = valor.replace('.','')
+          valor = parseFloat(valor.replace(',','.'))
+          $(id).val(valor)
+      }      
+
+      cadastrarEquipamento()
+    </script>
   </body>
 </html>

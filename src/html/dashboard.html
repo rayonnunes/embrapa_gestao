@@ -83,16 +83,17 @@
                         aria-haspopup="true"
                         aria-expanded="false"
                       >
-                        Fazenda 1
+                        <!-- Fazenda 1 -->
                         <i class="dripicons-chevron-down"></i>
                       </button>
                       <div
                         class="dropdown-menu"
                         aria-labelledby="dropdownMenuButton"
+                        id="dropdown-options"
                       >
-                        <a class="dropdown-item" href="#">Fazenda 1</a>
+                        <!-- <a class="dropdown-item" href="#">Fazenda 1</a>
                         <a class="dropdown-item" href="#">Fazenda 2</a>
-                        <a class="dropdown-item" href="#">Fazenda 3</a>
+                        <a class="dropdown-item" href="#">Fazenda 3</a> -->
                       </div>
                     </div>
 
@@ -473,7 +474,7 @@
           <div class="col-sm-12">
             <div class="card">
               <div class="card-body">
-                <h4 class="header-title mb-3">Últimos Lançamentos</h4>
+                <!-- <h4 class="header-title mb-3">Últimos Lançamentos</h4>
 
                 <div class="table-responsive">
                   <table
@@ -514,9 +515,11 @@
                       </tr>
                     </tbody>
                   </table>
-                </div>
+                </div> -->
+                @@include('./tabelas/resumo-cadastro.html')
               </div>
             </div>
+            
           </div>
         </div>
 
@@ -1158,20 +1161,9 @@
     <script src="assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <script src="assets/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
     <script src="assets/libs/autonumeric/autoNumeric-min.js"></script>
-    <script src="assets/js/pages/form-masks.init.js"></script>
+    <script src="assets/js/pages/form-masks.init.js"></script>    
 
-    <!-- Charts gráficos flot -->
-    <script src="assets/libs/flot-charts/jquery.flot.js"></script>
-    <script src="assets/libs/flot-charts/jquery.flot.time.js"></script>
-    <script src="assets/libs/flot-charts/jquery.flot.tooltip.min.js"></script>
-    <script src="assets/libs/flot-charts/jquery.flot.resize.js"></script>
-    <script src="assets/libs/flot-charts/jquery.flot.pie.js"></script>
-    <script src="assets/libs/flot-charts/jquery.flot.selection.js"></script>
-    <script src="assets/libs/flot-charts/jquery.flot.stack.js"></script>
-    <script src="assets/libs/flot-charts/jquery.flot.orderBars.js"></script>
-    <script src="assets/libs/flot-charts/jquery.flot.crosshair.js"></script>
-
-    <script src="assets/js/pages/flot.init.js"></script>
+    <!-- <script src="assets/js/pages/flot.init.js"></script> -->
 
     <!-- Init js-->
     <script src="assets/js/pages/form-pickers.init.js"></script>
@@ -1185,5 +1177,70 @@
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+
+    <!-- Função de listagem -->
+    <script src="assets/js/functions/listar-resumo.js"></script>
+
+    <script type="text/javascript">
+      function getFazenda(){
+        url = 'http://localhost/php-getovi/api/get-info.php';  
+
+          $.ajax({
+            url: url,
+            method: 'GET',            
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              
+              // window.alert(res.value)
+              console.log(res.value[0])
+
+              $('#dropdownMenuButton').prepend(
+                res.value[0].nome
+              )
+
+              for(let i = 0; i < res.value.length; i++)                                            
+                $('#dropdown-options').prepend(
+                  
+                 
+                   '<a class="dropdown-item" href="#">'+res.value[i].nome+'</a>'
+                                                       
+                  
+                  )
+              
+
+              // window.location.href = 'cadastrar-forrageira.html'                          
+            }else{
+              
+              window.alert(res.value)
+              console.log(res.value)              
+            }
+
+            // window.location.href = 'http://localhost:3000/cadastrar-propriedade2.html?id='+id+'&idProp='+idPropriedade          
+          })
+      }
+
+      getFazenda()
+
+      // <button
+      //   class="btn btn-info dropdown-toggle btn-lg"
+      //   type="button"
+      //   id="dropdownMenuButton"
+      //   data-toggle="dropdown"
+      //   aria-haspopup="true"
+      //   aria-expanded="false"
+      // >
+      //   Fazenda 1
+      //   <i class="dripicons-chevron-down"></i>
+      // </button>
+      // <div
+      //   class="dropdown-menu"
+      //   aria-labelledby="dropdownMenuButton"
+      // >
+      //   <a class="dropdown-item" href="#">Fazenda 1</a>
+      //   <a class="dropdown-item" href="#">Fazenda 2</a>
+      //   <a class="dropdown-item" href="#">Fazenda 3</a>
+      // </div>
+    </script>
   </body>
 </html>

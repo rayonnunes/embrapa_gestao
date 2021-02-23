@@ -44,47 +44,47 @@
                 <h3>Benfeitorias</h3>
               </div>
 
-              <form action="#">
+              <form id="form-benfeitorias">
                 <div class="form-group mb-3">
                   <label for="benfeitoria-princ-1"
                     >Selecione a Benfeitoria</label
                   >
-                  <select class="form-control select2" id="benfeitoria-princ-1">
+                  <select class="form-control select2" id="benfeitoria-princ-1" name="nomeBenfeitoria" onchange="adicionarOutro()">
                     <option>Selecione</option>
                     <optgroup label="Benfeitorias">
-                      <option value="ACUD">Açudes ou Barragens</option>
-                      <option value="BEBA">Bebedouro de Alvenaria</option>
-                      <option value="BEBT">Bebedouro de Tambor/Pneu</option>
-                      <option value="CERC">Cercas</option>
-                      <option value="CXDA">Caixa d'água</option>
-                      <option value="CASS">Casa de Sede</option>
-                      <option value="CASE">Casa de Empregados</option>
-                      <option value="CIST">Cisterna</option>
-                      <option value="COCH">Cocho</option>
-                      <option value="COCT">Cocho de Tambor/Pneu</option>
-                      <option value="CURO">Curral p/ Ovinos e Caprinos</option>
-                      <option value="CURR">Curral</option>
-                      <option value="ESTQ">Esterqueira</option>
-                      <option value="ESTR">Estrada</option>
-                      <option value="GALP">Galpão</option>
-                      <option value="MATB">Mataburro</option>
-                      <option value="POCP"
+                      <option value="Açudes ou Barragens">Açudes ou Barragens</option>
+                      <option value="Bebedourou de Alvenaria">Bebedouro de Alvenaria</option>
+                      <option value="Bebedouro de Tambor/Pneu">Bebedouro de Tambor/Pneu</option>
+                      <option value="Cercas">Cercas</option>
+                      <option value="Caixa d'água">Caixa d'água</option>
+                      <option value="Casa de Sede">Casa de Sede</option>
+                      <option value="Casa de Empregados">Casa de Empregados</option>
+                      <option value="Cisterna">Cisterna</option>
+                      <option value="Cocho">Cocho</option>
+                      <option value="Cocho de Tambor/Pneu">Cocho de Tambor/Pneu</option>
+                      <option value="Curral p/ Ovinos e Caprinos">Curral p/ Ovinos e Caprinos</option>
+                      <option value="Curral">Curral</option>
+                      <option value="Esterqueira">Esterqueira</option>
+                      <option value="Estrada">Estrada</option>
+                      <option value="Galpão">Galpão</option>
+                      <option value="Mataburro">Mataburro</option>
+                      <option value="Poço Profundo : Artesiano, Semi-artesiano ou Tubular"
                         >Poço Profundo: Artesiano, Semi-artesiano ou
                         Tubular</option
                       >
-                      <option value="POCR"
+                      <option value="Poço Raso: Cisterna, Cacimbão ou Aluvião"
                         >Poço Raso: Cisterna, Cacimbão ou Aluvião</option
                       >
-                      <option value="PONT">Ponte</option>
-                      <option value="PORT">Porteira</option>
-                      <option value="REDM">Rede Elétrica Monofásica</option>
-                      <option value="REDT">Rede Elétrica Trifásica</option>
-                      <option value="REDH">Rede Hidráulica</option>
-                      <option value="RODD">Roda D'água</option>
-                      <option value="SALO">Sala de Ordenha</option>
-                      <option value="SALE">Saleiros</option>
-                      <option value="SALT">Saleiros de Tambor/Pneu</option>
-                      <option value="SILO">Silo</option>
+                      <option value="Ponte">Ponte</option>
+                      <option value="Porteira">Porteira</option>
+                      <option value="Rede Elétrica Monofásica">Rede Elétrica Monofásica</option>
+                      <option value="Rede Elétrica Trifásica">Rede Elétrica Trifásica</option>
+                      <option value="Rede Hidráulica">Rede Hidráulica</option>
+                      <option value="Roda D'água">Roda D'água</option>
+                      <option value="Sala de Ordenha">Sala de Ordenha</option>
+                      <option value="Saleiros">Saleiros</option>
+                      <option value="Saleiros de Tambor/Pneu">Saleiros de Tambor/Pneu</option>
+                      <option value="Silo">Silo</option>
                     </optgroup>
                     <optgroup>
                       <option value="-1">Outro (Informe...)</option>
@@ -92,13 +92,13 @@
                   </select>
                 </div>
 
-                <div class="form-group d-none">
+                <div class="form-group d-none" id="outra-benfeitoria">
                   <label for="outra-benfeitoria-nome-1">Outra Estrutura</label>
                   <input
                     id="outra-benfeitoria-nome-1"
                     type="text"
                     class="form-control"
-                    disabled
+                    name="outro"                    
                   />
                 </div>
 
@@ -110,6 +110,7 @@
                     id="detalhes-benfeitoria-principal-1"
                     type="text"
                     class="form-control"
+                    name="caracteristica"
                   />
                 </div>
 
@@ -123,6 +124,7 @@
                         id="quantidade-benfeitoria-principal-1"
                         type="number"
                         class="form-control"
+                        name="qtd"
                       />
                     </div>
                   </div>
@@ -137,12 +139,13 @@
                           >
                         </div>
                         <input
-                          id="valor-benfeitoria-1"
+                          id="valor-benfeitoria"
                           type="text"
                           class="form-control"
                           data-toggle="input-mask"
                           data-mask-format="000.000.000.000.000,00"
                           data-reverse="true"
+                          name="valor"
                         />
                       </div>
                     </div>
@@ -160,6 +163,7 @@
                           class="form-control"
                           type="number"
                           id="vida-util-benfeitoria-1"
+                          name="vida-util"
                         />
                       </div>
                     </div>
@@ -167,28 +171,18 @@
 
                   <div class="col">
                     <div class="form-group mb-3">
-                      <label for="tempo-uso-benfeitoria-1">Tempo de Uso</label>
+                      <label for="tempo-uso-benfeitoria-1">Tempo de Uso (anos)</label>
                       <div class="input-group">
                         <input
                           class="form-control"
                           type="number"
                           id="tempo-uso-benfeitoria-1"
-                        />
-                        <div class="input-group-append">
-                          <select
-                            class="form-control select2"
-                            name="tempo-uso-benfeitoria-1"
-                            id="select-tempo-uso-benfeitoria-1"
-                          >
-                            <option value="MES">Meses</option>
-                            <option value="ANO" selected>Anos</option>
-                            <option value="-1">Outro...</option>
-                          </select>
-                        </div>
-                      </div>
+                          name="tempo-uso"
+                        />                        
                     </div>
                   </div>
                 </div>
+              </div>
 
                 <div class="row">
                   <div class="col">
@@ -198,9 +192,10 @@
                       >
                       <div class="input-group">
                         <input
-                          id="porcentagem-caprinos-benfeitoria-1"
+                          id="porcentagem-caprinos"
                           type="number"
                           class="form-control"
+                          name="uso-caprinos"
                         />
                         <div class="input-group-append">
                           <span
@@ -213,7 +208,7 @@
                   </div>
                   <div class="col">
                     <div class="form-group mb-3">
-                      <label for="porcentagem-ovinos-benfeitoria-1"
+                      <label for="porcentagem-ovinos"
                         >Uso para Ovinos</label
                       >
                       <div class="input-group">
@@ -221,6 +216,7 @@
                           id="porcentagem-ovinos-benfeitoria-1"
                           type="number"
                           class="form-control"
+                          name="uso-ovinos"
                         />
                         <div class="input-group-append">
                           <span
@@ -234,7 +230,7 @@
                 </div>
 
                 <div class="row justify-content-center">
-                  <button class="btn btn-link" name="button">
+                  <button class="btn btn-link" name="button" id="adicionar-benfeitoria">
                     <span class="position-relative" style="font-weight: bold;"
                       >Adicionar Outra Benfeitoria &nbsp;</span
                     >
@@ -243,7 +239,7 @@
 
                 <div class="form-group text-center my-5">
                   <a
-                    href="cadastrar-propriedade.html"
+                    href="cadastrar-propriedade2.html"
                     class="btn btn-dark width-md btn-rounded"
                     type="reset"
                   >
@@ -251,7 +247,7 @@
                     Voltar
                   </a>
                   <a
-                    href="cadastrar-propriedade.html"
+                    href="cadastrar-propriedade2.html"
                     class="btn btn-danger width-md btn-rounded"
                     type="reset"
                   >
@@ -287,8 +283,62 @@
     <script src="assets/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
     <script src="assets/libs/autonumeric/autoNumeric-min.js"></script>
     <script src="assets/js/pages/form-masks.init.js"></script>
+    <script src="assets/libs/jquery-steps/jquery.steps.min.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+
+    <script type="text/javascript">
+      function adicionarOutro(){
+        let select = document.getElementById('benfeitoria-princ-1').value
+        
+        let outraBenfeitoria = document.getElementById('outra-benfeitoria')
+
+        if(select === '-1'){          
+          outraBenfeitoria.className = "form-group d-block"
+        }else{
+          outraBenfeitoria.className = "form-group d-none"
+        }        
+      }
+
+      function cadastrarBenfeitoria(){
+        $('#adicionar-benfeitoria').click(function(event){          
+          event.preventDefault()
+
+          tratarValores('#valor-benfeitoria')          
+
+          let data = $('#form-benfeitorias').serialize()                    
+
+          url = 'http://localhost/php-getovi/api/cadastro_benfeitoria.php';          
+          
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              
+              window.alert(res.value)
+
+              window.location.href = 'cadastrar-benfeitorias.html'                          
+            }else{
+              console.log(res.value)              
+              window.alert('Erro')
+            }
+          })     
+        })
+      }
+
+      function tratarValores(id){
+        let valor = $(id).val()
+          valor = valor.replace('.','')
+          valor = parseFloat(valor.replace(',','.'))
+          $(id).val(valor)
+      }      
+
+      cadastrarBenfeitoria()
+    </script>
   </body>
 </html>

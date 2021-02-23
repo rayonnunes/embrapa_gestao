@@ -45,7 +45,7 @@
               </div>
 
               <!-- <form id="form-login"> -->
-              <form action="http://localhost:80/php-getovi/api/login.php" method="POST" id="form_login">
+              <form id="form-login">
                 <div class="form-group mb-3">
                   <label for="emailaddress">Email</label>
                   <input
@@ -89,7 +89,7 @@
                 <div class="form-group text-center mb-3">
                   <button
                     class="btn btn-primary btn-lg width-lg btn-rounded"
-                    type="submit"
+                    id="bnt-acessar"                    
                   >
                     Acessar
                   </button>
@@ -129,32 +129,52 @@
 	
 	 <script src="assets/libs/jquery-steps/jquery.steps.min.js"></script>		
 
-	<!-- <script>
-		$('#form_login').submit(function (event){						
-			let email = $('#emailaddress').val()
-			let password = $('#password').val()
-			
-			$.ajax({
-				url: 'http://localhost/php-getovi/api/login2.php/',
-				method: 'POST',
-				data: { email: email, password: password },
-				dataType: 'json',
-			  }).done(function (res) {
-          
-  				console.log(res)
-  				 for (let i = 0; i < res.dados.length; i++) {
-  				  $('#propriedade-card').prepend(
-  					'<h5 class="card-title">' +
-  					  res.dados[i].nome +
-  					  '</h5><p><b>Municipio: </b>' +
-  					  res.dados[i].municipio +
-  					  ' - ' +
-  					  res.dados[i].estado +
-  					  ' &emsp;</p>'
-  				  );
-  				}
-			  })
-		})
-	</script> -->
+	<script>
+    function logar(){
+      $('#bnt-acessar').click(function(event){          
+          event.preventDefault()          
+
+          let data = $('#form-login').serialize()                  
+
+
+  		// $('#form_login').submit(function (event){
+        // event.preventDefault()						
+  			// let email = $('#emailaddress').val()
+  			// let password = $('#password').val()
+
+        // console.log(data)
+
+  			
+  			$.ajax({
+  				url: 'http://localhost/php-getovi/api/login2.php',
+  				method: 'POST',
+  				data: data,
+  				dataType: 'json',
+  			  }).done(function (res) {
+            if(res.status == 'Success'){              
+              window.location.href = 'selecionar-propriedade.html?id='+res.value
+            }
+            else{
+              window.alert(res.value)
+              console.log(res)
+            }                          
+    				// console.log(res)            
+    				//  for (let i = 0; i < res.dados.length; i++) {
+    				//   $('#propriedade-card').prepend(
+    				// 	'<h5 class="card-title">' +
+    				// 	  res.dados[i].nome +
+    				// 	  '</h5><p><b>Municipio: </b>' +
+    				// 	  res.dados[i].municipio +
+    				// 	  ' - ' +
+    				// 	  res.dados[i].estado +
+    				// 	  ' &emsp;</p>'
+    				//   );
+    				// }
+  			  })
+  		
+    })
+    }
+    logar()
+	</script>
   </body>
 </html>

@@ -95,10 +95,21 @@
     		<script src="assets/libs/jquery-steps/jquery.steps.min.js"></script>		
     		
     		<script type="text/javascript">
-          function carregarPropriedade() {
-            let id = document.URL.slice(53);
-
-            let url = 'http://localhost/php-getovi/api/propriedade/mostrar/'+id;  
+          let queryString = location.search.slice(1)
+  
+          let parts = queryString.split('&')
+          
+          let data = {}
+          
+          parts.forEach(function (part) {
+            let keyValue = part.split('=');
+            let key = keyValue[0];
+            let value = keyValue[1];
+            data[key] = value;
+          });
+          
+          function carregarPropriedade() {            
+            let url = 'http://localhost/php-getovi/api/propriedade/mostrar/'+data.id;  
              //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
 
 
@@ -129,9 +140,15 @@
           }
 
           function adicionarPropriedade(){
-            let id = document.URL.slice(53);
 
-            window.location.href = 'http://localhost:3000/cadastrar-propriedade.html?id='+id
+            let userData = {
+              id: data.id,
+              idPropriedade: ''
+            }
+
+            localStorage.setItem("userIds", JSON.stringify(userData))            
+
+            window.location.href = 'http://localhost:3000/cadastrar-propriedade.html?id='+data.id
           }
 
           carregarPropriedade();  

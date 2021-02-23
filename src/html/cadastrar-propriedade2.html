@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cadastrar Propriedade - Emprapa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Bootstrap select pluings -->
+    <link
+      href="assets/libs/bootstrap-select/bootstrap-select.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="bg-white">
+    <div id="wrapper">
+      @@include('./partials/topbar-initial.html')
+    </div>
+    <div class="account-pages my-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+            <div>
+              <div class="text-center mb-4">
+                <h2>Cadastrar Nova Propriedade</h2>
+              </div>              
+                  
+                  <div class="atividades-exercidas my-4">
+                    <h4>Utilização da área da Propriedade
+                      <br>                      
+                    </h4>                    
+
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <button
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Cultura Forrageira (Cultivada)"
+                                onclick="direcionarForrageira()"
+                              >
+                                <i class="fas fa-seedling"> + </i> Cadastrar
+                                Forrageira
+                              </button>                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-cultura-agricola.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Cultura Agricola (Nativa)"
+                              >
+                                <i class="fas fa-seedling">
+                                  + Adicionar Cultura Agrícola
+                                </i>
+                              </a>                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                  
+
+                  <div class="ovinos-caprinos my-4">
+                    <h4>Cadastrar Estrutura da Propriedade</h4>
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-benfeitorias.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  Cadastrar Benfeitorias
+                                </i>
+                              </a>                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-equipamentos.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  Cadastrar Equipamentos
+                                </i>
+                              </a>                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-animais-trabalho.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  Cadastrar Animais de Trabalho
+                                </i>
+                              </a>                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ovinos-caprinos my-4">
+                    <h3><strong>Cadastrar Rebanho</strong></h3>
+                    <h4>Ovinos e Caprinos</h4>
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-rebanho-simplificado.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  Cadastrar Rebanho Simplificado
+                                </i>
+                              </a>
+                              <p>
+                                O cadastro de rebanho simplificado apresenta
+                                informações menos detalhadas do rebanho, de
+                                forma mais agregada, e por isso, o controle do
+                                rebanho é feito de forma menos detalhada e gera
+                                relatórios com menos informações.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-rebanho-detalhado.html"
+                                class="btn btn-success ml-1"
+                                title="Adicionar nova Estrutura"
+                              >
+                                <i class="fas fa-seedling">
+                                  Cadastrar Rebanho Detalhado
+                                </i>
+                              </a>
+                              <p>
+                                O cadastro de rebanho detalhado requer
+                                informações mais completas por animal, e permite
+                                um controle mais preciso e detalhado da
+                                movimentação de animais, gerando relatórios mais
+                                completos.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h4>Outros</h4>
+                    <div class="col-md-12 pr-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
+                      >
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group">
+                              <a
+                                href="cadastrar-outro-pecuaria.html"
+                                class="btn btn-success ml-1"
+                                name="adicionar-atividade"                        
+                              >
+                                <i class="fas fa-seedling">
+                                  + Outra Atividade Pecuária
+                                </i>
+                              </a>                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                    
+                  </div>
+                </div>
+                                                                              
+
+                <div class="col-md-12 pr-0">
+                  <a
+                    href="selecionar-propriedade.html"
+                    class="btn btn-danger width-md btn-rounded"
+                    type="reset"
+                  >
+                    <i class="fas fa-arrow-circle-left"></i>
+                    Cancelar
+                  </a>
+                  <button
+                    class="btn btn-outline-primary width-md btn-rounded ml-1"
+                    type="reset"
+                  >
+                    Limpar Campos
+                  </button>
+                  <!-- <input type="submit" name="submit-cadastro" value="Finalizar &nbsp;" class="btn btn-primary width-md btn-rounded ml-1"> -->
+                  <a
+                    class="btn btn-primary width-md btn-rounded ml-1"
+                    id="btn-finalizar"
+                    href="finalizar-cadastro.html"
+                  >
+                    Finalizar &nbsp;
+                    <i class="fas fa-check-circle"></i>
+                  </a>
+                </div>              
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end page -->    
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- Bootstrap select plugin -->
+    <script src="assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <!-- Plugins js -->
+    <script src="assets/libs/jquery-mask-plugin/jquery.mask.min.js"></script>
+    <script src="assets/libs/autonumeric/autoNumeric-min.js"></script>
+    <script src="assets/js/pages/form-masks.init.js"></script>
+
+    <!-- jQuery -->
+    <script src="assets/libs/jquery-steps/jquery.steps.min.js"></script>
+
+    <script type="text/javascript">
+      let url = document.URL
+
+      let numInfo = url.indexOf('?')
+
+      let info = url.slice(numInfo)
+
+      function direcionarForrageira(){
+        window.location.href = 'http://localhost:3000/cadastrar-forrageira.html'  
+      }
+
+      
+    </script>    
+  </body>
+</html>

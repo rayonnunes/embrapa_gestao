@@ -44,7 +44,11 @@
               </div>
             </div>
             <!-- end card -->
-            <div class="card-body table-responsive">
+            
+            <div class="card-body table-responsive" id="tabel-propriedade">
+              <div class="text-center mb-4">
+                <h3>Propriedade</h3>
+              </div>
               <table
                 id="datatable-buttons"
                 class="table table-striped table-bordered dt-responsive nowrap"
@@ -56,151 +60,280 @@
               >
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Tipo</th>
-                    <th>Unidade</th>
-                    <th>Quantidade</th>
-                    <th>Data</th>
-                    <th>Valor</th>
+                    <th>Nome Propriedade</th>
+                    <th>Município</th>
+                    <th>Estado</th>
+                    <th>Coordenadas</th>
+                    <th>Inscrição</th>
+                    <th>Área Total</th>
+                    <th>Valor Hectare</th>
+                    <th>Área Pastagem</th>
+                    <th>Área Benfeitoria</th>
+                    <th>Área Reserva</th>
+                    <th>Saldo</th>
                     <th>Ações</th>
                   </tr>
                 </thead>
 
-                <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                    <td>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Editar"
-                      >
-                        <i class="fe-edit"></i>
-                      </button>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Excluir"
-                      >
-                        <i class="fe-trash-2 text-danger"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                    <td>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Editar"
-                      >
-                        <i class="fe-edit"></i>
-                      </button>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Excluir"
-                      >
-                        <i class="fe-trash-2 text-danger"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009/01/12</td>
-                    <td>$86,000</td>
-                    <td>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Editar"
-                      >
-                        <i class="fe-edit"></i>
-                      </button>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Excluir"
-                      >
-                        <i class="fe-trash-2 text-danger"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012/03/29</td>
-                    <td>$433,060</td>
-                    <td>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Editar"
-                      >
-                        <i class="fe-edit"></i>
-                      </button>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Excluir"
-                      >
-                        <i class="fe-trash-2 text-danger"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>33</td>
-                    <td>2008/11/28</td>
-                    <td>$162,700</td>
-                    <td>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Editar"
-                      >
-                        <i class="fe-edit"></i>
-                      </button>
-                      <button
-                        class="btn btn-link"
-                        type="button"
-                        name="button"
-                        title="Excluir"
-                      >
-                        <i class="fe-trash-2 text-danger"></i>
-                      </button>
-                    </td>
-                  </tr>
+                <tbody id="dados-propriedade">
+                  
                 </tbody>
-              </table>
+              </table>            
             </div>
+
+            <div class="card-body table-responsive" id="tabel-forrageira">
+              <div class="text-center mb-4">
+                <h3>Forrageira</h3>
+              </div>
+              <table
+                id="datatable-buttons2"
+                class="table table-striped table-bordered dt-responsive nowrap"
+                style="
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  width: 100%;
+                "
+              >
+                <thead>
+                  <tr>
+                    <th>Cultura</th>
+                    <th>Área</th>
+                    <th>Ciclo</th>
+                    <th>Uso</th>
+                    <th>Vida Útil</th>
+                    <th>Fim Ciclo</th>                    
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+
+                <tbody id="dados-forrageira">
+                  
+                </tbody>
+              </table>            
+            </div>
+
+            <div class="card-body table-responsive" id="tabel-cultura">
+              <div class="text-center mb-4">
+                <h3>Cultura Agrícola</h3>
+              </div>
+              <table
+                id="datatable-buttons3"
+                class="table table-striped table-bordered dt-responsive nowrap"
+                style="
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  width: 100%;
+                "
+              >
+                <thead>
+                  <tr>
+                    <th>Cultura</th>
+                    <th>Área</th>
+                    <th>Ciclo</th>                    
+                    <th>Vida Útil</th>
+                    <th>Fim Ciclo</th>                    
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+
+                <tbody id="dados-cultura">
+                  
+                </tbody>
+              </table>            
+            </div>
+
+            <div class="card-body table-responsive">
+              <div class="text-center mb-4">
+                <h3>Benfeitorias</h3>
+              </div>
+              <table
+                id="datatable-buttons4"
+                class="table table-striped table-bordered dt-responsive nowrap"
+                style="
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  width: 100%;
+                "
+              >
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Característica</th>
+                    <th>Quantidade</th>                    
+                    <th>Valor</th>
+                    <th>Vida Útil</th>                    
+                    <th>Tempo Uso</th>
+                    <th>Uso Caprinos</th>
+                    <th>Uso Ovinos</th>
+                    <th>Ações</th>                    
+                  </tr>
+                </thead>
+
+                <tbody id="dados-benfeitorias">
+                  
+                </tbody>
+              </table>            
+            </div>
+            
+            <div class="card-body table-responsive">
+              <div class="text-center mb-4">
+                <h3>Equipamento e Veículos</h3>
+              </div>
+              <table
+                id="datatable-buttons5"
+                class="table table-striped table-bordered dt-responsive nowrap"
+                style="
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  width: 100%;
+                "
+              >
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Característica</th>
+                    <th>Quantidade</th>                    
+                    <th>Valor</th>
+                    <th>Vida Útil</th>                    
+                    <th>Tempo Uso</th>
+                    <th>Uso Caprinos</th>
+                    <th>Uso Ovinos</th>
+                    <th>Ações</th>                         
+                  </tr>
+                </thead>
+
+                <tbody id="dados-equipamentos">
+                  
+                </tbody>
+              </table>            
+            </div>
+            
           </div>
+
+          <div class="card-body table-responsive">
+              <div class="text-center mb-4">
+                <h3>Animais de Trabalho</h3>
+              </div>
+              <table
+                id="datatable-buttons6"
+                class="table table-striped table-bordered dt-responsive nowrap"
+                style="
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  width: 100%;
+                "
+              >
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Característica</th>
+                    <th>Quantidade</th>                    
+                    <th>Valor</th>
+                    <th>Vida Útil</th>                    
+                    <th>Tempo Uso</th>
+                    <th>Uso Caprinos</th>
+                    <th>Uso Ovinos</th>
+                    <th>Ações</th>                         
+                  </tr>
+                </thead>
+
+                <tbody id="dados-animais">
+                  
+                </tbody>
+              </table>            
+            </div>
+            
+            <div class="card-body table-responsive">
+              <div class="text-center mb-4">
+                <h3>Rebanho Simplificado</h3>
+              </div>
+              <table
+                id="datatable-buttons7"
+                class="table table-striped table-bordered dt-responsive nowrap"
+                style="
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  width: 100%;
+                "
+              >
+                <thead>
+                  <tr>
+                    <th>Nome Rebanho</th>
+                    <th>Espécie</th>
+                    <th>Raça</th>                    
+                    <th>Categoria</th>
+                    <th>Quantidade</th>                                        
+                    <th>Ações</th>                         
+                  </tr>
+                </thead>
+
+                <tbody id="dados-rebanho-simples">
+                  
+                </tbody>
+              </table>            
+            </div>
+
+            <div class="card-body table-responsive">
+              <div class="text-center mb-4">
+                <h3>Rebanho Detalhado</h3>
+              </div>
+              <table
+                id="datatable-buttons8"
+                class="table table-striped table-bordered dt-responsive nowrap"
+                style="
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  width: 100%;
+                "
+              >
+                <thead>
+                  <tr>
+                    <th>Nome Rebanho</th>
+                    <th>Identificação Animal</th>
+                    <th>Data Nascimento</th>
+                    <th>Espécie</th>
+                    <th>Raça</th>                    
+                    <th>Categoria</th>                    
+                    <th>Ações</th>                         
+                  </tr>
+                </thead>
+
+                <tbody id="dados-rebanho-detalhado">
+                  
+                </tbody>
+              </table>            
+            </div>
+
+            <div class="card-body table-responsive">
+              <div class="text-center mb-4">
+                <h3>Outro atividade pecuária</h3>
+              </div>
+              <table
+                id="datatable-buttons9"
+                class="table table-striped table-bordered dt-responsive nowrap"
+                style="
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  width: 100%;
+                "
+              >
+                <thead>
+                  <tr>
+                    <th>Nome Animal</th>                                        
+                    <th>Espécie</th>
+                    <th>Qtd</th>                                        
+                    <th>Ações</th>                         
+                  </tr>
+                </thead>
+
+                <tbody id="dados-outro-pecuaria">
+                  
+                </tbody>
+              </table>            
+            </div>
+          
+
+          </div>          
           <!-- end col -->
         </div>
         <!-- end row -->
@@ -213,14 +346,13 @@
           <i class="fas fa-arrow-circle-left"></i>
           Alterar Informações
         </a>
-        <a
-          href="dashboard.html"
+        <button          
           class="btn btn-primary width-md btn-rounded ml-1"
-          type="submit"
+          onclick="concluir()"          
         >
           Concluir &nbsp;
           <i class="fas fa-arrow-circle-right"></i>
-        </a>
+        </button>
       </div>
       <!-- end container -->
     </div>
@@ -239,5 +371,556 @@
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+
+    <script type="text/javascript">      
+      function listarPropriedade() {            
+        let url = 'http://localhost/php-getovi/api/propriedade/finalizar'           
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {
+          console.log(res)
+          if(res.status === 'Sucesso'){                                
+              for(let i = 0; i < res.dados.length; i++){
+                $('#dados-propriedade').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].nome+'</td>'
+                  +'<td>'+res.dados[i].estado+'</td>'
+                  +'<td>'+res.dados[i].municipio+'</td>'
+                  +'<td>'+res.dados[i].coordenadas+'</td>'
+                  +'<td>'+res.dados[i].inscricao+'</td>'
+                  +'<td>'+res.dados[i].area_benfeitoria+'</td>'
+                  +'<td>'+res.dados[i].area_pastagem+'</td>'
+                  +'<td>'+res.dados[i].area_reserva+'</td>'
+                  +'<td>'+res.dados[i].area_total+' '+res.dados[i].unidade_medida+'</td>'
+                  +'<td>'+res.dados[i].valor_hectare+'</td>'
+                  +'<td>'+res.dados[i].saldo+'</td>'
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+
+          
+        });
+      }
+
+      function listarForrageira() {            
+        let url = 'http://localhost/php-getovi/api/forrageira/finalizar'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {
+          console.log(res)
+          if(res.status === 'Sucesso'){                                
+              for(let i = 0; i < res.dados.length; i++){
+                if(res.dados[i].fim_ciclo === null){
+                  res.dados[i].fim_ciclo = '-'
+                }
+                if (res.dados[i].vida_util === null) {
+                  res.dados[i].vida_util = '-'
+                }
+                $('#dados-forrageira').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].cultura+'</td>'
+                  +'<td>'+res.dados[i].area+'</td>'
+                  +'<td>'+res.dados[i].ciclo+'</td>'
+                  +'<td>'+res.dados[i].uso+'</td>'
+                  +'<td>'+res.dados[i].fim_ciclo+'</td>'
+                  +'<td>'+res.dados[i].vida_util+'</td>'                  
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+
+          
+        });
+      }
+
+      function listarCultura() {            
+        let url = 'http://localhost/php-getovi/api/culturaAgricola/finalizar'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){                                
+              for(let i = 0; i < res.dados.length; i++){
+                if(res.dados[i].fim_ciclo === null){
+                  res.dados[i].fim_ciclo = '-'
+                }
+                if (res.dados[i].vida_util === null) {
+                  res.dados[i].vida_util = '-'
+                }
+                $('#dados-cultura').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].cultura+'</td>'
+                  +'<td>'+res.dados[i].area+'</td>'
+                  +'<td>'+res.dados[i].ciclo+'</td>'                  
+                  +'<td>'+res.dados[i].fim_ciclo+'</td>'
+                  +'<td>'+res.dados[i].vida_util+'</td>'                  
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+
+          
+        });
+      }
+
+      function listarBenfeitoria() {            
+        let url = 'http://localhost/php-getovi/api/benfeitorias/finalizar'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){
+            for(let i = 0; i < res.dados.length; i++){                                              
+                $('#dados-benfeitorias').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].nome_benfeitoria+'</td>'
+                  +'<td>'+res.dados[i].caracteristica+'</td>'
+                  +'<td>'+res.dados[i].qtd+'</td>'                  
+                  +'<td>'+res.dados[i].valor+'</td>'
+                  +'<td>'+res.dados[i].vida_util+'</td>'                  
+                  +'<td>'+res.dados[i].tempo_uso+'</td>'
+                  +'<td>'+res.dados[i].uso_caprinos+'</td>'
+                  +'<td>'+res.dados[i].uso_ovinos+'</td>'
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+
+          
+        });
+      }
+
+      function listarEquipamentos() {            
+        let url = 'http://localhost/php-getovi/api/equipamentos/finalizar'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){
+            for(let i = 0; i < res.dados.length; i++){                                              
+                $('#dados-equipamentos').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].nome_equipamento+'</td>'
+                  +'<td>'+res.dados[i].caracteristica+'</td>'
+                  +'<td>'+res.dados[i].qtd+'</td>'                  
+                  +'<td>'+res.dados[i].valor+'</td>'
+                  +'<td>'+res.dados[i].vida_util+'</td>'                  
+                  +'<td>'+res.dados[i].tempo_uso+'</td>'
+                  +'<td>'+res.dados[i].uso_caprinos+'</td>'
+                  +'<td>'+res.dados[i].uso_ovinos+'</td>'
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+          
+        });
+      }
+
+      function listarAnimaisTrabalho() {            
+        let url = 'http://localhost/php-getovi/api/animaisTrabalho/finalizar'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){
+            for(let i = 0; i < res.dados.length; i++){                                              
+                $('#dados-animais').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].nome_animal+'</td>'
+                  +'<td>'+res.dados[i].caracteristica+'</td>'
+                  +'<td>'+res.dados[i].qtd+'</td>'                  
+                  +'<td>'+res.dados[i].valor+'</td>'
+                  +'<td>'+res.dados[i].vida_util+'</td>'                  
+                  +'<td>'+res.dados[i].tempo_uso+'</td>'
+                  +'<td>'+res.dados[i].uso_caprinos+'</td>'
+                  +'<td>'+res.dados[i].uso_ovinos+'</td>'
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+          
+        });
+      }
+
+      function listarRebanhoSimples() {            
+        let url = 'http://localhost/php-getovi/api/rebanho/finalizar'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){
+            for(let i = 0; i < res.dados.length; i++){                                              
+                $('#dados-rebanho-simples').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].nome_rebanho_simples+'</td>'
+                  +'<td>'+res.dados[i].especie+'</td>'
+                  +'<td>'+res.dados[i].raca+'</td>'                  
+                  +'<td>'+res.dados[i].categoria+'</td>'
+                  +'<td>'+res.dados[i].qtd+'</td>'                                    
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+          
+        });
+      }
+
+      function listarRebanhoSimples() {            
+        let url = 'http://localhost/php-getovi/api/rebanho/finalizar'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){
+            for(let i = 0; i < res.dados.length; i++){                                              
+                $('#dados-rebanho-simples').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].nome_rebanho_simples+'</td>'
+                  +'<td>'+res.dados[i].especie+'</td>'
+                  +'<td>'+res.dados[i].raca+'</td>'                  
+                  +'<td>'+res.dados[i].categoria+'</td>'
+                  +'<td>'+res.dados[i].qtd+'</td>'                                    
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+          
+        });
+      }
+
+      function listarRebanhoDetalhado() {            
+        let url = 'http://localhost/php-getovi/api/rebanhoDetalhado/finalizar'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){
+            for(let i = 0; i < res.dados.length; i++){                                              
+                $('#dados-rebanho-detalhado').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].nome_rebanho_detalhado+'</td>'
+                  +'<td>'+res.dados[i].identificacao_animal+'</td>'
+                  +'<td>'+res.dados[i].data_nascimento+'</td>'                  
+                  +'<td>'+res.dados[i].especie+'</td>'
+                  +'<td>'+res.dados[i].raca+'</td>'
+                  +'<td>'+res.dados[i].categoria+'</td>'                  
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+          
+        });
+      }
+
+      function listarOutroPecuaria() {            
+        let url = 'http://localhost/php-getovi/api/outroPecuaria/finalizar'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){
+            for(let i = 0; i < res.dados.length; i++){                                              
+                $('#dados-outro-pecuaria').prepend(
+                  '<tr>'+
+                  '<td>'+res.dados[i].nome_animal+'</td>'                  
+                  +'<td>'+res.dados[i].especie+'</td>'
+                  +'<td>'+res.dados[i].qtd+'</td>'                
+                  +`<td><button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Editar"
+                  >
+                    <i class="fe-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    name="button"
+                    title="Excluir"
+                  >
+                    <i class="fe-trash-2 text-danger"></i>
+                  </button>
+                  </td>
+                  </tr>                      
+                  `
+                  )
+              }                                                                     
+          }
+          
+        });
+      }
+
+      function concluir(){
+        let url = 'http://localhost/php-getovi/api/finalizar_cadastro.php'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+
+        // $.ajax({
+        //   url: url,
+        //   method: 'GET',      
+        //   dataType: 'json',
+        // }).done(function (res) {          
+        //   if(res.status === 'Success'){
+        //     window.alert(res.value)
+
+        //     window.location.href = 'dashboard.html'                                                                         
+        //   }
+          
+        // });
+        window.alert('Cadastro Concluído!')
+        window.location.href = 'dashboard.html'                                                                         
+      }
+
+      listarPropriedade();
+      listarForrageira();
+      listarCultura();
+      listarBenfeitoria();
+      listarEquipamentos();
+      listarAnimaisTrabalho();
+      listarRebanhoSimples();
+      listarRebanhoDetalhado();
+      listarOutroPecuaria();  
+    </script>
   </body>
 </html>
+
+<!-- `<h3 class="text-center mb-4">Propriedade</h3>
+                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: collapse; width: 100%">
+                    <thead>
+                      <tr>
+                        <th>Nome Propriedade</th>
+                        <th>Município</th>
+                        <th>Estado</th>
+                        <th>Coordenadas</th>
+                        <th>Inscrição</th>
+                        <th>Área Total</th>
+                        <th>Valor Hectare</th>
+                        <th>Área Pastagem</th>
+                        <th>Área Benfeitoria</th>
+                        <th>Área Reserva</th>
+                        <th>Saldo</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>`
+                      for(let i = 0; i < res.dados.length; i++){
+                        $('#tabel-propriedade').prepend(
+                        '<tr>'+res.dados[i].nome+'</tr>'
+                        '<tr>'+res.dados[i].estado+'</tr>'
+                        '<tr>'+res.dados[i].municipio+'</tr>'
+                        '<tr>'+res.dados[i].coordenadas+'</tr>'
+                        '<tr>'+res.dados[i].inscricao+'</tr>'
+                        '<tr>'+res.dados[i].area_benfeitoria+'</tr>'
+                        '<tr>'+res.dados[i].area_pastagem+'</tr>'
+                        '<tr>'+res.dados[i].area_reserva+'</tr>'
+                        '<tr>'+res.dados[i].area_total+res.dados[i].unidade_medida+'</tr>'
+                        '<tr>'+res.dados[i].valor_hectare+'</tr>'
+                        '<tr>'+res.dados[i].saldo+'</tr>'
+                        )
+                      }     
+                    +`</tbody>
+                </table>` -->
