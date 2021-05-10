@@ -209,28 +209,20 @@
 
                 <div class="form-group text-center my-5">
                   <a
-                    href="cadastrar-equipamentos.html"
+                    href="cadastrar-propriedade2.html"
                     class="btn btn-dark width-md btn-rounded"
                     type="reset"
                   >
                     <i class="fas fa-arrow-circle-left"></i>
                     Voltar
                   </a>
-                  <a
-                    href="cadastrar-propriedade2.html"
+                  <button                    
                     class="btn btn-danger width-md btn-rounded"
                     type="reset"
+                    id="cadastrar-animais-retornar"
                   >
-                    Retornar Cadastro Inicial
-                  </a>
-                  <a
-                    href="cadastrar-propriedade2.html"
-                    class="btn btn-success width-md btn-rounded ml-1"
-                    type="submit"
-                  >
-                    Próximo &nbsp;
-                    <i class="fas fa-arrow-circle-right"></i>
-                  </a>
+                    Cadastrar e Retornar
+                  </button>                  
                 </div>
               </form>
             </div>
@@ -301,6 +293,36 @@
         })
       }
 
+      function cadastrarRetornar(){
+        $('#cadastrar-animais-retornar').click(function(event){          
+          event.preventDefault()
+
+          tratarValores('#valor-animal')          
+
+          let data = $('#form-animais-trabalho').serialize()                    
+
+          url = 'http://localhost/php-getovi/api/cadastro_animais_trabalho.php';          
+          
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              
+              window.alert(res.value)
+
+              window.location.href = 'cadastrar-propriedade2.html'                          
+            }else{
+              console.log(res.value)              
+              window.alert('Erro')
+            }
+          })     
+        })
+      }
+
       function tratarValores(id){
         let valor = $(id).val()
           valor = valor.replace('.','')
@@ -309,6 +331,7 @@
       }      
 
       cadastrarAnimalTrabalho()
+      cadastrarRetornar()
     </script>
   </body>
 </html>

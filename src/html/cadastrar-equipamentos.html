@@ -249,27 +249,20 @@
 
                 <div class="form-group text-center my-5">
                   <a
-                    href="cadastrar-benfeitorias.html"
+                    href="cadastrar-propriedade2.html"
                     class="btn btn-dark width-md btn-rounded"
                     type="reset"
                   >
                     <i class="fas fa-arrow-circle-left"></i>
                     Voltar
-                  </a>
-                  <a
-                    href="cadastrar-propriedade2.html"
+                  </a>                                    
+                  <button                    
                     class="btn btn-danger width-md btn-rounded"
                     type="reset"
+                    id="cadastrar-equipamentos-retornar" 
                   >
-                    Retornar Cadastro Inicial
-                  </a>
-                  <a
-                    href="cadastrar-animais-trabalho.html"
-                    class="btn btn-success width-md btn-rounded"
-                  >
-                    Próximo &nbsp;
-                    <i class="fas fa-arrow-circle-right"></i>
-                  </a>
+                    Cadastrar e Retornar
+                  </button>                  
                 </div>
               </form>
             </div>
@@ -340,6 +333,36 @@
         })
       }
 
+      function cadastrarRetornar(){
+        $('#cadastrar-equipamentos-retornar').click(function(event){          
+          event.preventDefault()
+
+          tratarValores('#valor-equipamento')          
+
+          let data = $('#form-equipamentos').serialize()                    
+
+          url = 'http://localhost/php-getovi/api/cadastro_equipamento.php';          
+          
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              
+              window.alert(res.value)
+
+              window.location.href = 'cadastrar-propriedade2.html'                          
+            }else{
+              console.log(res.value)              
+              window.alert('Erro')
+            }
+          })     
+        })
+      }
+
       function tratarValores(id){
         let valor = $(id).val()
           valor = valor.replace('.','')
@@ -348,6 +371,7 @@
       }      
 
       cadastrarEquipamento()
+      cadastrarRetornar()
     </script>
   </body>
 </html>

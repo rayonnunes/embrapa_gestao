@@ -1,5 +1,15 @@
-<form>
+<form id="form-nascimento">
   <div class="row" id="mean-row">
+    <div class="col-md-6 d-none">
+      <div class="form-group">        
+        <input
+          class="form-control"
+          type="text"
+          name="tipo-lancamento"
+          value="nascimento"          
+        />
+      </div>
+    </div>  
     <div class="col-md-6">
       <div class="form-group">
         <label for="rebanho-nascimento">Rebanho</label>
@@ -9,15 +19,14 @@
           name="nasc-rebanho"
           onchange="addFields()"
         >
-          <option value="simplificado">Rebanho Simplificado</option>
-          <option value="detalhado">Rebanho Detalhado</option>
+          
         </select>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
         <label for="nascimento-parto">Tipo de Parto</label>
-        <select id="nascimento-parto" class="form-control" name="tipo-produto">
+        <select id="nascimento-parto" class="form-control" name="tipo-parto" onchange="addFields()">
           <option value="simples">Simples</option>
           <option value="duplo">Duplo</option>
           <option value="triplo">Triplo</option>
@@ -25,26 +34,201 @@
         </select>
       </div>
     </div>
-    <div class="col-md-6">
+
+    <div class="col-md-6 d-none" id="div-matriz-nascimento">
       <div class="form-group">
-        <label for="sexo-nascimento">Sexo</label>
-        <select id="sexo-nascimento" class="form-control" name="tipo-produto">
-          <option value="1">Macho</option>
-          <option value="2">Fêmea</option>
+        <label for="sexo-nascimento">Matriz</label>
+        <select id="matriz-nascimento" class="form-control" name="matriz">
+          
         </select>
       </div>
     </div>
+    <div class="col-md-6 d-none" id="div-reprodutor-nascimento">
+      <div class="form-group">
+        <label for="peso-nascimento">Reprodutor</label>
+        <select id="reprodutor-nascimento" class="form-control" name="reprodutor">
+          
+        </select>
+      </div>
+    </div>
+
+
+    <!-- Cria 1 -->
+    <div class="col-md-6 d-none" id="div-cria-nascimento">
+      <div class="form-group">
+        <label for="peso-nascimento">Identificação Cria 1</label>
+        <input 
+          id="id-cria1"
+          type="text"
+          class="form-control"
+          name="cria1" 
+        />
+      </div>
+    </div>
+
     <div class="col-md-6">
       <div class="form-group">
-        <label for="peso-nascimento">Peso</label>
+        <label for="sexo-nascimento">Sexo cria 1</label>
+        <select id="sexo-nascimento" class="form-control" name="sexo1">
+          <option value="macho">Macho</option>
+          <option value="fêmea">Fêmea</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="peso-nascimento">Peso Cria 1</label>
         <input
           class="form-control"
           type="number"
-          name="peso-nasc"
+          name="peso1"
           id="peso-nascimento"
         />
       </div>
     </div>
+
+    <div class="col-md-6" id="div-raca-nascimento">
+      <div class="form-group">
+        <label for="raca-nascimento">Raça cria 1</label>
+        <select id="raca-nascimento1" class="form-control" name="raca1">
+          <option value="misto">Misto</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Cria 2 -->
+    <div class="col-md-6 d-none" id="div-cria-nascimento2">
+      <div class="form-group">
+        <label for="peso-nascimento">Identificação Cria 2</label>
+        <input 
+          id="id-cria2"
+          type="text"
+          class="form-control"
+          name="cria2" 
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6 d-none" id="div-sexo-nascimento2">
+      <div class="form-group">
+        <label for="sexo-nascimento">Sexo Cria 2</label>
+        <select id="sexo-nascimento2" class="form-control" name="sexo2">
+          <option value="macho">Macho</option>
+          <option value="fêmea">Fêmea</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="col-md-6 d-none" id="div-peso-nascimento2">
+      <div class="form-group">
+        <label for="peso-nascimento">Peso Cria 2</label>
+        <input
+          class="form-control"
+          type="number"
+          name="peso2"
+          id="peso-nascimento2"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6 d-none" id="div-raca-nascimento2">
+      <div class="form-group">
+        <label for="raca-nascimento">Raça cria 2</label>
+        <select id="raca-nascimento2" class="form-control" name="raca2">
+          <option value="misto">Misto</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Cria 3 -->
+    <div class="col-md-6 d-none" id="div-cria-nascimento3">
+      <div class="form-group">
+        <label for="peso-nascimento">Identificação Cria 3</label>
+        <input 
+          id="id-cria3"
+          type="text"
+          class="form-control"
+          name="cria3" 
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6 d-none" id="div-sexo-nascimento3">
+      <div class="form-group">
+        <label for="sexo-nascimento">Sexo Cria 3</label>
+        <select id="sexo-nascimento3" class="form-control" name="sexo3">
+          <option value="macho">Macho</option>
+          <option value="fêmea">Fêmea</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="col-md-6 d-none" id="div-peso-nascimento3">
+      <div class="form-group">
+        <label for="peso-nascimento">Peso Cria 3</label>
+        <input
+          class="form-control"
+          type="number"
+          name="peso3"
+          id="peso-nascimento3"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6 d-none" id="div-raca-nascimento3">
+      <div class="form-group">
+        <label for="raca-nascimento">Raça cria 3</label>
+        <select id="raca-nascimento3" class="form-control" name="raca3">
+          <option value="misto">Misto</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Cria 2 -->
+    <div class="col-md-6 d-none" id="div-cria-nascimento4">
+      <div class="form-group">
+        <label for="peso-nascimento">Identificação Cria 4</label>
+        <input 
+          id="id-cria4"
+          type="text"
+          class="form-control"
+          name="cria4" 
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6 d-none" id="div-sexo-nascimento4">
+      <div class="form-group">
+        <label for="sexo-nascimento">Sexo Cria 4</label>
+        <select id="sexo-nascimento4" class="form-control" name="sexo4">
+          <option value="macho">Macho</option>
+          <option value="fêmea">Fêmea</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="col-md-6 d-none" id="div-peso-nascimento4">
+      <div class="form-group">
+        <label for="peso-nascimento">Peso Cria 4</label>
+        <input
+          class="form-control"
+          type="number"
+          name="peso4"
+          id="peso-nascimento4"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6 d-none" id="div-raca-nascimento4">
+      <div class="form-group">
+        <label for="raca-nascimento">Raça cria 4</label>
+        <select id="raca-nascimento4" class="form-control" name="raca4">
+          <option value="misto">Misto</option>
+        </select>
+      </div>
+    </div>
+    
     <div class="col-md-6">
       <div class="form-group">
         <label for="data-nascimento-simp">Data do Parto</label>
@@ -58,7 +242,7 @@
     </div>
   </div>
 
-  <button class="btn btn-primary btn-lg" type="submit">
+  <button class="btn btn-primary btn-lg" type="submit" id="btn-adicionar-nascimento">
     Adicionar Nascimento
   </button>
 
@@ -71,107 +255,176 @@
     Fechar
   </button>
 </form>
-
 <script type="text/javascript">
-  function addFields() {
-    let selectedValue = document.getElementById('nascimento-rebanho').value;
-    let row = document.getElementById('mean-row');
+  // function carregarRebanhos(){
+  //   let url = 'http://localhost/php-getovi/api/especie_rebanho.php'
+  //   $.ajax({
+  //         url: url,
+  //         method: 'GET',      
+  //         dataType: 'json',
+  //       }).done(function (res) {          
+  //         if(res.status === 'Success'){
+  //           console.log(res.rebanhos)            
+  //             // for(let i = 0; i < res.value.length; i++){
+                
+  //             //   }           
+  //               // $('#div-atividade-associada').prepend(
+  //               //   `
+  //               //   <div class="col-md-12 pr-0">
+  //               //     <div class="form-group">
+  //               //       <div class="row">
+  //               //         <div class="col-md-5 mt-1">
+  //               //           <label>`+res.value[i].especie+`</label>                          
+  //               //         </div>
+  //               //         <div class="col-md-7 pl-0">
+  //               //           <div class="input-group">
+  //               //             <input
+  //               //             class="form-control"
+  //               //             type="number"
+  //               //             name=`+name
+  //               //             +` value="0"
+  //               //             />
+  //               //             <div class="input-group-append">
+  //               //               <span class="input-group-text bg-primary text-white b-0">%</span>
+  //               //             </div>
+  //               //           </div>
+  //               //         </div>
+  //               //       </div>
+  //               //     </div>
+  //               //   </div>`                                
+  //               //   )
 
-    let col1 = document.createElement('div');
-    col1.className = 'col-md-6';
-    col1.id = 'group-nascimento1';
-    let col2 = document.createElement('div');
-    col2.className = 'col-md-6';
-    col2.id = 'group-nascimento2';
-    let col3 = document.createElement('div');
-    col3.className = 'col-md-6';
-    col3.id = 'group-nascimento3';
+  //               // $('#div-atv-invest').prepend(
+  //               //   `
+  //               //   <div class="col-md-12 pr-0">
+  //               //     <div class="form-group">
+  //               //       <div class="row">
+  //               //         <div class="col-md-5 mt-1">
+  //               //           <label>`+res.value[i].especie+`</label>                          
+  //               //         </div>
+  //               //         <div class="col-md-7 pl-0">
+  //               //           <div class="input-group">
+  //               //             <input
+  //               //             class="form-control"
+  //               //             type="number"
+  //               //             name=`+name+` value="0"                            
+  //               //             />
+  //               //             <div class="input-group-append">
+  //               //               <span class="input-group-text bg-primary text-white b-0">%</span>
+  //               //             </div>
+  //               //           </div>
+  //               //         </div>
+  //               //       </div>
+  //               //     </div>
+  //               //   </div>`                                
+  //                 // )
+  //             }                                                                               
 
-    let formGroup1 = document.createElement('div');
-    formGroup1.className = 'form-group';
+  //         // else{
+  //         //   console.log(res)
+  //         // }
+  //       });
+  // }
+  // function addFields() {
+  //   let selectedValue = document.getElementById('nascimento-rebanho').value;
+  //   let row = document.getElementById('mean-row');
 
-    let formGroup2 = document.createElement('div');
-    formGroup2.className = 'form-group';
+  //   let col1 = document.createElement('div');
+  //   col1.className = 'col-md-6';
+  //   col1.id = 'group-nascimento1';
+  //   let col2 = document.createElement('div');
+  //   col2.className = 'col-md-6';
+  //   col2.id = 'group-nascimento2';
+  //   let col3 = document.createElement('div');
+  //   col3.className = 'col-md-6';
+  //   col3.id = 'group-nascimento3';
 
-    let formGroup3 = document.createElement('div');
-    formGroup3.className = 'form-group';
+  //   let formGroup1 = document.createElement('div');
+  //   formGroup1.className = 'form-group';
 
-    if (selectedValue === 'simplificado') {
-      let child1 = document.getElementById('group-nascimento1');
-      let child2 = document.getElementById('group-nascimento2');
-      let child3 = document.getElementById('group-nascimento3');
+  //   let formGroup2 = document.createElement('div');
+  //   formGroup2.className = 'form-group';
 
-      child1.parentNode.removeChild(child1);
-      child2.parentNode.removeChild(child2);
-      child3.parentNode.removeChild(child3);
-    } else if (selectedValue === 'detalhado') {
-      var labelMatriz = document.createElement('label');
-      labelMatriz.innerText = 'Matriz';
+  //   let formGroup3 = document.createElement('div');
+  //   formGroup3.className = 'form-group';
 
-      var inputMatriz = document.createElement('select');
-      inputMatriz.className = 'form-control';
+  //   if (selectedValue === 'simplificado') {
+  //     let child1 = document.getElementById('group-nascimento1');
+  //     let child2 = document.getElementById('group-nascimento2');
+  //     let child3 = document.getElementById('group-nascimento3');
 
-      var optionMatriz1 = document.createElement('option');
-      optionMatriz1.innerText = 'Matriz 1';
-      var optionMatriz2 = document.createElement('option');
-      optionMatriz2.innerText = 'Matriz 2';
-      var optionMatriz3 = document.createElement('option');
-      optionMatriz3.innerText = 'Matriz 3';
-      var optionMatriz4 = document.createElement('option');
-      optionMatriz4.innerText = 'Matriz 4';
+  //     child1.parentNode.removeChild(child1);
+  //     child2.parentNode.removeChild(child2);
+  //     child3.parentNode.removeChild(child3);
+  //   } else if (selectedValue === 'detalhado') {
+  //     var labelMatriz = document.createElement('label');
+  //     labelMatriz.innerText = 'Matriz';
 
-      var labelReprodutor = document.createElement('label');
-      labelReprodutor.innerText = 'Reprodutor';
+  //     var inputMatriz = document.createElement('select');
+  //     inputMatriz.className = 'form-control';
 
-      var inputReprodutor = document.createElement('select');
-      inputReprodutor.className = 'form-control';
+  //     var optionMatriz1 = document.createElement('option');
+  //     optionMatriz1.innerText = 'Matriz 1';
+  //     var optionMatriz2 = document.createElement('option');
+  //     optionMatriz2.innerText = 'Matriz 2';
+  //     var optionMatriz3 = document.createElement('option');
+  //     optionMatriz3.innerText = 'Matriz 3';
+  //     var optionMatriz4 = document.createElement('option');
+  //     optionMatriz4.innerText = 'Matriz 4';
 
-      var optionReprodutor1 = document.createElement('option');
-      optionReprodutor1.innerText = 'Reprodutor 1';
-      var optionReprodutor2 = document.createElement('option');
-      optionReprodutor2.innerText = 'Reprodutor 2';
-      var optionReprodutor3 = document.createElement('option');
-      optionReprodutor3.innerText = 'Reprodutor 3';
-      var optionReprodutor4 = document.createElement('option');
-      optionReprodutor4.innerText = 'Reprodutor 4';
-      var optionReprodutor5 = document.createElement('option');
-      optionReprodutor5.innerText = 'Desconhecido';
+  //     var labelReprodutor = document.createElement('label');
+  //     labelReprodutor.innerText = 'Reprodutor';
 
-      var labelCria = document.createElement('label');
-      labelCria.innerText = 'Identificação Cria';
+  //     var inputReprodutor = document.createElement('select');
+  //     inputReprodutor.className = 'form-control';
 
-      var inputCria = document.createElement('input');
-      inputCria.className = 'form-control';
+  //     var optionReprodutor1 = document.createElement('option');
+  //     optionReprodutor1.innerText = 'Reprodutor 1';
+  //     var optionReprodutor2 = document.createElement('option');
+  //     optionReprodutor2.innerText = 'Reprodutor 2';
+  //     var optionReprodutor3 = document.createElement('option');
+  //     optionReprodutor3.innerText = 'Reprodutor 3';
+  //     var optionReprodutor4 = document.createElement('option');
+  //     optionReprodutor4.innerText = 'Reprodutor 4';
+  //     var optionReprodutor5 = document.createElement('option');
+  //     optionReprodutor5.innerText = 'Desconhecido';
 
-      inputMatriz.appendChild(optionMatriz1);
-      inputMatriz.appendChild(optionMatriz2);
-      inputMatriz.appendChild(optionMatriz3);
-      inputMatriz.appendChild(optionMatriz4);
+  //     var labelCria = document.createElement('label');
+  //     labelCria.innerText = 'Identificação Cria';
 
-      formGroup1.appendChild(labelMatriz);
-      formGroup1.appendChild(inputMatriz);
+  //     var inputCria = document.createElement('input');
+  //     inputCria.className = 'form-control';
 
-      col1.appendChild(formGroup1);
+  //     inputMatriz.appendChild(optionMatriz1);
+  //     inputMatriz.appendChild(optionMatriz2);
+  //     inputMatriz.appendChild(optionMatriz3);
+  //     inputMatriz.appendChild(optionMatriz4);
 
-      inputReprodutor.appendChild(optionReprodutor1);
-      inputReprodutor.appendChild(optionReprodutor2);
-      inputReprodutor.appendChild(optionReprodutor3);
-      inputReprodutor.appendChild(optionReprodutor4);
-      inputReprodutor.appendChild(optionReprodutor5);
+  //     formGroup1.appendChild(labelMatriz);
+  //     formGroup1.appendChild(inputMatriz);
 
-      formGroup2.appendChild(labelReprodutor);
-      formGroup2.appendChild(inputReprodutor);
+  //     col1.appendChild(formGroup1);
 
-      col2.appendChild(formGroup2);
+  //     inputReprodutor.appendChild(optionReprodutor1);
+  //     inputReprodutor.appendChild(optionReprodutor2);
+  //     inputReprodutor.appendChild(optionReprodutor3);
+  //     inputReprodutor.appendChild(optionReprodutor4);
+  //     inputReprodutor.appendChild(optionReprodutor5);
 
-      formGroup3.appendChild(labelCria);
-      formGroup3.appendChild(inputCria);
+  //     formGroup2.appendChild(labelReprodutor);
+  //     formGroup2.appendChild(inputReprodutor);
 
-      col3.appendChild(formGroup3);
+  //     col2.appendChild(formGroup2);
 
-      row.appendChild(col1);
-      row.appendChild(col2);
-      row.appendChild(col3);
-    }
-  }
+  //     formGroup3.appendChild(labelCria);
+  //     formGroup3.appendChild(inputCria);
+
+  //     col3.appendChild(formGroup3);
+
+  //     row.appendChild(col1);
+  //     row.appendChild(col2);
+  //     row.appendChild(col3);
+  //   }
+  // }
+  // carregarRebanhos()
 </script>

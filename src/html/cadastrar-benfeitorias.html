@@ -245,21 +245,14 @@
                   >
                     <i class="fas fa-arrow-circle-left"></i>
                     Voltar
-                  </a>
-                  <a
-                    href="cadastrar-propriedade2.html"
+                  </a>                  
+                  <button                    
                     class="btn btn-danger width-md btn-rounded"
                     type="reset"
+                    id="cadastrar-benfeitoria-retornar"
                   >
-                    Retornar Cadastro Inicial
-                  </a>
-                  <a
-                    href="cadastrar-equipamentos.html"
-                    class="btn btn-success width-md btn-rounded"
-                  >
-                    Próximo &nbsp;
-                    <i class="fas fa-arrow-circle-right"></i>
-                  </a>
+                    Cadastrar e Retornar
+                  </button>                  
                 </div>
               </form>
             </div>
@@ -331,6 +324,36 @@
         })
       }
 
+      function cadastrarRetornar(){
+        $('#cadastrar-benfeitoria-retornar').click(function(event){          
+          event.preventDefault()
+
+          tratarValores('#valor-benfeitoria')          
+
+          let data = $('#form-benfeitorias').serialize()                    
+
+          url = 'http://localhost/php-getovi/api/cadastro_benfeitoria.php';          
+          
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              
+              window.alert(res.value)
+
+              window.location.href = 'cadastrar-propriedade2.html'                          
+            }else{
+              console.log(res.value)              
+              window.alert('Erro')
+            }
+          })     
+        })
+      }
+
       function tratarValores(id){
         let valor = $(id).val()
           valor = valor.replace('.','')
@@ -339,6 +362,7 @@
       }      
 
       cadastrarBenfeitoria()
+      cadastrarRetornar()
     </script>
   </body>
 </html>

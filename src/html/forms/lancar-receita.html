@@ -1,4 +1,7 @@
-<form>
+<form id="form-lanc-receita">
+  <div class="form-group d-none">
+    <input type="text" name="tipo" value="receita">  
+  </div>    
   <div class="row">
     <div class="col-md-12">
       <label for="fazenda"><h4>Fazenda 1</h4></label>
@@ -12,6 +15,7 @@
           id="categoria-receita"
           class="form-control select2"
           value=""
+          name="categoria"
         >
           <option>Selecione</option>
           <option value="animais_descarte">Animais de Descarte</option>
@@ -25,50 +29,20 @@
         </select>
       </div>
     </div>
-    <div class="col-md-12">
-      <div class="form-group">
-        <p>
-          <a
-            class="btn btn-primary"
-            data-toggle="collapse"
-            href="#collapseExample"
-            role="button"
-            aria-expanded="false"
-            aria-controls="collapseExample"
-          >
-            Atividade Associada
-          </a>
-        </p>
-
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body">
-            <div class="atividades-exercidas mb-4">
-              <label>Divisão da Propriedade: </label>
-              <div class="col-md-12 pr-0">
-                <div
-                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
-                >
+    <div class="col-md-12 pr-0 d-none">
+                <div class="form-group">
                   <div class="row">
-                    <div class="col-md-5 mt-1">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="rec-atividade-ovinos"
-                        checked
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="check-atividade-ovinos"
-                        >Criação de Ovinos</label
-                      >
+                    <div class="col-md-5 mt-1">                      
+                      <label>Ovinos</label>
                     </div>
                     <div class="col-md-7 pl-0">
                       <div class="input-group">
                         <input
                           class="form-control"
                           type="number"
-                          id="rec-area-criacao-ovinos"
-                          value="1.3"
+                          id="rec-ovinos"
+                          value="0"
+                          name="atividade-ovinos"
                         />
                         <div class="input-group-append">
                           <div class="input-group-append">
@@ -83,31 +57,20 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-12 pr-0">
-                <div
-                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
-                >
+              <div class="col-md-12 pr-0 d-none">
+                <div class="form-group">
                   <div class="row">
-                    <div class="col-md-5 mt-1">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="rec-atividade-caprinos"
-                        checked
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="check-atividade-caprinos"
-                        >Criação de Caprinos</label
-                      >
+                    <div class="col-md-5 mt-1">                      
+                      <label>Caprinos</label>
                     </div>
                     <div class="col-md-7 pl-0">
                       <div class="input-group">
                         <input
                           class="form-control"
                           type="number"
-                          id="rec-area-criacao-caprinos"
-                          value="2.1"
+                          id="rec-caprinos"
+                          value="0"
+                          name="atividade-caprinos"
                         />
                         <div class="input-group-append">
                           <span
@@ -120,212 +83,194 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-12 pr-0">
-                <div
-                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
-                >
-                  <div class="row">
-                    <div class="col-md-5 mt-1">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="rec-atividade-pastagem-nativa"
-                        checked
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="check-atividade-pastagem-nativa"
-                        >Pastagem Nativa</label
-                      >
-                    </div>
-                    <div class="col-md-7 pl-0">
-                      <div class="input-group">
-                        <input
-                          class="form-control"
-                          type="number"
-                          id="rec-area-pastagem-nativa"
-                          value="3.0"
-                        />
-                        <div class="input-group-append">
-                          <div class="input-group-append">
-                            <span
-                              class="input-group-text bg-primary text-white b-0"
-                              >%</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 pr-0">
-                <div
-                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
-                >
-                  <div class="row">
-                    <div class="col-md-5 mt-1">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="rec-atividade-pastagem-cultivada"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="check-atividade-pastagem-cultivada"
-                        >Pastagem Cultivada</label
-                      >
-                    </div>
-                    <div class="col-md-7 pl-0">
-                      <div class="input-group">
-                        <input
-                          class="form-control"
-                          type="number"
-                          id="rec-area-pastagem-cultivada"
-                          placeholder="Área"
-                          disabled
-                        />
-                        <div class="input-group-append">
-                          <div class="input-group-append">
-                            <span
-                              class="input-group-text bg-primary text-white b-0"
-                              >%</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 pr-0">
-                <div
-                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
-                >
-                  <div class="row">
-                    <div class="col-md-5 mt-1">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="rec-atividade-cultivo-agricola"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="check-atividade-cultivo-agricola"
-                        >Cultivo Agrícola (não Forrageiro)</label
-                      >
-                    </div>
-                    <div class="col-md-7 pl-0">
-                      <div class="input-group">
-                        <input
-                          class="form-control"
-                          type="number"
-                          id="rec-area-cultivo-agricola"
-                          placeholder="Área"
-                          disabled
-                        />
-                        <div class="input-group-append">
-                          <div class="input-group-append">
-                            <span
-                              class="input-group-text bg-primary text-white b-0"
-                              >%</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 pr-0">
-                <div
-                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
-                >
-                  <div class="row">
-                    <div class="col-md-5 mt-1">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="rec-atividade-reserva"
-                        checked
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="check-atividade-reserva"
-                        >Área de Reserva</label
-                      >
-                    </div>
-                    <div class="col-md-7 pl-0">
-                      <div class="input-group">
-                        <input
-                          class="form-control"
-                          type="number"
-                          id="rec-area-reserva"
-                          value="0.7"
-                        />
-                        <div class="input-group-append">
-                          <div class="input-group-append">
-                            <span
-                              class="input-group-text bg-primary text-white b-0"
-                              >%</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 pr-0">
-                <div
-                  class="custom-control custom-checkbox custom-control-inline mt-3 mr-0"
-                >
-                  <div class="row">
-                    <div class="col-md-5 mt-1">
-                      <input
-                        type="checkbox"
-                        class="custom-control-input"
-                        id="rec-atividade-benfeitorias"
-                        checked
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="check-atividade-benfeitorias"
-                        >Área de Benfeitorias (Casas, açudes e etc.)</label
-                      >
-                    </div>
-                    <div class="col-md-7 pl-0">
-                      <div class="input-group">
-                        <input
-                          class="form-control"
-                          type="number"
-                          id="rec-area-benfeitorias"
-                          value="0.2"
-                        />
-                        <div class="input-group-append">
-                          <div class="input-group-append">
-                            <span
-                              class="input-group-text bg-primary text-white b-0"
-                              >%</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <p>
-          <a href="../cadastrar-propriedade.html" class="btn btn-link"
-            >Adicionar Atividade Associada</a
-          >
-        </p>
+              <!-- Bovino leite -->
+              <div class="col-md-12 pr-0 d-none" id="bovino-leite">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <label>Bovino Leite</label>                          
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                        class="form-control"
+                        type="number"
+                        name= 'bovino-leite'
+                        value="0"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text bg-primary text-white b-0">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fim bovino leite -->
+
+              <!-- Bovino corte -->
+              <div class="col-md-12 pr-0 d-none">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <label>Bovino Corte</label>                          
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                        class="form-control"
+                        type="number"
+                        name= 'bovino-corte'
+                        value="0"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text bg-primary text-white b-0">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fim bovino corte -->
+
+              <!-- Bovino misto -->
+              <div class="col-md-12 pr-0 d-none">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <label>Bovino Misto</label>                          
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                        class="form-control"
+                        type="number"
+                        name= 'bovino-misto'
+                        value="0"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text bg-primary text-white b-0">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fim bovino misto -->
+
+              <!-- Suinocultura -->
+              <div class="col-md-12 pr-0 d-none">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <label>Suinocultura</label>                          
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                        class="form-control"
+                        type="number"
+                        name= 'suinocultura'
+                        value="0"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text bg-primary text-white b-0">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fim suinocultura-->
+
+              <!-- Avicultura Postura -->
+              <div class="col-md-12 pr-0 d-none">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <label>Avicultura Postura</label>                          
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                        class="form-control"
+                        type="number"
+                        name= 'avicultura-postura'
+                        value="0"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text bg-primary text-white b-0">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fim avicultura postura -->
+
+              <!-- Avicultura Corte -->
+              <div class="col-md-12 pr-0 d-none">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-5 mt-1">
+                      <label>Avicultura Corte</label>                          
+                    </div>
+                    <div class="col-md-7 pl-0">
+                      <div class="input-group">
+                        <input
+                        class="form-control"
+                        type="number"
+                        name= 'avicultura-corte'
+                        value="0"
+                        />
+                        <div class="input-group-append">
+                          <span class="input-group-text bg-primary text-white b-0">%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fim avicultura corte -->
+    <!-- <div class="col-md-6">
+      <div class="form-group">
+        <label for="quantidade-receita">Atividade Associada</label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            type="text"
+            id="atividade-receita"
+            placeholder="Digite a atividade"
+            name="atividade-receita"
+          />          
+        </div>
+      </div>
+    </div> -->
+    <!-- Atividade Associada -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="atividades-receita">Atividade Associada</label>
+        <select
+          type="text"
+          id="atividade-receita"
+          class="form-control select2"
+          value=""
+          name="atividades-receita"
+        >
+          <option>Selecione</option>
+          <option value="Ovinos">Ovinos</option>
+          <option value="Caprinos">Caprinos</option>
+          <option value="Bovino Leite">Bovino Leite</option>
+          <option value="Bovino Corte">Bovino Corte</option>
+          <option value="Bovino Misto">Bovino Misto</option>
+          <option value="Suinocultura">Suinocultura</option>
+          <option value="Avicultura Corte">Avicultura Corte</option>
+          <option value="Avicultura Postura">Avicultura Postura</option>
+        </select>
       </div>
     </div>
+    <!-- Fim atividade receita -->
   </div>
   <div class="row">
     <div class="col-md-6">
@@ -338,6 +283,7 @@
           placeholder="dd/mm/yyyy"
           data-provide="datepicker"
           data-date-autoclose="true"
+          name="data"
         />
       </div>
     </div>
@@ -352,13 +298,15 @@
             type="number"
             id="quantidade-receita"
             placeholder="10"
+            name="qtd"
           />
           <div class="input-group-append">
-            <select class="form-control select2" name="select-unidade-receita">
-              <option value="1">KG</option>
-              <option value="2">@</option>
-              <option value="3">Ton</option>
-              <option value="4">Unidade(s)</option>
+            <select class="form-control select2" name="qtd-unidade">
+              <option value="KG">KG</option>
+              <option value="@">@</option>
+              <option value="Ton">Ton</option>
+              <option value="L">L</option>
+              <option value="unidade(s)">Unidade(s)</option>
             </select>
           </div>
         </div>
@@ -373,11 +321,12 @@
           </div>
           <input
             id="valor-receita"
+            name="valor"
             type="text"
             class="form-control"
             data-toggle="input-mask"
             data-mask-format="000.000.000.000.000,00"
-            data-reverse="true"
+            data-reverse="true"            
           />
         </div>
       </div>
@@ -392,11 +341,12 @@
           id="descricao-receita"
           class="form-control"
           value=""
+          name="descricao"
         ></textarea>
       </div>
     </div>
   </div>
-  <button class="btn btn-primary btn-lg float-right" type="submit">
+  <button class="btn btn-primary btn-lg float-right" id="btn-adicionar-receita" type="submit">
     Adicionar Receita
   </button>
   <button class="btn btn-danger btn-lg float-right mr-4" type="reset">

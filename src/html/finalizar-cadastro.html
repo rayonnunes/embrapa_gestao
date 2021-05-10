@@ -39,13 +39,14 @@
         <div class="row justify-content-center">
           <div class="col-md-8 col-lg-8 col-xl-10">
             <div>
-              <div class="text-center mb-4">
-                <h2>Cadastro Realizado com sucesso!</h2>
+              <div class="text-center mb-4">                
+                <h2 id="titulo-finalizado"></h2>
+                <h3>Cadastro Realizado com Sucesso!</h3>
               </div>
             </div>
             <!-- end card -->
             
-            <div class="card-body table-responsive" id="tabel-propriedade">
+            <div class="card-body table-responsive d-none" id="tabela-propriedade">
               <div class="text-center mb-4">
                 <h3>Propriedade</h3>
               </div>
@@ -81,7 +82,7 @@
               </table>            
             </div>
 
-            <div class="card-body table-responsive" id="tabel-forrageira">
+            <div class="card-body table-responsive d-none" id="tabela-forrageira">
               <div class="text-center mb-4">
                 <h3>Forrageira</h3>
               </div>
@@ -112,7 +113,7 @@
               </table>            
             </div>
 
-            <div class="card-body table-responsive" id="tabel-cultura">
+            <div class="card-body table-responsive d-none" id="tabela-cultura-agricola">
               <div class="text-center mb-4">
                 <h3>Cultura Agrícola</h3>
               </div>
@@ -142,7 +143,7 @@
               </table>            
             </div>
 
-            <div class="card-body table-responsive">
+            <div class="card-body table-responsive d-none" id="tabela-benfeitoria">
               <div class="text-center mb-4">
                 <h3>Benfeitorias</h3>
               </div>
@@ -175,7 +176,7 @@
               </table>            
             </div>
             
-            <div class="card-body table-responsive">
+            <div class="card-body table-responsive d-none" id="tabela-equipamentos">
               <div class="text-center mb-4">
                 <h3>Equipamento e Veículos</h3>
               </div>
@@ -210,7 +211,7 @@
             
           </div>
 
-          <div class="card-body table-responsive">
+          <div class="card-body table-responsive d-none" id="tabela-animais-trabalho">
               <div class="text-center mb-4">
                 <h3>Animais de Trabalho</h3>
               </div>
@@ -243,7 +244,7 @@
               </table>            
             </div>
             
-            <div class="card-body table-responsive">
+            <div class="card-body table-responsive d-none" id="tabela-rebanho-simples">
               <div class="text-center mb-4">
                 <h3>Rebanho Simplificado</h3>
               </div>
@@ -273,7 +274,7 @@
               </table>            
             </div>
 
-            <div class="card-body table-responsive">
+            <div class="card-body table-responsive d-none" id="tabela-rebanho-detalhado">
               <div class="text-center mb-4">
                 <h3>Rebanho Detalhado</h3>
               </div>
@@ -304,7 +305,7 @@
               </table>            
             </div>
 
-            <div class="card-body table-responsive">
+            <div class="card-body table-responsive d-none" id="tabela-outro-pecuaria">
               <div class="text-center mb-4">
                 <h3>Outro atividade pecuária</h3>
               </div>
@@ -372,17 +373,35 @@
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
 
-    <script type="text/javascript">      
-      function listarPropriedade() {            
-        let url = 'http://localhost/php-getovi/api/propriedade/finalizar'           
+    <script type="text/javascript">
+      function nomeProdutor() {            
+        let url = 'http://localhost/php-getovi/api/produtor_info.php'        
+        let h2 = document.getElementById('titulo-finalizado')
 
         $.ajax({
           url: url,
           method: 'GET',      
           dataType: 'json',
-        }).done(function (res) {
-          console.log(res)
-          if(res.status === 'Sucesso'){                                
+        }).done(function (res) {          
+          
+          let nome = res.value
+
+
+          h2.innerText = "Parabéns " + nome  
+        });
+      }
+
+      function listarPropriedade() {            
+        let url = 'http://localhost/php-getovi/api/propriedade/finalizar'
+        let propriedade = document.getElementById('tabela-propriedade')           
+
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){
+              propriedade.className = 'card-body table-responsive d-block'                                
               for(let i = 0; i < res.dados.length; i++){
                 $('#dados-propriedade').prepend(
                   '<tr>'+
@@ -428,14 +447,14 @@
         let url = 'http://localhost/php-getovi/api/forrageira/finalizar'  
          //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
 
-
+         let forrageira = document.getElementById('tabela-forrageira')
         $.ajax({
           url: url,
           method: 'GET',      
           dataType: 'json',
-        }).done(function (res) {
-          console.log(res)
-          if(res.status === 'Sucesso'){                                
+        }).done(function (res) {          
+          if(res.status === 'Sucesso'){
+              forrageira.className = 'card-body table-responsive d-block'                                
               for(let i = 0; i < res.dados.length; i++){
                 if(res.dados[i].fim_ciclo === null){
                   res.dados[i].fim_ciclo = '-'
@@ -482,13 +501,14 @@
         let url = 'http://localhost/php-getovi/api/culturaAgricola/finalizar'  
          //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
 
-
+         let culturaAgricola = document.getElementById('tabela-cultura-agricola')
         $.ajax({
           url: url,
           method: 'GET',      
           dataType: 'json',
         }).done(function (res) {          
-          if(res.status === 'Sucesso'){                                
+          if(res.status === 'Sucesso'){
+              culturaAgricola.className = 'card-body table-responsive d-block'                                
               for(let i = 0; i < res.dados.length; i++){
                 if(res.dados[i].fim_ciclo === null){
                   res.dados[i].fim_ciclo = '-'
@@ -534,13 +554,14 @@
         let url = 'http://localhost/php-getovi/api/benfeitorias/finalizar'  
          //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
 
-
+         let benfeitoria = document.getElementById('tabela-benfeitoria')
         $.ajax({
           url: url,
           method: 'GET',      
           dataType: 'json',
         }).done(function (res) {          
           if(res.status === 'Sucesso'){
+            benfeitoria.className = 'card-body table-responsive d-block'
             for(let i = 0; i < res.dados.length; i++){                                              
                 $('#dados-benfeitorias').prepend(
                   '<tr>'+
@@ -583,13 +604,14 @@
         let url = 'http://localhost/php-getovi/api/equipamentos/finalizar'  
          //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
 
-
+         let equipamentos = document.getElementById('tabela-equipamentos')
         $.ajax({
           url: url,
           method: 'GET',      
           dataType: 'json',
         }).done(function (res) {          
           if(res.status === 'Sucesso'){
+            equipamentos.className = 'card-body table-responsive d-block'
             for(let i = 0; i < res.dados.length; i++){                                              
                 $('#dados-equipamentos').prepend(
                   '<tr>'+
@@ -631,6 +653,7 @@
         let url = 'http://localhost/php-getovi/api/animaisTrabalho/finalizar'  
          //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
 
+        let animaisTrabalho = document.getElementById('tabela-animais-trabalho')
 
         $.ajax({
           url: url,
@@ -638,6 +661,7 @@
           dataType: 'json',
         }).done(function (res) {          
           if(res.status === 'Sucesso'){
+            animaisTrabalho.className = 'card-body table-responsive d-block'
             for(let i = 0; i < res.dados.length; i++){                                              
                 $('#dados-animais').prepend(
                   '<tr>'+
@@ -675,9 +699,11 @@
         });
       }
 
+
       function listarRebanhoSimples() {            
         let url = 'http://localhost/php-getovi/api/rebanho/finalizar'  
-         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'
+         let rebanhoSimples = document.getElementById('tabela-rebanho-simples')  
 
 
         $.ajax({
@@ -686,51 +712,7 @@
           dataType: 'json',
         }).done(function (res) {          
           if(res.status === 'Sucesso'){
-            for(let i = 0; i < res.dados.length; i++){                                              
-                $('#dados-rebanho-simples').prepend(
-                  '<tr>'+
-                  '<td>'+res.dados[i].nome_rebanho_simples+'</td>'
-                  +'<td>'+res.dados[i].especie+'</td>'
-                  +'<td>'+res.dados[i].raca+'</td>'                  
-                  +'<td>'+res.dados[i].categoria+'</td>'
-                  +'<td>'+res.dados[i].qtd+'</td>'                                    
-                  +`<td><button
-                    class="btn btn-link"
-                    type="button"
-                    name="button"
-                    title="Editar"
-                  >
-                    <i class="fe-edit"></i>
-                  </button>
-                  <button
-                    class="btn btn-link"
-                    type="button"
-                    name="button"
-                    title="Excluir"
-                  >
-                    <i class="fe-trash-2 text-danger"></i>
-                  </button>
-                  </td>
-                  </tr>                      
-                  `
-                  )
-              }                                                                     
-          }
-          
-        });
-      }
-
-      function listarRebanhoSimples() {            
-        let url = 'http://localhost/php-getovi/api/rebanho/finalizar'  
-         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
-
-
-        $.ajax({
-          url: url,
-          method: 'GET',      
-          dataType: 'json',
-        }).done(function (res) {          
-          if(res.status === 'Sucesso'){
+            rebanhoSimples.className = 'card-body table-responsive d-block'
             for(let i = 0; i < res.dados.length; i++){                                              
                 $('#dados-rebanho-simples').prepend(
                   '<tr>'+
@@ -766,16 +748,18 @@
       }
 
       function listarRebanhoDetalhado() {            
-        let url = 'http://localhost/php-getovi/api/rebanhoDetalhado/finalizar'  
-         //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+        let url = 'http://localhost/php-getovi/api/rebanhoDetalhado/finalizar'           
 
-
+         
+        let rebanhoDetalhado = document.getElementById('tabela-rebanho-detalhado')
         $.ajax({
           url: url,
           method: 'GET',      
           dataType: 'json',
         }).done(function (res) {          
           if(res.status === 'Sucesso'){
+            // Revelando a tabela caso sejam encontrados dados cadastrados nela
+            rebanhoDetalhado.className = "card-body table-responsive d-block"     
             for(let i = 0; i < res.dados.length; i++){                                              
                 $('#dados-rebanho-detalhado').prepend(
                   '<tr>'+
@@ -815,13 +799,16 @@
         let url = 'http://localhost/php-getovi/api/outroPecuaria/finalizar'  
          //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
 
-
+         // Pegando div da tabela outro-pecuária         
+         let outroPecuaria = document.getElementById('tabela-outro-pecuaria')
         $.ajax({
           url: url,
           method: 'GET',      
           dataType: 'json',
         }).done(function (res) {          
           if(res.status === 'Sucesso'){
+            // Revelando a tabela caso sejam encontrados dados cadastrados nela
+            outroPecuaria.className = "card-body table-responsive d-block"          
             for(let i = 0; i < res.dados.length; i++){                                              
                 $('#dados-outro-pecuaria').prepend(
                   '<tr>'+
@@ -849,8 +836,7 @@
                   `
                   )
               }                                                                     
-          }
-          
+          }          
         });
       }
 
@@ -875,6 +861,7 @@
         window.location.href = 'dashboard.html'                                                                         
       }
 
+      nomeProdutor()
       listarPropriedade();
       listarForrageira();
       listarCultura();

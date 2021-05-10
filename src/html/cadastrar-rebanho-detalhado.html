@@ -181,15 +181,15 @@
                   </a>
                   <button
                     class="btn btn-outline-primary width-md btn-rounded ml-1"
-                    type="reset"
+                    id="cadastrar-retornar-rd"
                   >
-                    Limpar Campos
+                    Cadastrar e Retornar
                   </button>
                   <button
-                    class="btn btn-primary width-md btn-rounded ml-1"
-                    type="submit"
+                    class="btn btn-primary width-md btn-rounded ml-1"                    
+                    id="cadastrar-novo-rd"
                   >
-                    Finalizar &nbsp;
+                    Novo Rebanho &nbsp;
                     <i class="fas fa-arrow-circle-right"></i>
                   </button>
                 </div>
@@ -232,12 +232,37 @@
         }        
       }
 
-      function cadastrarRebanho(){
-        $('#adicionar-animal').click(function(event){          
+      function cadastrarRetornar(){
+        $('#cadastrar-retornar-rd').click(function(event){          
           event.preventDefault()
           
-          let data = $('#form-rebanho-detalhado').serialize()          
+          let data = $('#form-rebanho-detalhado').serialize()
 
+          let url = 'http://localhost/php-getovi/api/cadastro_rebanho_detalhado.php';                    
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){            
+            if(res.status == 'Success'){              
+              window.alert(res.value)
+              console.log(res)
+
+              window.location.href = 'cadastrar-propriedade2.html'                          
+            }else{              
+              console.log(res.value)              
+              window.alert('Erro')
+            }
+          })     
+        })
+      }
+
+      function cadastrarNovoRebanho(){
+        $('#cadastrar-novo-rd').click(function(event){          
+          event.preventDefault()
+          
+          let data = $('#form-rebanho-detalhado').serialize()                                                  
           let url = 'http://localhost/php-getovi/api/cadastro_rebanho_detalhado.php';                    
           $.ajax({
             url: url,
@@ -256,9 +281,65 @@
             }
           })     
         })
+      }
+
+      function cadastrarCategoria(){
+        $('#adicionar-animal').click(function(event){          
+          event.preventDefault()
+          
+          let data = $('#form-rebanho-detalhado').serialize()          
+          let nomeRebanho = document.getElementById('nomeRebanho').value
+          console.log(data)                                
+
+          let url = 'http://localhost/php-getovi/api/cadastro_rebanho_detalhado.php';                    
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){            
+            if(res.status == 'Success'){              
+              window.alert(res.value)
+              console.log(res)
+
+              // window.location.href = 'cadastrar-rebanho-detalhado.html?nome='+nomeRebanho                          
+            }else{              
+              console.log(res.value)              
+              window.alert('Erro')
+            }
+          })     
+        })
       }   
 
-      cadastrarRebanho()
+      function preparaNomeRebanho(){
+        let queryString = location.search.slice(1)
+  
+          let parts = queryString.split('&')
+          
+          let data = {}
+          
+          parts.forEach(function (part) {
+            let keyValue = part.split('=');
+            let key = keyValue[0];
+            let value = keyValue[1];
+            data[key] = value;
+          });
+          
+          if(data.nome){
+            let novoNome = data.nome
+            novoNome = novoNome.replace(/%20/gi, " ");
+            let nomeRebanho = document.getElementById('nomeRebanho')
+            nomeRebanho.value = novoNome  
+            nomeRebanho.disabled = true
+          }          
+          
+      }
+
+      cadastrarNovoRebanho()
+      cadastrarRetornar()
+      cadastrarCategoria()
+      preparaNomeRebanho()
+
     </script>
   </body>
 </html>

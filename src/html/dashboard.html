@@ -290,7 +290,7 @@
                         <div class="text-right">
                           <p class="text-uppercase">Despesas</p>
                           <h4 class="mb-0">
-                            R$ <span data-plugin="counterup">2500.00 </span>
+                            R$ <span data-plugin="counterup" id="card-despesa"></span>
                           </h4>
                         </div>
                       </div>
@@ -310,7 +310,7 @@
                         <div class="text-right">
                           <p class="text-uppercase">Receitas</p>
                           <h4 class="mb-0">
-                            R$ <span data-plugin="counterup">7800.00 </span>
+                            R$ <span data-plugin="counterup" id="card-receita"></span>
                           </h4>
                         </div>
                       </div>
@@ -330,7 +330,7 @@
                         <div class="text-right">
                           <p class="text-uppercase">Investimentos</p>
                           <h4 class="mb-0">
-                            R$ <span data-plugin="counterup">1687.44 </span>
+                            R$ <span data-plugin="counterup" id="card-investimento"> </span>
                           </h4>
                         </div>
                       </div>
@@ -1193,7 +1193,7 @@
             if(res.status == 'Success'){
               
               // window.alert(res.value)
-              console.log(res.value[0])
+              // console.log(res.value[0])
 
               $('#dropdownMenuButton').prepend(
                 res.value[0].nome
@@ -1210,6 +1210,82 @@
               
 
               // window.location.href = 'cadastrar-forrageira.html'                          
+            }
+            // else{
+              
+            //   window.alert(res.value)
+            //   console.log(res.value)              
+            // }
+
+            // window.location.href = 'http://localhost:3000/cadastrar-propriedade2.html?id='+id+'&idProp='+idPropriedade          
+          })
+      }
+
+      function tratarValores(id){
+        let valor = $(id).val()
+          valor = valor.replace('.','')
+          valor = parseFloat(valor.replace(',','.'))
+          $(id).val(valor)
+      }  
+
+      function carregarAtividades() {            
+        let url = 'http://localhost/php-getovi/api/especie_rebanho.php'
+        let divAtividade = document.getElementById('div-atividade-associada')
+        let name        
+        
+        $.ajax({
+          url: url,
+          method: 'GET',      
+          dataType: 'json',
+        }).done(function (res) {          
+          if(res.status === 'Success'){
+            // console.log(res.rebanhos)
+            // console.log(res.value[0].especie)                                              
+              for(let i = 0; i < res.value.length; i++){
+                name = res.value[i].especie.toLowerCase().replace(' ', '-')
+                let name1 = 'desp-'+name
+                let name2 = 'inv-'+name
+                if(name){
+                  let atv1 = document.getElementById(name1)
+                  let atv2 = document.getElementById(name2)
+                  // console.log(name2)
+                  console.log(atv2)
+                  atv1.className = 'col-md-12 pr-0'
+                  atv2.className = 'col-md-12 pr-0'
+                  console.log(atv2)
+                }           
+                
+              }                                                                     
+          }
+          
+        });
+      }
+
+      function lancarFinanceiro(){        
+        $('#btn-adicionar-despesa').click(function(event){          
+          // console.log('teste')
+          event.preventDefault()
+          // window.alert('Teste')                    
+          tratarValores('#valor')
+          let data = $('#form-lanc-despesa').serialize()                  
+
+          // console.log()
+
+          url = 'http://localhost/php-getovi/api/lancamento_financeiro.php';  
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              console.log(res.value)
+              
+              window.alert(res.value)
+              window.location.href = 'dashboard.html'
+
+              // window.location.href = 'cadastrar-forrageira.html'                          
             }else{
               
               window.alert(res.value)
@@ -1217,30 +1293,389 @@
             }
 
             // window.location.href = 'http://localhost:3000/cadastrar-propriedade2.html?id='+id+'&idProp='+idPropriedade          
-          })
+          })     
+        })
+
+        $('#btn-adicionar-receita').click(function(event){
+          event.preventDefault()          
+          // console.log('teste')          
+          // window.alert('Teste')                    
+          tratarValores('#valor-receita')
+          let data = $('#form-lanc-receita').serialize()                  
+
+          // console.log()
+
+          url = 'http://localhost/php-getovi/api/lancamento_financeiro.php';  
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              console.log(res.value)
+              
+              window.alert(res.value)
+              window.location.href = 'dashboard.html'
+              // window.location.href = 'cadastrar-forrageira.html'                          
+            }else{
+              
+              window.alert(res.value)
+              console.log(res.value)              
+            }
+
+            // window.location.href = 'http://localhost:3000/cadastrar-propriedade2.html?id='+id+'&idProp='+idPropriedade          
+          })     
+        })
+
+        $('#btn-adicionar-investimento').click(function(event){          
+          // console.log('teste')
+          event.preventDefault()
+          // window.alert('Teste')                    
+          tratarValores('#valor-investimento')
+          let data = $('#form-lanc-investimento').serialize()                  
+
+          // console.log()
+
+          url = 'http://localhost/php-getovi/api/lancamento_financeiro.php';  
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              console.log(res.value)
+              
+              window.alert(res.value)
+              window.location.href = 'dashboard.html'                          
+              // window.location.href = 'cadastrar-forrageira.html'                          
+            }else{
+              
+              window.alert(res.value)
+              console.log(res.value)              
+            }
+
+            // window.location.href = 'http://localhost:3000/cadastrar-propriedade2.html?id='+id+'&idProp='+idPropriedade          
+          })     
+        })
+
+        // Lançamento Rebanho
+
+        $('#btn-adicionar-nascimento').click(function(event){          
+          // console.log('teste')
+          event.preventDefault()
+          // window.alert('Teste')                              
+          let data = $('#form-nascimento').serialize()                  
+
+          // console.log()
+
+          url = 'http://localhost/php-getovi/api/lancamento_nascimento.php';  
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              console.log(res.value)
+              
+              window.alert(res.value)
+              window.location.href = 'dashboard.html'
+            
+            }else{
+              
+              window.alert(res.value)
+              console.log(res.value)              
+            }
+
+            
+          })     
+        })
+
+        // Adicionar um registro de reprodução do lançamento do rebanho
+         $('#btn-adicionar-registro').click(function(event){          
+          // console.log('teste')
+          event.preventDefault()
+          // window.alert('Teste')                              
+          let data = $('#form-registro-reproducao').serialize()                  
+
+          // console.log()
+
+          url = 'http://localhost/php-getovi/api/registro_reproducao.php';  
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
+              console.log(res.value)
+              
+              window.alert(res.value)
+              // window.location.href = 'dashboard.html'
+            
+            }else{
+              
+              window.alert(res.value)
+              console.log(res.value)              
+            }
+
+            
+          })     
+        })
       }
+
+
+
+      // Busca a quantidade total de despesas, investimentos e receita e apresenta nos cards
+      function carregarTotal() {            
+            let url = 'http://localhost/php-getovi/api/lancamentoFinanceiro/obterTotal/'
+             //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'  
+
+            let cardDespesa = document.getElementById('card-despesa')
+            let cardReceita = document.getElementById('card-receita')
+            let cardInvestimento = document.getElementById('card-investimento')
+            $.ajax({
+              url: url,
+              method: 'GET',      
+              dataType: 'json',
+            }).done(function (res) {              
+              if (res.status === 'Sucesso') {      
+                console.log(res.dados.receita.sum)
+                cardReceita.innerText = res.dados.receita.sum
+                cardDespesa.innerText = res.dados.despesa.sum
+                cardInvestimento.innerText = res.dados.investimento.sum
+              } else {
+                console.log(res)
+              }
+            });
+          }
+
+      function carregarRebanhos(){
+        let url = 'http://localhost/php-getovi/api/especie_rebanho.php'
+        $.ajax({
+              url: url,
+              method: 'GET',      
+              dataType: 'json',
+            }).done(function (res) {          
+              if(res.status === 'Success'){
+                console.log(res)            
+                let rebanhoSimples = res.rebanho_simples
+                let rebanhoDetalhado = res.rebanho_detalhado
+                let category = res.categorias
+                let raca = res.racas
+                // console.log(raca)            
+                // console.log(res.categorias[0].categoria)
+                  for(let i = 0; i < rebanhoSimples.length; i++){
+                      $('#nascimento-rebanho').prepend(
+                        `<option name=simples>`+rebanhoSimples[i].nome_rebanho_simples+`</option>
+                        `
+                        )
+                     }           
+                   for(let i = 0; i < rebanhoDetalhado.length; i++){
+                    $('#nascimento-rebanho').prepend(
+                      `<option name=detalhado>`+rebanhoDetalhado[i].nome_rebanho_detalhado+`</option>
+                      `
+                      )
+                   }
+                   for(let i = 0; i < raca.length; i++){
+                    $('#raca-nascimento1').prepend(
+                      `<option>`+raca[i].raca+`</option>
+                      `
+                      )
+                    $('#raca-nascimento2').prepend(
+                      `<option>`+raca[i].raca+`</option>
+                      `
+                      )
+                    $('#raca-nascimento3').prepend(
+                      `<option>`+raca[i].raca+`</option>
+                      `
+                      )
+                    $('#raca-nascimento4').prepend(
+                      `<option>`+raca[i].raca+`</option>
+                      `
+                      )
+                   }
+
+                  for(let i = 0; i < category.length; i++){
+                    if(category[i].categoria === 'matriz'){
+                      $('#matriz-nascimento').prepend(
+                        `<option>`+category[i].identificacao_animal+`</option>
+                      `
+                      )
+                      $('#id-matriz').prepend(
+                        `<option>`+category[i].identificacao_animal+`</option>
+                      `
+                      )    
+                    }
+                    else if(category[i].categoria === 'reprodutor'){
+                      $('#reprodutor-nascimento').prepend(
+                        `<option>`+category[i].identificacao_animal+`</option>
+                      `
+                      )
+                      $('#id-reprodutor').prepend(
+                        `<option>`+category[i].identificacao_animal+`</option>
+                      `
+                      )    
+                    }
+                    
+                  }                                                                                         
+                  }
+
+            });
+      }
+  function addFields() {    
+    let selectedValue = document.getElementById('nascimento-rebanho');
+    let selectedParto = document.getElementById('nascimento-parto').value
+    let selectEvento = document.getElementById('reproducao-ocorrencia').value
+
+    let option = document.getElementById('nascimento-rebanho').options[selectedValue.selectedIndex];
+    let name = option.getAttribute('name');
+
+    let divIdReprodutor = document.getElementById('div-reprodutor-registro')
+
+    let divMatriz = document.getElementById('div-matriz-nascimento')
+    let divReprodutor = document.getElementById('div-reprodutor-nascimento')
+    let divCria = document.getElementById('div-cria-nascimento')    
+
+    let divCria2 = document.getElementById('div-cria-nascimento2')
+    let divSexo2 = document.getElementById('div-sexo-nascimento2')
+    let divPeso2 = document.getElementById('div-peso-nascimento2')
+    let divRaca2 = document.getElementById('div-raca-nascimento2')    
+
+    let divCria3 = document.getElementById('div-cria-nascimento3')
+    let divSexo3 = document.getElementById('div-sexo-nascimento3')
+    let divPeso3 = document.getElementById('div-peso-nascimento3')        
+    let divRaca3 = document.getElementById('div-raca-nascimento3')    
+
+    let divCria4 = document.getElementById('div-cria-nascimento4')
+    let divSexo4 = document.getElementById('div-sexo-nascimento4')
+    let divPeso4 = document.getElementById('div-peso-nascimento4')    
+    let divRaca4 = document.getElementById('div-raca-nascimento4')    
+
+    if (name === 'simples') {
+      //col-md-6 d-none
+      divMatriz.className = 'col-md-6 d-none'
+      divReprodutor.className = 'col-md-6 d-none'
+      divCria.className = 'col-md-6 d-none'
+      
+    } else if (name === 'detalhado') {
+      divMatriz.className = 'col-md-6'
+      divReprodutor.className = 'col-md-6'
+      divCria.className = 'col-md-6'
+
+    }
+
+    if(selectedParto === 'simples'){      
+      divCria2.className = 'col-md-6 d-none'
+      divSexo2.className = 'col-md-6 d-none'
+      divPeso2.className = 'col-md-6 d-none'
+      divRaca2.className = 'col-md-6 d-none'
+
+      divCria3.className = 'col-md-6 d-none'
+      divSexo3.className = 'col-md-6 d-none'
+      divPeso3.className = 'col-md-6 d-none'
+      divRaca3.className = 'col-md-6 d-none'
+
+      divCria4.className = 'col-md-6 d-none'
+      divSexo4.className = 'col-md-6 d-none'
+      divPeso4.className = 'col-md-6 d-none'
+      divRaca4.className = 'col-md-6 d-none'
+      
+    }
+    else if(selectedParto === 'duplo'){
+      divCria2.className = 'col-md-6'
+      divSexo2.className = 'col-md-6'
+      divPeso2.className = 'col-md-6'      
+      divRaca2.className = 'col-md-6'
+
+      divCria3.className = 'col-md-6 d-none'
+      divSexo3.className = 'col-md-6 d-none'
+      divPeso3.className = 'col-md-6 d-none'
+      divRaca3.className = 'col-md-6 d-none'
+
+      divCria4.className = 'col-md-6 d-none'
+      divSexo4.className = 'col-md-6 d-none'
+      divPeso4.className = 'col-md-6 d-none'      
+      divRaca4.className = 'col-md-6 d-none'
+
+      if(name === 'detalhado'){
+        divCria2.className = 'col-md-6'
+      }
+      else{
+       divCria2.className = 'col-md-6 d-none' 
+      }
+    }
+    else if(selectedParto === 'triplo'){
+      divSexo2.className = 'col-md-6'
+      divPeso2.className = 'col-md-6'
+      divRaca2.className = 'col-md-6'      
+
+      divSexo3.className = 'col-md-6'
+      divPeso3.className = 'col-md-6'
+      divRaca3.className = 'col-md-6'
+
+      divCria4.className = 'col-md-6 d-none'
+      divSexo4.className = 'col-md-6 d-none'
+      divPeso4.className = 'col-md-6 d-none'
+      divRaca4.className = 'col-md-6 d-none'      
+
+      if(name === 'detalhado'){
+        divCria2.className = 'col-md-6'
+        divCria3.className = 'col-md-6'
+      }
+      else{
+       divCria2.className = 'col-md-6 d-none'
+       divCria3.className = 'col-md-6 d-none'
+      }
+    }
+    else if(selectedParto === 'quadruplo'){
+      divSexo2.className = 'col-md-6'
+      divPeso2.className = 'col-md-6'
+      divRaca2.className = 'col-md-6'            
+
+      divSexo3.className = 'col-md-6'
+      divPeso3.className = 'col-md-6'
+      divRaca3.className = 'col-md-6'      
+      
+      divSexo4.className = 'col-md-6'
+      divPeso4.className = 'col-md-6'      
+      divRaca4.className = 'col-md-6'      
+
+      if(name === 'detalhado'){
+        divCria2.className = 'col-md-6'
+        divCria3.className = 'col-md-6'
+        divCria4.className = 'col-md-6'
+      }
+      else{
+       divCria2.className = 'col-md-6 d-none'
+       divCria3.className = 'col-md-6 d-none'
+       divCria4.className = 'col-md-6 d-none'
+      }
+    }
+
+    if(selectEvento === 'cobertura'){
+      divIdReprodutor.className = 'col-md-6'
+    }
+    else{
+     divIdReprodutor.className = 'col-md-6 d-none' 
+    }
+  }
+      carregarRebanhos()      
+
+      carregarAtividades()
 
       getFazenda()
 
-      // <button
-      //   class="btn btn-info dropdown-toggle btn-lg"
-      //   type="button"
-      //   id="dropdownMenuButton"
-      //   data-toggle="dropdown"
-      //   aria-haspopup="true"
-      //   aria-expanded="false"
-      // >
-      //   Fazenda 1
-      //   <i class="dripicons-chevron-down"></i>
-      // </button>
-      // <div
-      //   class="dropdown-menu"
-      //   aria-labelledby="dropdownMenuButton"
-      // >
-      //   <a class="dropdown-item" href="#">Fazenda 1</a>
-      //   <a class="dropdown-item" href="#">Fazenda 2</a>
-      //   <a class="dropdown-item" href="#">Fazenda 3</a>
-      // </div>
+      lancarFinanceiro()
+
+      carregarTotal()
+      
     </script>
   </body>
 </html>

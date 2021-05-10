@@ -164,7 +164,7 @@
 
                 <div class="form-group text-center my-5">
                   <a
-                    href="cadastrar-propriedade.html"
+                    href="cadastrar-propriedade2.html"
                     class="btn btn-dark width-md btn-rounded"
                     type="reset"
                   >
@@ -172,18 +172,18 @@
                     Voltar
                   </a>
                   <button
-                    class="btn btn-outline-primary width-md btn-rounded ml-1"
-                    type="reset"
+                    class="btn btn-outline-primary width-md btn-rounded ml-1"                    
+                    id="cadastrar-retornar-rs"
                   >
-                    Limpar Campos
+                    Cadastrar e Retornar
                   </button>
-                  <a
-                    href="cadastrar-propriedade2.html"
+                  <button                    
                     class="btn btn-primary width-md btn-rounded ml-1"
+                    id="cadastrar-novo-rs"
                   >
-                    Finalizar &nbsp;
+                    Novo Rebanho &nbsp;
                     <i class="fas fa-arrow-circle-right"></i>
-                  </a>
+                  </button>
                 </div>
               </form>
             </div>
@@ -224,14 +224,15 @@
         }        
       }
 
-      function cadastrarRebanho(){
+      function cadastrarCategoria(){
         $('#adicionar-outra-categoria').click(function(event){          
           event.preventDefault()
           
-          let data = $('#form-rebanho').serialize()                    
+          let data = $('#form-rebanho').serialize()
+          let nomeRebanho = document.getElementById('nome-rebanho').value                      
 
           let url = 'http://localhost/php-getovi/api/cadastro_rebanho_simples.php';          
-          //let url = 'http://localhost/php-getovi/testes/teste.php'
+                    
 
           $.ajax({
             url: url,
@@ -243,16 +244,101 @@
               window.alert(res.value)
               console.log(res)
 
-              window.location.href = 'cadastrar-rebanho-simplificado.html'                          
+              window.location.href = 'cadastrar-rebanho-simplificado.html?nome='+nomeRebanho                                    
             }else{              
               console.log(res.value)              
               window.alert('Erro')
             }
           })     
         })
-      }   
+      }
 
-      cadastrarRebanho()
+      function cadastrarRetornar(){
+        $('#cadastrar-retornar-rs').click(function(event){          
+          event.preventDefault()
+          
+          let data = $('#form-rebanho').serialize()          
+
+          let url = 'http://localhost/php-getovi/api/cadastro_rebanho_simples.php';          
+          
+          // window.location.href = 'cadastrar-rebanho-simplificado.html?nome='+nomeRebanho          
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){            
+            if(res.status == 'Success'){              
+              window.alert(res.value)
+              console.log(res)
+
+              window.location.href = 'cadastrar-propriedade2.html'                                    
+            }else{              
+              console.log(res.value)              
+              window.alert('Erro')
+            }
+          })     
+        })
+      }
+
+      function cadastrarNovoRebanho(){
+        $('#cadastrar-novo-rs').click(function(event){          
+          event.preventDefault()
+          
+          let data = $('#form-rebanho').serialize()          
+
+          let url = 'http://localhost/php-getovi/api/cadastro_rebanho_simples.php';          
+          
+          // window.location.href = 'cadastrar-rebanho-simplificado.html?nome='+nomeRebanho          
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){            
+            if(res.status == 'Success'){              
+              window.alert(res.value)
+              console.log(res)
+
+              window.location.href = 'cadastrar-rebanho-simplificado.html'                                    
+            }else{              
+              console.log(res.value)              
+              window.alert('Erro')
+            }
+          })     
+        })
+      }
+
+      function preparaNomeRebanho(){
+        let queryString = location.search.slice(1)
+  
+          let parts = queryString.split('&')
+          
+          let data = {}
+          
+          parts.forEach(function (part) {
+            let keyValue = part.split('=');
+            let key = keyValue[0];
+            let value = keyValue[1];
+            data[key] = value;
+          });
+          
+          if(data.nome){
+            let novoNome = data.nome
+            novoNome = novoNome.replace(/%20/gi, " ");
+            let nomeRebanho = document.getElementById('nome-rebanho')
+            nomeRebanho.value = novoNome  
+            nomeRebanho.disabled = true
+          }          
+          
+      }
+
+      cadastrarNovoRebanho()
+      cadastrarRetornar()
+      cadastrarCategoria()
+      preparaNomeRebanho()
     </script>
   </body>
 </html>

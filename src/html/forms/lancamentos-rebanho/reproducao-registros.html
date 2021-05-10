@@ -1,34 +1,52 @@
-<form>
+<form id="form-registro-reproducao">
   <div class="row">
+    <div class="col-md-6 d-none">
+      <div class="form-group">        
+        <input
+          class="form-control"
+          type="text"
+          name="tipo-lancamento"
+          value="registro-reprodução"          
+        />
+      </div>
+    </div>  
+
     <div class="col-md-6">
       <div class="form-group">
         <label for="reproducao-rebanho">Tipo de Evento</label>
         <select
           id="reproducao-ocorrencia"
           class="form-control"
-          name="tipo-produto"
+          name="tipo-evento"
+          onchange="addFields()"
         >
           <option value="">Selecione</option>
           <option value="cio">Cio</option>
           <option value="cobertura">Cobertura</option>
-          <option value="confirmacao-prenhez">Confirmação Prenhez</option>
+          <option value="confirmação-prenhez">Confirmação Prenhez</option>
           <option value="secagem">Secagem</option>
           <option value="aborto">Aborto</option>
         </select>
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6" id="div-matriz-registro">
       <div class="form-group">
-        <label for="identificaocao-animal"
-          >Identificação do Animal (nome ou nº)</label
+        <label for="identificacao-animal"
+          >Identificação Matriz (nome ou nº)</label
         >
-        <select id="id-registro" class="form-control" name="id-animal">
-          <option value="1">Selecione</option>
-          <option value="animal1">Animal 1</option>
-          <option value="animal2">Animal 2</option>
-          <option value="animal3">Animal 3</option>
-          <option value="animal4">Animal 4</option>
+        <select id="id-matriz" class="form-control" name="id-matriz">
+          
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6 d-none" id="div-reprodutor-registro">
+      <div class="form-group">
+        <label for="identificacao-animal"
+          >Identificação Reprodutor (nome ou nº)</label
+        >
+        <select id="id-reprodutor" class="form-control" name="id-reprodutor">
+          
         </select>
       </div>
     </div>
@@ -48,7 +66,7 @@
     </div>
   </div>
 
-  <button class="btn btn-primary btn-lg" type="submit">
+  <button class="btn btn-primary btn-lg" id="btn-adicionar-registro">
     Adicionar Registro
   </button>
 
