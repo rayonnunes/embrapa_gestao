@@ -1,58 +1,131 @@
-<form>
+<form id="form-parametros">
   <div class="row">
-    <div class="col-md-12">
+    <!-- <div class="col-md-12">
       <label for="fazenda"><h4>Rebanho 1</h4></label>
+    </div> -->
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="produtoServico-despesa">Período de Lactação (meses)</label>
+        <input
+          type="number"
+          id="periodo-lactacao"
+          class="form-control"          
+          name="periodo-lactacao"
+        />
+      </div>
     </div>
 
     <div class="col-md-6">
       <div class="form-group">
-        <label for="produtoServico-despesa">Período de Lactação</label>
+        <label for="produtoServico-despesa">Idade Animais jovens (meses)</label>
         <input
-          type="text"
-          id="periodo-lactacao"
-          class="form-control"
-          value="periodo-lactacao"
+          type="number"
+          id="animais-jovens"
+          class="form-control"          
+          name="animais-jovens"
         />
       </div>
     </div>
+
     <div class="col-md-12">
       <div class="form-group">
         <label for="produtoServico-despesa"
-          >Inicio da Idade Reprodutiva das Matrizes</label
+          >Inicio da Idade Reprodutiva das Matrizes (meses)</label
         >
         <input
-          type="text"
+          type="number"
           id="idade-reprodutiva"
-          class="form-control"
-          value="idade-reprodutiva"
+          class="form-control"          
+          name="idade-reprodutiva-matriz"
         />
       </div>
     </div>
-  </div>
-  <div class="row">
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="produtoServico-despesa"
+          >Inicio da Idade Reprodutiva dos Reprodutores (meses)</label
+        >
+        <input
+          type="number"
+          id="idade-reprodutiva-rep"
+          class="form-control"          
+          name="idade-reprodutiva-rep"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="produtoServico-despesa"
+          >Idade Descarte Reprodutores</label
+        >
+        <input
+          type="number"
+          id="idade-descarte-rep"
+          class="form-control"          
+          name="idade-descarte-rep"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="produtoServico-despesa"
+          >Idade Descarte Matrizes</label
+        >
+        <input
+          type="number"
+          id="idade-descarte-mat"
+          class="form-control"          
+          name="idade-descarte-mat"
+        />
+      </div>
+    </div>
+
+  </div>  
+
+  <!-- </div> -->
+  <!-- <div class="row">
     <div class="col-md-6">
       <div class="form-group">
         <label for="produtoServico-despesa"
           >Tempo de Secagem antes da Parição</label
         >
         <input
-          type="text"
+          type="number"
           id="tempo-secagem"
-          class="form-control"
-          value="tempo-secagem"
+          class="form-control"          
+          name="tempo-secagem"
         />
       </div>
     </div>
+
+     <div class="col-md-6">
+      <div class="form-group">
+        <label for="produtoServico-despesa"
+          >Idade Venda/Abate</label
+        >
+        <input
+          type="number"
+          id="idade-venda-abate"
+          class="form-control"          
+          name="idade-venda-abate"
+        />
+      </div>
+    </div>
+
     <div class="col-md-12">
       <div class="form-group">
         <label for="produtoServico-despesa"
-          >Tempo de Permanencia de Reprodutores</label
+          >Tempo de Permanencia de Reprodutores (anos)</label
         >
         <input
-          type="text"
+          type="number"
           id="permanencia-reprodutores"
-          class="form-control"
-          value="permanencia-reprodutores"
+          class="form-control"          
+          name="permanencia-reprodutores"
         />
       </div>
     </div>
@@ -60,32 +133,34 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <label for="quantidade-despesa">Tempo de Permanencia de Matrizes</label>
+        <label for="quantidade-despesa">Tempo de Permanencia de Matrizes (anos)</label>
         <div class="input-group">
           <input
             class="form-control"
             type="number"
             id="permanencia-matrizes"
             placeholder="10"
+            name="permanencia-matrizes"
           />
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label for="quantidade-despesa">Intervalo entre partos</label>
+        <label for="quantidade-despesa">Intervalo entre partos (meses)</label>
         <div class="input-group">
           <input
             class="form-control"
             type="number"
             id="intervalo-partos"
             placeholder="10"
+            name="intervalo-partos"
           />
         </div>
       </div>
     </div>
-  </div>
-  <button class="btn btn-primary btn-lg float-right" type="submit">
+  </div> -->
+  <button class="btn btn-primary btn-lg float-right"  id="btn-adicionar-parametros">
     Adicionar Parâmetros
   </button>
   <button class="btn btn-danger btn-lg float-right mr-4" type="reset">

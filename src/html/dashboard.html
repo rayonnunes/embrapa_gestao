@@ -1249,10 +1249,10 @@
                   let atv1 = document.getElementById(name1)
                   let atv2 = document.getElementById(name2)
                   // console.log(name2)
-                  console.log(atv2)
+                  // console.log(atv2)
                   atv1.className = 'col-md-12 pr-0'
                   atv2.className = 'col-md-12 pr-0'
-                  console.log(atv2)
+                  // console.log(atv2)
                 }           
                 
               }                                                                     
@@ -1280,7 +1280,7 @@
             dataType: 'json'
           }).done(function(res){
             if(res.status == 'Success'){
-              console.log(res.value)
+              // console.log(res.value)
               
               window.alert(res.value)
               window.location.href = 'dashboard.html'
@@ -1289,7 +1289,7 @@
             }else{
               
               window.alert(res.value)
-              console.log(res.value)              
+              // console.log(res.value)              
             }
 
             // window.location.href = 'http://localhost:3000/cadastrar-propriedade2.html?id='+id+'&idProp='+idPropriedade          
@@ -1314,7 +1314,7 @@
             dataType: 'json'
           }).done(function(res){
             if(res.status == 'Success'){
-              console.log(res.value)
+              // console.log(res.value)
               
               window.alert(res.value)
               window.location.href = 'dashboard.html'
@@ -1322,7 +1322,7 @@
             }else{
               
               window.alert(res.value)
-              console.log(res.value)              
+              // console.log(res.value)              
             }
 
             // window.location.href = 'http://localhost:3000/cadastrar-propriedade2.html?id='+id+'&idProp='+idPropriedade          
@@ -1347,7 +1347,7 @@
             dataType: 'json'
           }).done(function(res){
             if(res.status == 'Success'){
-              console.log(res.value)
+              // console.log(res.value)
               
               window.alert(res.value)
               window.location.href = 'dashboard.html'                          
@@ -1355,7 +1355,7 @@
             }else{
               
               window.alert(res.value)
-              console.log(res.value)              
+              // console.log(res.value)              
             }
 
             // window.location.href = 'http://localhost:3000/cadastrar-propriedade2.html?id='+id+'&idProp='+idPropriedade          
@@ -1381,7 +1381,7 @@
             dataType: 'json'
           }).done(function(res){
             if(res.status == 'Success'){
-              console.log(res.value)
+              // console.log(res.value)
               
               window.alert(res.value)
               window.location.href = 'dashboard.html'
@@ -1389,7 +1389,7 @@
             }else{
               
               window.alert(res.value)
-              console.log(res.value)              
+              // console.log(res.value)              
             }
 
             
@@ -1414,6 +1414,40 @@
             dataType: 'json'
           }).done(function(res){
             if(res.status == 'Success'){
+              // console.log(res.value)
+              
+              window.alert(res.value)
+              window.location.href = 'dashboard.html'
+            
+            }else{
+              
+              window.alert(res.value)
+              // console.log(res.value)              
+            }
+
+            
+          })     
+        })
+
+         // Adicionar um lançamento do rebanho do tipo compra
+         $('#btn-adicionar-compra').click(function(event){          
+          // console.log('teste')
+          
+          event.preventDefault()
+          // window.alert('Teste')                              
+          let data = $('#form-compra').serialize()                  
+
+          // console.log()
+
+          url = 'http://localhost/php-getovi/api/lancamento_compra.php';  
+
+          $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+          }).done(function(res){
+            if(res.status == 'Success'){
               console.log(res.value)
               
               window.alert(res.value)
@@ -1428,6 +1462,7 @@
             
           })     
         })
+
       }
 
 
@@ -1446,7 +1481,7 @@
               dataType: 'json',
             }).done(function (res) {              
               if (res.status === 'Sucesso') {      
-                console.log(res.dados.receita.sum)
+                // console.log(res.dados.receita.sum)
                 cardReceita.innerText = res.dados.receita.sum
                 cardDespesa.innerText = res.dados.despesa.sum
                 cardInvestimento.innerText = res.dados.investimento.sum
@@ -1464,21 +1499,29 @@
               dataType: 'json',
             }).done(function (res) {          
               if(res.status === 'Success'){
-                console.log(res)            
+                // console.log(res)            
                 let rebanhoSimples = res.rebanho_simples
                 let rebanhoDetalhado = res.rebanho_detalhado
                 let category = res.categorias
                 let raca = res.racas
-                // console.log(raca)            
+                // console.log(rebanhoDetalhado.length)            
                 // console.log(res.categorias[0].categoria)
                   for(let i = 0; i < rebanhoSimples.length; i++){
                       $('#nascimento-rebanho').prepend(
                         `<option name=simples>`+rebanhoSimples[i].nome_rebanho_simples+`</option>
                         `
                         )
+                      $('#compra-rebanho').prepend(
+                        `<option name=simples>`+rebanhoSimples[i].nome_rebanho_simples+`</option>
+                        `
+                        )
                      }           
                    for(let i = 0; i < rebanhoDetalhado.length; i++){
                     $('#nascimento-rebanho').prepend(
+                      `<option name=detalhado>`+rebanhoDetalhado[i].nome_rebanho_detalhado+`</option>
+                      `
+                      )
+                    $('#compra-rebanho').prepend(
                       `<option name=detalhado>`+rebanhoDetalhado[i].nome_rebanho_detalhado+`</option>
                       `
                       )
@@ -1493,6 +1536,10 @@
                       `
                       )
                     $('#raca-nascimento3').prepend(
+                      `<option>`+raca[i].raca+`</option>
+                      `
+                      )
+                    $('#raca-nascimento4').prepend(
                       `<option>`+raca[i].raca+`</option>
                       `
                       )
@@ -1529,7 +1576,8 @@
 
             });
       }
-  function addFields() {    
+  function addFields() {
+    // Campos referentes ao Nascimento    
     let selectedValue = document.getElementById('nascimento-rebanho');
     let selectedParto = document.getElementById('nascimento-parto').value
     let selectEvento = document.getElementById('reproducao-ocorrencia').value
@@ -1665,6 +1713,34 @@
     else{
      divIdReprodutor.className = 'col-md-6 d-none' 
     }
+
+    // Campos referentes a compra
+    let rebanhoCompra = document.getElementById('compra-rebanho');
+    
+
+    let optionRebanhoCompra = document.getElementById('compra-rebanho').options[rebanhoCompra.selectedIndex];
+    let nameOption = optionRebanhoCompra.getAttribute('name');    
+
+    let divId = document.getElementById('div-id-animal')
+    let divCategoria = document.getElementById('div-categoria-compra')
+    let divQtd = document.getElementById('div-qtd-compra')
+    let divDataNascimento = document.getElementById('div-data-nascimento-compra')    
+
+    
+    // console.log(nameOption)
+    if (nameOption === 'simples') {
+      //col-md-6 d-none
+      divId.className = 'col-md-6 d-none'
+      divDataNascimento.className = 'col-md-6 d-none'      
+      divQtd.className = 'col-md-6'
+      
+    } else if (nameOption === 'detalhado') {
+      divId.className = 'col-md-6'
+      divDataNascimento.className = 'col-md-6'      
+      divQtd.className = 'col-md-6 d-none'
+
+    }
+
   }
       carregarRebanhos()      
 

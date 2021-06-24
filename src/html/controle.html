@@ -1129,9 +1129,9 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form id="basic-form2" action="#">
+                <!-- <form id="basic-form2" action="#"> -->
                   <div>@@include('./forms/parametros.html')</div>
-                </form>
+                <!-- </form> -->
               </div>
             </div>
           </div>
@@ -1183,5 +1183,48 @@
 
     <!-- App js -->
     <script src="assets/js/app.min.js"></script>
+
+    <script type="text/javascript">
+      // Função para adicionar parâmetros de reprodução
+      function adicionarParametros() {            
+            let url = 'http://localhost/php-getovi/api/adicionar_parametros.php'
+             //let url2 = 'http://localhost/php-getovi/api/propriedade/teste'              
+
+            
+            $('#btn-adicionar-parametros').click(function(event){          
+              // console.log('teste')
+              event.preventDefault()
+              // window.alert('Teste')                              
+              let data = $('#form-parametros').serialize()                  
+
+              // console.log()
+              
+
+              $.ajax({
+                url: url,
+                method: 'POST',
+                data: data,
+                dataType: 'json'
+              }).done(function(res){
+                if(res.status == 'Success'){
+                  console.log(res.value)
+                  
+                  window.alert(res.value)
+                  window.location.href = 'controle.html'
+                
+                }else{
+                  
+                  window.alert(res.value)
+                  console.log(res.value)              
+                }
+
+                
+              })     
+            })
+          }
+
+          adicionarParametros()
+
+    </script>
   </body>
 </html>
